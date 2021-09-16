@@ -1,5 +1,5 @@
 @import "./fonts.css";
 
-#page-wrapper {
+.bg-gradient {
   background-image: linear-gradient(to right bottom, #2e2e2e, #303030, #313131, #333333, #353535, #343434, #323232, #313131, #2c2c2c, #282828, #232323, #1f1f1f);
 }
