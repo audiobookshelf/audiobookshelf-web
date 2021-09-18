@@ -11,6 +11,14 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+      width: {
+        '15': '3.75rem',
+        '30': '7.5rem'
+      },
+      height: {
+        '15': '3.75rem',
+        '30': '7.5rem'
+      },
       screens: {
         'short': { 'raw': '(max-height: 500px)' }
       },
