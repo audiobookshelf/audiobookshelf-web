@@ -2,6 +2,7 @@
   "name": "audiobookshelf-web",
   "version": "1.0.0",
   "private": true,
+  "description": "Self-hosted audiobook server for managing and playing audiobooks",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
