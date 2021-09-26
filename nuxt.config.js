@@ -43,7 +43,7 @@ export default {
       },
       {
         name: 'twitter:card',
-        content: `summary_large_image`,
+        content: 'summary',
         vmid: 'twitter:card'
       }
     ],
