@@ -26,7 +26,7 @@
       </div>
 
       <div class="absolute bottom-6 right-6 md:bottom-12 md:right-12 text-right">
-        <nuxt-link to="/install" class="text-gray-200 text-lg md:text-3xl font-book py-1 md:py-2 hover:underline block">How to Install</nuxt-link>
+        <nuxt-link to="/install" class="text-gray-200 text-lg md:text-3xl font-book py-1 md:py-2 hover:underline block">Install Guides</nuxt-link>
         <nuxt-link to="/docs" class="text-gray-200 text-lg md:text-3xl font-book py-1 md:py-2 hover:underline block">Documentation</nuxt-link>
 
         <div class="flex pt-4 md:pt-8 text-gray-300">
