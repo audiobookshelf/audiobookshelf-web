@@ -1,16 +1,84 @@
 <template>
-  <div class="w-screen h-screen">
-    <Nuxt />
+  <div class="w-screen h-screen max-w-full max-h-screen text-white bg-gradient">
+    <div class="fixed top-0 left-0 w-full h-16 shadow-lg bg-primary flex px-4 items-center">
+      <nuxt-link to="/" class="h-12 w-12">
+        <img src="/Logo48.png" class="h-12 w-12" />
+      </nuxt-link>
+      <nuxt-link to="/" class="text-2xl pl-4 font-book hover:underline hidden md:block">AudioBookshelf</nuxt-link>
+      <!-- <div class="flex-grow" /> -->
+      <nuxt-link to="/install" class="h-full px-3 md:px-5 flex items-center ml-4 md:ml-12 cursor-pointer" :class="routeName === 'install' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
+        <p class="text-base md:text-lg">Install</p>
+      </nuxt-link>
+      <nuxt-link to="/docs" class="h-full px-3 md:px-5 flex items-center cursor-pointer" :class="routeName === 'docs' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
+        <p class="text-base md:text-lg hidden md:block">Documentation</p>
+        <p class="text-base md:text-lg md:hidden">Docs</p>
+      </nuxt-link>
+      <div class="flex-grow" />
+      <a :href="dockerHubUrl">
+        <img src="/DockerHubLogo.png" class="h-6 mr-2" />
+      </a>
+      <a :href="githubUrl">
+        <img src="/GithubLogo.png" class="h-7 mx-2" />
+      </a>
+      <a :href="playStoreUrl" class="hidden md:block">
+        <img src="/GetGooglePlayStore.png" class="h-7 ml-2" />
+      </a>
+    </div>
+    <div class="page-container w-screen pt-16">
+      <div class="w-full h-full overflow-y-auto py-8">
+        <Nuxt />
+
+        <div class="absolute bottom-0 left-0 w-full h-8 flex items-center text-xs text-gray-300 bg-primary px-4">
+          No copyright, take whatever you want.
+          <div class="flex-grow" />
+          <a href="https://github.com/advplyr" target="_blank" class="font-mono underline text-blue-200 hover:text-blue-100 text-sm">advplyr</a>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {}
+    return {
+      dockerHubUrl: 'https://hub.docker.com/repository/docker/advplyr/audiobookshelf',
+      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.audiobookshelf.app',
+      githubUrl: 'https://github.com/advplyr/audiobookshelf'
+    }
   },
-  computed: {},
-  methods: {},
-  mounted() {}
+  watch: {
+    '$route.hash'(newVal) {
+      if (newVal) {
+        this.scrollTo(newVal)
+      }
+    }
+  },
+  computed: {
+    routeName() {
+      return this.$route.name
+    }
+  },
+  methods: {
+    scrollTo(hashtag) {
+      location.href = hashtag
+    }
+  },
+  mounted() {
+    if (this.$route.hash) {
+      this.scrollTo(this.$route.hash)
+    }
+  }
 }
 </script>
+
+<style>
+html,
+body {
+  overflow: hidden;
+}
+.page-container {
+  height: calc(100% - 32px);
+  max-height: calc(100% - 32px);
+}
+</style>
