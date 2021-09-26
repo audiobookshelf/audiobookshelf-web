@@ -10,7 +10,42 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
+      {
+        property: 'og:title',
+        content: 'AudioBookshelf',
+        vmid: 'og:title'
+      },
+      {
+        property: 'og:image',
+        content: 'https://audiobookshelf.org/Logo.png',
+        vmid: 'og:image'
+      },
+      {
+        property: 'og:description',
+        content: 'Self-hosted audiobook server for managing and playing audiobooks',
+        vmid: 'og:description'
+      },
+      {
+        property: 'twitter:title',
+        content: 'AudioBookshelf',
+        vmid: 'twitter:title'
+      },
+      {
+        property: 'twitter:image',
+        content: 'https://audiobookshelf.org/Logo.png',
+        vmid: 'twitter:image'
+      },
+      {
+        property: 'twitter:description',
+        content: 'Self-hosted audiobook server for managing and playing audiobooks',
+        vmid: 'twitter:description'
+      },
+      {
+        name: 'twitter:card',
+        content: `summary_large_image`,
+        vmid: 'twitter:card'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
