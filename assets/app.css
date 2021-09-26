@@ -1,5 +1,32 @@
 @import "./fonts.css";
+@import "./prism.css";
 
 .bg-gradient {
   background-image: linear-gradient(to right bottom, #2e2e2e, #303030, #313131, #333333, #353535, #343434, #323232, #313131, #2c2c2c, #282828, #232323, #1f1f1f);
+}
+
+/* override prism padding */
+pre[class*="language-"] {
+  /* padding: 0.25em 1em; */
+  white-space:pre-line;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 24px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #525252;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6b6b6b;
 }
