@@ -32,11 +32,9 @@
         <div class="flex pt-4 md:pt-8 text-gray-300">
           <a :href="dockerHubUrl" class="mx-2">
             <img src="/docker.svg" class="h-8 md:h-11 text-white" />
-            <!-- <img src="/DockerHubLogo.png" class="h-6 md:h-9 mr-2" /> -->
           </a>
           <a :href="githubUrl" class="mx-2">
             <img src="/github.svg" class="h-7 md:h-10 text-white" />
-            <!-- <img src="/GithubLogo.png" class="h-7 md:h-10 mx-2" /> -->
           </a>
           <a :href="playStoreUrl" class="mx-2">
             <img src="/GetGooglePlayStore.png" class="h-7 md:h-10 ml-2" />

@@ -15,10 +15,10 @@
       </nuxt-link>
       <div class="flex-grow" />
       <a :href="dockerHubUrl">
-        <img src="/DockerHubLogo.png" class="h-6 mr-2" />
+        <img src="/docker.svg" class="h-8 text-white" />
       </a>
       <a :href="githubUrl">
-        <img src="/GithubLogo.png" class="h-7 mx-2" />
+        <img src="/github.svg" class="h-7 text-white mx-3" />
       </a>
       <a :href="playStoreUrl" class="hidden md:block">
         <img src="/GetGooglePlayStore.png" class="h-7 ml-2" />
