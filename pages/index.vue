@@ -1,6 +1,6 @@
 <template>
-  <div ref="wrapper" class="w-full h-full bg-gradient">
-    <div class="absolute top-0 left-0 w-full h-screen pointer-events-none">
+  <div ref="wrapper" class="w-full h-full bg-gradient overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-screen pointer-events-none max-h-screen max-w-screen overflow-hidden">
       <template v-for="(shelf, index) in shelves">
         <div :key="index" class="bookshelfRow w-full flex relative h-32 md:h-60 px-3 md:px-12">
           <template v-for="(book, n) in shelf">
@@ -61,7 +61,8 @@ export default {
         ['bravenewworld.jpg', 'againstdemocracy.jpg', 'fahrenheit451.jpg', 'lordoftheflies.jpg', 'humanaction.jpg', 'theoryofsocialismandcapitalism.jpg', 'thehobbit.jpg', 'warandpeace.jpg', 'anthem.jpg'],
         ['theanarchisthandbook.jpg', 'faithofthefallen.jpg', 'theidiot.jpg', 'machineryoffreedom.png', 'thefountainhead.jpg'],
         ['notreason.jpg', 'ethicsofliberty.jpg'],
-        []
+        ['theprince.jpg', 'templeofthewinds.jpg'],
+        ['economicsinonelesson.jpg']
       ]
     }
   },

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen h-screen max-w-full max-h-screen text-white bg-gradient">
+  <div class="w-screen h-screen max-w-full max-h-screen text-white bg-gradient overflow-hidden">
     <div class="fixed top-0 left-0 w-full h-16 shadow-lg bg-primary flex px-4 items-center">
       <nuxt-link to="/" class="h-12 w-12">
         <img src="/Logo48.png" class="h-12 w-12" />
@@ -25,10 +25,9 @@
       </a>
     </div>
     <div class="page-container w-screen pt-16">
-      <div class="w-full h-full overflow-y-auto py-8">
+      <div class="w-full h-full overflow-y-auto">
         <Nuxt />
-
-        <div class="absolute bottom-0 left-0 w-full h-8 flex items-center text-xs text-gray-300 bg-primary px-4">
+        <div class="w-full h-8 flex items-center text-xs text-gray-300 bg-primary px-4">
           No copyright, take whatever you want.
           <div class="flex-grow" />
           <a href="https://github.com/advplyr" target="_blank" class="font-mono underline text-blue-200 hover:text-blue-100 text-sm">advplyr</a>
@@ -78,7 +77,7 @@ body {
   overflow: hidden;
 }
 .page-container {
-  height: calc(100% - 32px);
-  max-height: calc(100% - 32px);
+  height: calc(100%);
+  max-height: calc(100%);
 }
 </style>
