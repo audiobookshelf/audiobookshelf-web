@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full max-w-5xl mx-auto px-2">
+  <div class="w-full max-w-5xl mx-auto px-2 py-8">
     <h1 id="docker" class="text-3xl mb-4">
       <nuxt-link to="#docker"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
       >Docker Install
@@ -70,7 +70,7 @@ sudo apt update
 sudo apt install audiobookshelf</code>
       </pre>
 
-    <div class="w-full h-24" />
+    <!-- <div class="w-full h-24" /> -->
   </div>
 </template>
 
