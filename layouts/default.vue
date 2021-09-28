@@ -4,21 +4,24 @@
       <nuxt-link to="/" class="h-12 w-12">
         <img src="/Logo48.png" class="h-12 w-12" />
       </nuxt-link>
-      <nuxt-link to="/" class="text-2xl pl-4 font-book hover:underline hidden md:block">AudioBookshelf</nuxt-link>
+      <nuxt-link to="/" class="text-2xl pl-2 sm:pl-4 font-book hover:underline hidden md:block">AudioBookshelf</nuxt-link>
       <!-- <div class="flex-grow" /> -->
-      <nuxt-link to="/install" class="h-full px-3 md:px-5 flex items-center ml-4 md:ml-12 cursor-pointer" :class="routeName === 'install' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
+      <nuxt-link to="/install" class="h-full px-3 md:px-5 flex items-center ml-2 md:ml-12 cursor-pointer" :class="routeName === 'install' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
         <p class="text-base md:text-lg">Install</p>
       </nuxt-link>
       <nuxt-link to="/docs" class="h-full px-3 md:px-5 flex items-center cursor-pointer" :class="routeName === 'docs' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
         <p class="text-base md:text-lg hidden md:block">Documentation</p>
         <p class="text-base md:text-lg md:hidden">Docs</p>
       </nuxt-link>
+      <nuxt-link to="/showcase" class="h-full px-3 md:px-5 items-center cursor-pointer flex" :class="routeName === 'showcase' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
+        <p class="text-base md:text-lg">Showcase</p>
+      </nuxt-link>
       <div class="flex-grow" />
       <a :href="dockerHubUrl">
         <img src="/docker.svg" class="h-8 text-white" />
       </a>
       <a :href="githubUrl">
-        <img src="/github.svg" class="h-7 text-white mx-3" />
+        <img src="/github.svg" class="h-7 text-white mx-1 sm:mx-3" />
       </a>
       <a :href="playStoreUrl" class="hidden md:block">
         <img src="/GetGooglePlayStore.png" class="h-7 ml-2" />
