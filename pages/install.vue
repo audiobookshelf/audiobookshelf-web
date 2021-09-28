@@ -61,13 +61,9 @@ sudo apt install audiobookshelf</code>
     <p class="mb-4 text-sm md:text-base">Grab the latest debian package from the <a href="https://github.com/advplyr/audiobookshelf-ppa" target="_blank" class="underline text-blue-400 hover:text-blue-200">audiobookshelf-ppa</a> github repository, and install.</p>
 
     <pre>
-        <code class="language-bash">curl -s --compressed "https://advplyr.github.io/audiobookshelf-ppa/KEY.gpg" | sudo apt-key add - 
+        <code class="language-bash">wget https://advplyr.github.io/audiobookshelf-ppa/audiobookshelf_1.2.7_amd64.deb
 
-sudo curl -s --compressed -o /etc/apt/sources.list.d/audiobookshelf.list "https://advplyr.github.io/audiobookshelf-ppa/audiobookshelf.list" 
-
-sudo apt update 
-
-sudo apt install audiobookshelf</code>
+sudo apt install ./audiobookshelf_1.2.7_amd64.deb</code>
       </pre>
 
     <!-- <div class="w-full h-24" /> -->
