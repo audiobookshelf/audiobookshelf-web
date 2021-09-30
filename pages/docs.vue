@@ -156,7 +156,45 @@
       <li class="py-1">The publish year must be the first part of the name OR directly after a volume number, and separated by " - " on both sides.</li>
     </ul>
 
-    <!-- <div class="w-full h-px my-24" /> -->
+    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
+
+    <h1 id="metadata" class="text-3xl mb-4">
+      <nuxt-link to="#metadata"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
+      >Audio File Metadata
+    </h1>
+
+    <p class="mb-4">AudioBookshelf uses the ID3 metadata tags in audio files to populate data.</p>
+
+    <p class="mb-4">Metadata on audio files will be mapped as follows:</p>
+
+    <table>
+      <tr class="bg-white bg-opacity-10 text-sm text-left font-semibold">
+        <th>File Metadata</th>
+        <th>AudioBookshelf Data</th>
+      </tr>
+      <tr>
+        <td>Artist</td>
+        <td>Author</td>
+      </tr>
+      <tr>
+        <td>Subtitle</td>
+        <td>Subtitle</td>
+      </tr>
+      <tr>
+        <td>Publisher</td>
+        <td>Publisher</td>
+      </tr>
+      <tr>
+        <td>Year</td>
+        <td>Publish Year</td>
+      </tr>
+      <tr>
+        <td>Composer</td>
+        <td>Narrator</td>
+      </tr>
+    </table>
+
+    <p class="my-4">Embedded cover art will be extracted and used.</p>
   </div>
 </template>
 
@@ -170,3 +208,16 @@ export default {
   mounted() {}
 }
 </script>
+
+<style>
+table,
+tr,
+td,
+th {
+  border: 1px solid #666;
+}
+table td,
+th {
+  padding: 5px 15px;
+}
+</style>
