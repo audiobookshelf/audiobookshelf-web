@@ -192,9 +192,14 @@
         <td>Composer</td>
         <td>Narrator</td>
       </tr>
+      <tr>
+        <td>Description</td>
+        <td>Description</td>
+      </tr>
     </table>
 
     <p class="my-4">Embedded cover art will be extracted and used.</p>
+    <p class="my-4">If you have a file named <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">desc.txt</span> in the audiobook folder it will be used as the description (does not overwrite existing description).</p>
   </div>
 </template>
 
