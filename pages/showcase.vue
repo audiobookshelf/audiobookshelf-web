@@ -7,10 +7,16 @@
 
     Library View - Sorted by Most Recent Date Added
     <img src="/showcase/1.png" class="pt-1 pb-8" />
+
+    Series View
+    <img src="/showcase/series1.png" class="pt-1 pb-8" />
+
     Viewing Author - Sorted by Volume # Ascending - Showing list of sorting options
     <img src="/showcase/2.png" class="pt-1 pb-8" />
+
     Using Keyword Filter - Sorting by Author (First Last) Descending - Showing available Filter Options
     <img src="/showcase/3.png" class="pt-1 pb-8" />
+
     <div class="flex justify-around mb-8">
       <div>
         Series Filter Options
@@ -25,6 +31,16 @@
         <img src="/showcase/6.png" />
       </div>
     </div>
+
+    Series View - View of item being moused over, and a closer look at the In-Progress progress bar
+    <img src="/showcase/series2.png" class="pt-1 pb-8" />
+
+    Series View - View inside of Series
+    <img src="/showcase/series3.png" class="pt-1 pb-8" />
+
+    Series View - Using the Keyword Filter
+    <img src="/showcase/series4.png" class="pt-1 pb-8" />
+
     Showing Marked Read items - Sorted by Author (Last, First) Ascending
     <img src="/showcase/7.png" class="pt-1 pb-8" />
     Showing Unread Items - Sorted by Data Added Ascending (Most Recent)

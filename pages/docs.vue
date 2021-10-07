@@ -1,5 +1,15 @@
 <template>
   <div class="w-full max-w-5xl mx-auto px-2 py-8">
+    <div class="flex -ml-8 mb-8">
+      <div>
+        <span class="material-icons text-success text-2xl">priority_high</span>
+      </div>
+      <p class="pl-2 text-base md:text-lg">
+        Help needed writing documentation! This website is on <a href="https://github.com/advplyr/audiobookshelf-web" target="_blank" class="text-blue-500 underline">github</a>. Join the <a href="https://github.com/advplyr/audiobookshelf/discussions" target="_blank" class="text-blue-500 underline">discussion</a>,
+        <a href="https://github.com/advplyr/audiobookshelf/issues" target="_blank" class="text-blue-500 underline">report an issue</a> or contact me directly at <a href="mailto:advplyr@protonmail.com" class="text-blue-500 underline">advplyr@protonmail.com</a>.
+      </p>
+    </div>
+
     <div class="flex -ml-8">
       <div>
         <span class="material-icons text-warning text-2xl">priority_high</span>
@@ -9,7 +19,7 @@
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
 
-    <h1 id="structure" class="text-3xl mb-4">
+    <h1 id="structure" class="text-3xl mb-4 -ml-8">
       <nuxt-link to="#structure"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
       >Directory Structure
     </h1>
@@ -111,7 +121,7 @@
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
 
-    <h1 id="naming" class="text-3xl mb-4">
+    <h1 id="naming" class="text-3xl mb-4 -ml-8">
       <nuxt-link to="#naming"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
       >Naming Convention
     </h1>
@@ -158,7 +168,7 @@
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
 
-    <h1 id="metadata" class="text-3xl mb-4">
+    <h1 id="metadata" class="text-3xl mb-4 -ml-8">
       <nuxt-link to="#metadata"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
       >Audio File Metadata
     </h1>
@@ -199,7 +209,8 @@
     </table>
 
     <p class="my-4">Embedded cover art will be extracted and used.</p>
-    <p class="my-4">If you have a file named <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">desc.txt</span> in the audiobook folder it will be used as the description (does not overwrite existing description).</p>
+    <p class="my-4">If you have a file named <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">desc.txt</span> in the audiobook folder it will be used as the description.</p>
+    <p class="my-4">If you have a file named <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">reader.txt</span> in the audiobook folder it will be used as the narrator.</p>
   </div>
 </template>
 
