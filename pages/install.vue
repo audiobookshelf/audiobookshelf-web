@@ -24,7 +24,16 @@ docker run -d \
     -v &lt;/path/to/metadata>:/metadata \
     --name audiobookshelf \
     --rm advplyr/audiobookshelf</code>
-      </pre>
+    </pre>
+
+    <p class="text-error">Note: Volume mappings should all be separate directories that are not contained in eachother.</p>
+    <p class="text-warning py-1">Unraid users: it is recommended that you map <span class="font-mono">/config</span> and <span class="font-mono">/metadata</span> to <span class="font-mono">/mnt/user/appdata/audiobookshelf/config</span> and <span class="font-mono">/mnt/user/appdata/audiobookshelf/metadata</span> respectively.</p>
+
+    <p class="mt-2 mb-1 font-semibold text-lg">Volume mappings</p>
+    <p>• &nbsp;<span class="font-mono">/config</span> will contain the database (users/books/libraries/settings)</p>
+    <p>• &nbsp;<span class="font-mono">/metadata</span> will contain open streams, cover art, current downloads, and cover art</p>
+    <p>• &nbsp;<span class="font-mono">/audiobooks</span> is <em>your</em> audiobook folder</p>
+    <p>• &nbsp;Then map any other directories you want to use for your book collection</p>
 
     <div class="w-full h-px bg-gray-400 my-6" />
 
@@ -70,9 +79,9 @@ sudo apt install audiobookshelf</code>
     <p class="mb-4 text-sm md:text-base">Grab the latest debian package from the <a href="https://github.com/advplyr/audiobookshelf-ppa" target="_blank" class="underline text-blue-400 hover:text-blue-200">audiobookshelf-ppa</a> github repository, and install.</p>
 
     <pre>
-        <code class="language-bash">wget https://advplyr.github.io/audiobookshelf-ppa/audiobookshelf_1.4.2_amd64.deb
+        <code class="language-bash">wget https://advplyr.github.io/audiobookshelf-ppa/audiobookshelf_1.4.4_amd64.deb
 
-sudo apt install ./audiobookshelf_1.4.2_amd64.deb</code>
+sudo apt install ./audiobookshelf_1.4.4_amd64.deb</code>
       </pre>
 
     <!-- <div class="w-full h-24" /> -->
