@@ -24,7 +24,7 @@
       >Directory Structure
     </h1>
 
-    <p class="mb-4 text-sm md:text-base">Here is an example supported directory structure</p>
+    <p class="mb-4 text-sm md:text-base">Here is an example supported directory structure (Note: Author names can also be Last, First)</p>
 
     <div class="p-4 border border-opacity-10 bg-primary bg-opacity-20 font-mono">
       <div class="flex py-1 max-w-2xl">
