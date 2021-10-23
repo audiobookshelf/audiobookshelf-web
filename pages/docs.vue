@@ -175,6 +175,13 @@
 
     <p class="mb-4">AudioBookshelf uses the ID3 metadata tags in audio files to populate data.</p>
 
+    <div class="flex -ml-8 mb-4">
+      <div>
+        <span class="material-icons text-warning text-2xl">priority_high</span>
+      </div>
+      <p class="pl-2 text-base">Metadata is only mapped to audiobookshelf if the field is empty. Data parsed from the folder structure and filenames takes priority over ID3 tags.</p>
+    </div>
+
     <p class="mb-4">Metadata on audio files will be mapped as follows:</p>
 
     <table>
@@ -206,7 +213,20 @@
         <td>Description</td>
         <td>Description</td>
       </tr>
+      <tr>
+        <td>Genre</td>
+        <td>Genres <span class="text-sm text-warning">*</span></td>
+      </tr>
+      <tr>
+        <td>Series</td>
+        <td>Series</td>
+      </tr>
+      <tr>
+        <td>Series-Part</td>
+        <td>Volume Number</td>
+      </tr>
     </table>
+    <p class="text-sm pt-2"><span class="text-sm text-warning">*</span> Genre meta tag can include multiple genres separated by "/", "//", or ";". e.g. "Science Fiction/Fiction/Fantasy"</p>
 
     <p class="my-4">Embedded cover art will be extracted and used.</p>
     <p class="my-4">If you have a file named <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">desc.txt</span> in the audiobook folder it will be used as the description.</p>
