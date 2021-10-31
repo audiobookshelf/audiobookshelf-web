@@ -24,7 +24,7 @@
       >Directory Structure
     </h1>
 
-    <p class="mb-4 text-sm md:text-base">Here is an example supported directory structure (Note: Author names can also be Last, First)</p>
+    <p class="mb-4 text-sm md:text-base">Here is an example supported directory structure</p>
 
     <div class="p-4 border border-opacity-10 bg-primary bg-opacity-20 font-mono">
       <div class="flex py-1 max-w-2xl">
@@ -121,9 +121,45 @@
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
 
+    <h1 id="author-naming" class="text-3xl mb-4 -ml-8">
+      <nuxt-link to="#author-naming"><span class="material-icons text-lg text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
+      >Author Folder Naming Convention
+    </h1>
+
+    <p class="mb-4">Supports "Last, First" author naming as well as multiple authors separated by "," or "&".<br /><br />Valid author folder names:</p>
+
+    <div class="p-4 border border-opacity-10 bg-primary bg-opacity-20 font-mono">
+      <div class="flex py-1">
+        <img src="/folder.svg" class="h-6" />
+        <p class="pl-2">Ichiro Kishimi</p>
+      </div>
+      <div class="flex py-1">
+        <img src="/folder.svg" class="h-6" />
+        <p class="pl-2">Kishimi, Ichiro</p>
+      </div>
+      <div class="flex py-1">
+        <img src="/folder.svg" class="h-6" />
+        <p class="pl-2">Ichiro Kishimi, Fumitake Koga</p>
+      </div>
+      <div class="flex py-1">
+        <img src="/folder.svg" class="h-6" />
+        <p class="pl-2">Kishimi, Ichiro, Koga, Fumitake</p>
+      </div>
+      <div class="flex py-1">
+        <img src="/folder.svg" class="h-6" />
+        <p class="pl-2">Ichiro Kishimi & Fumitake Koga</p>
+      </div>
+      <div class="flex py-1">
+        <img src="/folder.svg" class="h-6" />
+        <p class="pl-2">Kishimi, Ichiro & Koga, Fumitake</p>
+      </div>
+    </div>
+
+    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
+
     <h1 id="naming" class="text-3xl mb-4 -ml-8">
       <nuxt-link to="#naming"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
-      >Naming Convention
+      >Title Folder Naming Convention
     </h1>
 
     <p class="mb-4">In addition to the book title, the title folder can include the publish year, volume number, and the subtitle.</p>
