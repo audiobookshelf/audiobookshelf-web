@@ -21,7 +21,7 @@
 
       <div key="homePage" class="h-full flex flex-col items-center justify-center">
         <img ref="logo" src="/Logo.png" class="h-28 md:h-40" />
-        <h1 ref="title" class="text-white text-4xl md:text-5xl pt-4 md:pt-8 font-book">AudioBookshelf</h1>
+        <h1 ref="title" class="text-white text-4xl md:text-5xl pt-4 md:pt-8 font-book">audiobookshelf</h1>
         <p ref="subtitle" class="text-white text-center text-sm md:text-lg pt-4">Self-hosted Audiobook Server</p>
       </div>
 

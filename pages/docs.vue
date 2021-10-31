@@ -14,7 +14,7 @@
       <div>
         <span class="material-icons text-warning text-2xl">priority_high</span>
       </div>
-      <p class="pl-2 text-base md:text-lg">AudioBookshelf relies on you already having an organized directory structure. This is because information is taken from your folder names. This includes the author name, series name, book title, publish year, volume number, and subtitle.</p>
+      <p class="pl-2 text-base md:text-lg">Audiobookshelf relies on you already having an organized directory structure. This is because information is taken from your folder names. This includes the author name, series name, book title, publish year, volume number, and subtitle.</p>
     </div>
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
@@ -158,6 +158,10 @@
         <img src="/folder.svg" class="h-6" />
         <p class="pl-2">Vol. 1 - 1994 - Wizards First Rule - A Really Good Subtitle</p>
       </div>
+      <div class="flex py-1">
+        <img src="/folder.svg" class="h-6" />
+        <p class="pl-2">(1994) - Wizards First Rule - A Really Good Subtitle</p>
+      </div>
     </div>
 
     <ul class="list-outside md:list-inside px-6 md:px-0 list-disc my-4 text-sm md:text-base">
@@ -173,7 +177,7 @@
       >Audio File Metadata
     </h1>
 
-    <p class="mb-4">AudioBookshelf uses the ID3 metadata tags in audio files to populate data.</p>
+    <p class="mb-4">Audiobookshelf uses the ID3 metadata tags in audio files to populate data.</p>
 
     <div class="flex -ml-8 mb-4">
       <div>
@@ -187,7 +191,7 @@
     <table>
       <tr class="bg-white bg-opacity-10 text-sm text-left font-semibold">
         <th>File Metadata</th>
-        <th>AudioBookshelf Data</th>
+        <th>Audiobookshelf Data</th>
       </tr>
       <tr>
         <td>Artist</td>

@@ -9,10 +9,12 @@
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
 
-    <h1 id="docker" class="text-3xl mb-4">
+    <h1 id="docker" class="text-3xl mb-4 -ml-8">
       <nuxt-link to="#docker"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
       >Docker Install
     </h1>
+
+    <p class="mb-2 text-sm md:text-base">Multi-architecture image for amd64 and arm64</p>
 
     <pre>
         <code class="language-bash">docker pull advplyr/audiobookshelf
@@ -33,13 +35,13 @@ docker run -d \
     <p>• &nbsp;<span class="font-mono">/config</span> will contain the database (users/books/libraries/settings)</p>
     <p>• &nbsp;<span class="font-mono">/metadata</span> will contain open streams, cover art, current downloads, and cover art</p>
     <p>• &nbsp;<span class="font-mono">/audiobooks</span> is <em>your</em> audiobook folder</p>
-    <p>• &nbsp;Then map any other directories you want to use for your book collection</p>
+    <p>• &nbsp;Map any other directories you want to use for your book collection (ebooks supported as experimental)</p>
 
     <div class="w-full h-px bg-gray-400 my-6" />
 
     <br />
 
-    <h1 id="linux" class="text-3xl mb-4">
+    <h1 id="linux" class="text-3xl mb-4 -ml-8">
       <nuxt-link to="#linux"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
       >Linux Install
     </h1>
@@ -49,7 +51,7 @@ docker run -d \
 
     <br />
 
-    <h2 id="ubuntu" class="text-2xl mb-2">
+    <h2 id="ubuntu" class="text-2xl mb-2 -ml-6">
       <nuxt-link to="#ubuntu"><span class="material-icons text-lg text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
       >Ubuntu Install (PPA)
     </h2>
@@ -71,7 +73,7 @@ sudo apt install audiobookshelf</code>
 
     <br />
 
-    <h2 id="debian" class="text-2xl mb-2 mt-6">
+    <h2 id="debian" class="text-2xl mb-2 mt-6 -ml-6">
       <nuxt-link to="#debian"><span class="material-icons text-lg text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
       >All other Linux Distros
     </h2>

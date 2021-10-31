@@ -4,7 +4,7 @@
       <nuxt-link to="/" class="h-12 w-12">
         <img src="/Logo48.png" class="h-12 w-12" />
       </nuxt-link>
-      <nuxt-link to="/" class="text-2xl pl-2 sm:pl-4 font-book hover:underline hidden md:block">AudioBookshelf</nuxt-link>
+      <nuxt-link to="/" class="text-2xl pl-2 sm:pl-4 font-book hover:underline hidden md:block">audiobookshelf</nuxt-link>
       <!-- <div class="flex-grow" /> -->
       <nuxt-link to="/install" class="h-full px-3 md:px-5 flex items-center ml-2 md:ml-12 cursor-pointer" :class="routeName === 'install' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
         <p class="text-base md:text-lg">Install</p>
@@ -31,7 +31,6 @@
       <div class="w-full h-full overflow-y-auto">
         <Nuxt />
         <div class="w-full h-8 flex items-center text-xs text-gray-300 bg-primary px-4">
-          No copyright, take whatever you want.
           <div class="flex-grow" />
           <a href="https://github.com/advplyr" target="_blank" class="font-mono underline text-blue-200 hover:text-blue-100 text-sm">advplyr</a>
         </div>
