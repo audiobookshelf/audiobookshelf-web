@@ -31,8 +31,9 @@
       <div class="w-full h-full overflow-y-auto">
         <Nuxt />
         <div class="w-full h-8 flex items-center text-xs text-gray-300 bg-primary px-4">
+          <a href="mailto:advplyr@protonmail.com" class="font-mono underline text-blue-200 hover:text-blue-100 text-sm">advplyr@protonmail.com</a>
           <div class="flex-grow" />
-          <a href="https://github.com/advplyr" target="_blank" class="font-mono underline text-blue-200 hover:text-blue-100 text-sm">advplyr</a>
+          <a href="https://github.com/advplyr" target="_blank" class="font-mono underline text-blue-200 hover:text-blue-100 text-sm">https://github.com/advplyr</a>
         </div>
       </div>
     </div>
