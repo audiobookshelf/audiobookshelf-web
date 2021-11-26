@@ -221,60 +221,60 @@
       <div>
         <span class="material-icons text-warning text-2xl">priority_high</span>
       </div>
-      <p class="pl-2 text-base">Metadata is only mapped to audiobookshelf if the field is empty. Data parsed from the folder structure and filenames takes priority over ID3 tags.</p>
+      <p class="pl-2 text-base">Data parsed from the folder structure and filenames takes priority over ID3 tags unless you have enabled the scanner setting "Prefer Audio Metadata".</p>
     </div>
 
-    <p class="mb-4">Metadata on audio files will be mapped as follows:</p>
+    <p class="mb-4">Metadata on audio files will be mapped as follows (second tag after "/" is a fallback):</p>
 
     <table>
       <tr class="bg-white bg-opacity-10 text-sm text-left font-semibold">
-        <th>File Metadata</th>
+        <th>ID3 Tag</th>
         <th>Audiobookshelf Data</th>
       </tr>
       <tr>
-        <td>Artist</td>
+        <td>artist / album-artist</td>
         <td>Author</td>
       </tr>
       <tr>
-        <td>Album</td>
+        <td>album / title</td>
         <td>Title</td>
       </tr>
       <tr>
-        <td>Subtitle</td>
+        <td>subtitle</td>
         <td>Subtitle</td>
       </tr>
       <tr>
-        <td>Publisher</td>
+        <td>publisher</td>
         <td>Publisher</td>
       </tr>
       <tr>
-        <td>Year</td>
+        <td>year</td>
         <td>Publish Year</td>
       </tr>
       <tr>
-        <td>Composer</td>
+        <td>composer</td>
         <td>Narrator</td>
       </tr>
       <tr>
-        <td>Description</td>
+        <td>description</td>
         <td>Description</td>
       </tr>
       <tr>
-        <td>Genre</td>
+        <td>genre</td>
         <td>Genres <span class="text-sm text-warning">*</span></td>
       </tr>
       <tr>
-        <td>Series</td>
+        <td>series</td>
         <td>Series</td>
       </tr>
       <tr>
-        <td>Series-Part</td>
+        <td>series-part</td>
         <td>Volume Number</td>
       </tr>
     </table>
     <p class="text-sm pt-2"><span class="text-sm text-warning">*</span> Genre meta tag can include multiple genres separated by "/", "//", or ";". e.g. "Science Fiction/Fiction/Fantasy"</p>
 
-    <p class="my-4">Embedded cover art will be extracted and used.</p>
+    <p class="my-4">Embedded cover art will be extracted and used only if there are no images in the book folder.</p>
     <p class="my-4">If you have a file named <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">desc.txt</span> in the audiobook folder it will be used as the description.</p>
     <p class="my-4">If you have a file named <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">reader.txt</span> in the audiobook folder it will be used as the narrator.</p>
     <p class="my-4">
