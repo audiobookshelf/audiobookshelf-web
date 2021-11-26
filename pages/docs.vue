@@ -14,7 +14,9 @@
       <div>
         <span class="material-icons text-warning text-2xl">priority_high</span>
       </div>
-      <p class="pl-2 text-base md:text-lg">Audiobookshelf relies on you already having an organized directory structure. This is because information is taken from your folder names. This includes the author name, series name, book title, publish year, volume number, and subtitle.</p>
+      <p class="pl-2 text-base md:text-lg">
+        Audiobookshelf works best when you have an organized directory structure like shown below. This is because information is taken from your folder names. This includes the author name, series name, book title, publish year, volume number, and subtitle. However, you can enable scanner settings to prefer using your audio file ID3 tags or an OPF file over using folder names.
+      </p>
     </div>
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
@@ -234,6 +236,10 @@
         <td>Author</td>
       </tr>
       <tr>
+        <td>Album</td>
+        <td>Title</td>
+      </tr>
+      <tr>
         <td>Subtitle</td>
         <td>Subtitle</td>
       </tr>
@@ -278,6 +284,16 @@
         >{{ index < 8 ? ', ' : '' }}</span
       ><br /><span class="text-sm"><span class="text-yellow-500">Note:</span> Only plain text descriptions are used.</span>
     </p>
+
+    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
+
+    <h1 id="reverse-proxy" class="text-3xl mb-4 -ml-8">
+      <nuxt-link to="#reverse-proxy"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
+      >Reverse Proxy Setup
+    </h1>
+    <a href="https://github.com/advplyr/audiobookshelf#reverse-proxy-set-up" class="text-blue-500 hover:text-blue-300 underline">See Github Readme</a>
+
+    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
   </div>
 </template>
 
