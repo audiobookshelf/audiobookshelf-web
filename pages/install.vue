@@ -20,6 +20,8 @@
         <code class="language-bash">docker pull advplyr/audiobookshelf
 
 docker run -d \
+    -e AUDIOBOOKSHELF_UID=99
+    -e AUDIOBOOKSHELF_GID=100
     -p 1337:80 \
     -v &lt;/path/to/audiobooks>:/audiobooks \
     -v &lt;/path/to/config>:/config \
@@ -29,11 +31,11 @@ docker run -d \
     </pre>
 
     <p class="text-error">Note: Volume mappings should all be separate directories that are not contained in eachother.</p>
-    <p class="text-warning py-1">Unraid users: it is recommended that you map <span class="font-mono">/config</span> and <span class="font-mono">/metadata</span> to <span class="font-mono">/mnt/user/appdata/audiobookshelf/config</span> and <span class="font-mono">/mnt/user/appdata/audiobookshelf/metadata</span> respectively.</p>
+    <!-- <p class="text-warning py-1">Unraid users: it is recommended that you map <span class="font-mono">/config</span> and <span class="font-mono">/metadata</span> to <span class="font-mono">/mnt/user/appdata/audiobookshelf/config</span> and <span class="font-mono">/mnt/user/appdata/audiobookshelf/metadata</span> respectively.</p> -->
 
     <p class="mt-2 mb-1 font-semibold text-lg">Volume mappings</p>
     <p>• &nbsp;<span class="font-mono">/config</span> will contain the database (users/books/libraries/settings)</p>
-    <p>• &nbsp;<span class="font-mono">/metadata</span> will contain open streams, cover art, current downloads, and cover art</p>
+    <p>• &nbsp;<span class="font-mono">/metadata</span> will contain cache, streams, covers, downloads, and backups</p>
     <p>• &nbsp;<span class="font-mono">/audiobooks</span> is <em>your</em> audiobook folder</p>
     <p>• &nbsp;Map any other directories you want to use for your book collection (ebooks supported as experimental)</p>
 
@@ -83,7 +85,7 @@ sudo apt install audiobookshelf</code>
     <pre>
         <code class="language-bash">wget https://advplyr.github.io/audiobookshelf-ppa/audiobookshelf_1.4.12_amd64.deb
 
-sudo apt install ./audiobookshelf_1.4.12_amd64.deb</code>
+sudo apt install ./audiobookshelf_1.6.41_amd64.deb</code>
       </pre>
 
     <!-- <div class="w-full h-24" /> -->
