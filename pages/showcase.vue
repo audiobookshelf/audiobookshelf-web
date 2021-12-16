@@ -1,5 +1,12 @@
 <template>
   <div class="w-full max-w-5xl mx-auto px-2 py-8">
+    <div class="flex -ml-8 mb-12">
+      <div>
+        <span class="material-icons text-warning text-2xl">priority_high</span>
+      </div>
+      <p class="pl-2 text-base md:text-lg">Screenshots are out of date! You can help by emailing some screenshots of your bookshelf to <a href="mailto:advplyr@protonmail.com" class="text-blue-500 underline">advplyr@protonmail.com</a> (or <a href="https://github.com/advplyr/audiobookshelf-web" target="_blank" class="text-blue-500 underline">submit a PR</a>).</p>
+    </div>
+
     <div class="flex justify-between items-center mb-8">
       <h1 class="text-3xl">Showcase</h1>
       <a href="https://github.com/advplyr/audiobookshelf/discussions/60" class="text-lg text-blue-500 hover:underline hover:text-blue-300">courtesy of Budlyte</a>

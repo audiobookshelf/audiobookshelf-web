@@ -4,23 +4,30 @@
       <nuxt-link to="/" class="h-12 w-12">
         <img src="/Logo48.png" class="h-12 w-12" />
       </nuxt-link>
-      <nuxt-link to="/" class="text-2xl pl-2 sm:pl-4 font-book hover:underline hidden md:block">audiobookshelf</nuxt-link>
+      <nuxt-link to="/" class="text-2xl pl-2 sm:pl-4 font-book hover:underline hidden lg:block">audiobookshelf</nuxt-link>
       <!-- <div class="flex-grow" /> -->
-      <nuxt-link to="/install" class="h-full px-3 md:px-5 flex items-center ml-2 md:ml-12 cursor-pointer" :class="routeName === 'install' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
+      <nuxt-link to="/install" class="h-full px-3 lg:px-5 flex items-center ml-2 lg:ml-12 cursor-pointer" :class="routeName === 'install' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
         <p class="text-base md:text-lg">Install</p>
       </nuxt-link>
-      <nuxt-link to="/docs" class="h-full px-3 md:px-5 flex items-center cursor-pointer" :class="routeName === 'docs' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
+      <nuxt-link to="/docs" class="h-full px-3 lg:px-5 flex items-center cursor-pointer" :class="routeName === 'docs' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
         <p class="text-base md:text-lg hidden md:block">Documentation</p>
         <p class="text-base md:text-lg md:hidden">Docs</p>
       </nuxt-link>
-      <nuxt-link to="/support" class="h-full px-3 md:px-5 items-center cursor-pointer flex" :class="routeName === 'support' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
-        <p class="text-base md:text-lg">How to Support</p>
+      <nuxt-link to="/support" class="h-full px-3 lg:px-5 items-center cursor-pointer flex" :class="routeName === 'support' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
+        <!-- <p class="text-base md:text-lg">How to Support</p> -->
+        <p class="text-base md:text-lg hidden md:block">How to Support</p>
+        <p class="text-base md:text-lg md:hidden">Support</p>
       </nuxt-link>
-      <nuxt-link to="/showcase" class="h-full px-3 md:px-5 items-center cursor-pointer flex" :class="routeName === 'showcase' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
+      <nuxt-link to="/showcase" class="h-full px-3 lg:px-5 items-center cursor-pointer hidden md:flex" :class="routeName === 'showcase' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
         <p class="text-base md:text-lg">Showcase</p>
       </nuxt-link>
 
       <div class="flex-grow" />
+
+      <div class="pr-4 pt-1 hidden lg:inline-block">
+        <a class="github-button" href="https://github.com/advplyr/audiobookshelf" data-color-scheme="no-preference: dark_high_contrast; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Star advplyr/audiobookshelf on GitHub">Star</a>
+      </div>
+
       <a :href="dockerHubUrl">
         <img src="/docker.svg" class="h-8 text-white" />
       </a>

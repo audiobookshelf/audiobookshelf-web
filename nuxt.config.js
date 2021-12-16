@@ -54,6 +54,11 @@ export default {
     script: [
       {
         src: '/prism.js'
+      },
+      {
+        src: 'https://buttons.github.io/buttons.js',
+        defer: true,
+        async: true
       }
     ]
   },

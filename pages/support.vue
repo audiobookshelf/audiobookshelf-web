@@ -1,18 +1,32 @@
 <template>
   <div class="w-full max-w-5xl mx-auto h-full px-2 py-8">
+    <div class="flex -ml-8 mb-4">
+      <div>
+        <span class="material-icons text-success text-2xl">star</span>
+      </div>
+      <p class="pl-2 text-base md:text-lg">
+        The best way that <u>everyone</u> can show support is to follow/star the <a href="https://github.com/advplyr/audiobookshelf" target="_blank" class="text-blue-500 underline">github repo</a>, test new features, and open a <a href="https://github.com/advplyr/audiobookshelf/discussions" target="_blank" class="text-blue-500 underline">discussion</a> with ideas on how to improve the project.
+      </p>
+    </div>
     <div class="flex -ml-8">
       <div>
-        <span class="material-icons text-warning text-2xl">priority_high</span>
+        <span class="material-icons text-gray-400 text-2xl">email</span>
       </div>
-      <p class="pl-2 text-base md:text-lg">Default username is "root" with no password.</p>
+      <p class="pl-2 text-base md:text-lg"><a href="mailto:advplyr@protonmail.com" class="text-blue-500 underline">advplyr@protonmail.com</a></p>
     </div>
+
+    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
+
+    <p>As you can see, this documentation could really use some support.</p>
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
 
     <h1 id="docker" class="text-3xl mb-4 -ml-8">
       <nuxt-link to="#docker"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
-      >Docker Install
+      >Developers
     </h1>
+    <p class="mb-2">This section will eventually give info on how to run the project locally.</p>
+    <p class="mb-2">PRs welcome and highly encouraged. Before working on an issue/feature you should post about it so we don't overlap.</p>
   </div>
 </template>
 
