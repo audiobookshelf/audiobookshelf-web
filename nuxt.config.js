@@ -57,8 +57,8 @@ export default {
       },
       {
         src: 'https://buttons.github.io/buttons.js',
-        defer: true,
-        async: true
+        defer: false,
+        async: false
       }
     ]
   },
