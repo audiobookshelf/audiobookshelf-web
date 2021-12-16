@@ -49,7 +49,15 @@ docker run -d \
     </h1>
 
     <span class="text-error">Note: Only for amd64 architecture</span>
-    <p class="mb-2 text-sm md:text-base">A few questions are asked during install to setup the initial config. <br />If you already have audiobooks, you can enter the path to your audiobooks during the install. The installer will create a user and group named audiobookshelf.</p>
+    <p class="mb-2 mt-1 text-sm md:text-base">Will use config file <span class="bg-white bg-opacity-10 text-gray-100 rounded-md px-1 py-0.5 font-mono">/etc/default/audiobookshelf</span> if exists or create the following default config:</p>
+
+    <pre>
+      <code class="language-bash">  AUDIOBOOK_PATH="/usr/share/audiobookshelf/audiobooks"
+  METADATA_PATH="/usr/share/audiobookshelf/metadata"
+  CONFIG_PATH="/usr/share/audiobookshelf/config"
+  FFMPEG_PATH="/usr/lib/audiobookshelf-ffmpeg/ffmpeg"
+  PORT=7331</code>
+    </pre>
 
     <br />
 
@@ -83,12 +91,22 @@ sudo apt install audiobookshelf</code>
     <p class="mb-4 text-sm md:text-base">Grab the latest debian package from the <a href="https://github.com/advplyr/audiobookshelf-ppa" target="_blank" class="underline text-blue-400 hover:text-blue-200">audiobookshelf-ppa</a> github repository, and install.</p>
 
     <pre>
-        <code class="language-bash">wget https://advplyr.github.io/audiobookshelf-ppa/audiobookshelf_1.4.12_amd64.deb
+        <code class="language-bash">wget https://advplyr.github.io/audiobookshelf-ppa/audiobookshelf_1.6.41_amd64.deb
 
 sudo apt install ./audiobookshelf_1.6.41_amd64.deb</code>
       </pre>
 
     <!-- <div class="w-full h-24" /> -->
+
+    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
+
+    <h1 id="reverse-proxy" class="text-3xl mb-4 -ml-8">
+      <nuxt-link to="#reverse-proxy"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
+      >Reverse Proxy Setup
+    </h1>
+    <a href="https://github.com/advplyr/audiobookshelf#reverse-proxy-set-up" class="text-blue-500 hover:text-blue-300 underline">See Github Readme</a>
+
+    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
   </div>
 </template>
 

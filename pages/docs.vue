@@ -282,16 +282,8 @@
       <span v-for="(key, index) in ['title', 'author', 'narrator', 'publishYear', 'publisher', 'isbn', 'description', 'genres', 'language']" :key="key"
         ><span class="bg-white bg-opacity-10 text-gray-100 rounded-md px-1 py-0.5 font-mono">{{ key }}</span
         >{{ index < 8 ? ', ' : '' }}</span
-      ><br /><span class="text-sm"><span class="text-yellow-500">Note:</span> Only plain text descriptions are used.</span>
+      >
     </p>
-
-    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
-
-    <h1 id="reverse-proxy" class="text-3xl mb-4 -ml-8">
-      <nuxt-link to="#reverse-proxy"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
-      >Reverse Proxy Setup
-    </h1>
-    <a href="https://github.com/advplyr/audiobookshelf#reverse-proxy-set-up" class="text-blue-500 hover:text-blue-300 underline">See Github Readme</a>
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
   </div>

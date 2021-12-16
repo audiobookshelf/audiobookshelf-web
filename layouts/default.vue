@@ -13,9 +13,13 @@
         <p class="text-base md:text-lg hidden md:block">Documentation</p>
         <p class="text-base md:text-lg md:hidden">Docs</p>
       </nuxt-link>
+      <nuxt-link to="/support" class="h-full px-3 md:px-5 items-center cursor-pointer flex" :class="routeName === 'support' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
+        <p class="text-base md:text-lg">How to Support</p>
+      </nuxt-link>
       <nuxt-link to="/showcase" class="h-full px-3 md:px-5 items-center cursor-pointer flex" :class="routeName === 'showcase' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
         <p class="text-base md:text-lg">Showcase</p>
       </nuxt-link>
+
       <div class="flex-grow" />
       <a :href="dockerHubUrl">
         <img src="/docker.svg" class="h-8 text-white" />
