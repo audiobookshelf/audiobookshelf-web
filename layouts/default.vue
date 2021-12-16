@@ -24,9 +24,9 @@
 
       <div class="flex-grow" />
 
-      <div class="pr-4 pt-1 hidden lg:inline-block">
+      <!-- <div class="pr-4 pt-1 hidden lg:inline-block">
         <a class="github-button" href="https://github.com/advplyr/audiobookshelf" data-color-scheme="no-preference: dark_high_contrast; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Star advplyr/audiobookshelf on GitHub">Star</a>
-      </div>
+      </div> -->
 
       <a :href="dockerHubUrl">
         <img src="/docker.svg" class="h-8 text-white" />
