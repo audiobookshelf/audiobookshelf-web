@@ -2,7 +2,7 @@ export default {
   target: 'static',
 
   head: {
-    title: 'AudioBookshelf',
+    title: 'Audiobookshelf',
     htmlAttrs: {
       lang: 'en'
     },

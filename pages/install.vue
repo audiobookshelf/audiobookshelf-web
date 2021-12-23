@@ -22,7 +22,7 @@
 docker run -d \
     -e AUDIOBOOKSHELF_UID=99
     -e AUDIOBOOKSHELF_GID=100
-    -p 1337:80 \
+    -p 13378:80 \
     -v &lt;/path/to/audiobooks>:/audiobooks \
     -v &lt;/path/to/config>:/config \
     -v &lt;/path/to/metadata>:/metadata \
@@ -91,9 +91,9 @@ sudo apt install audiobookshelf</code>
     <p class="mb-4 text-sm md:text-base">Grab the latest debian package from the <a href="https://github.com/advplyr/audiobookshelf-ppa" target="_blank" class="underline text-blue-400 hover:text-blue-200">audiobookshelf-ppa</a> github repository, and install.</p>
 
     <pre>
-        <code class="language-bash">wget https://advplyr.github.io/audiobookshelf-ppa/audiobookshelf_1.6.41_amd64.deb
+        <code class="language-bash">wget https://advplyr.github.io/audiobookshelf-ppa/audiobookshelf_1.6.45_amd64.deb
 
-sudo apt install ./audiobookshelf_1.6.41_amd64.deb</code>
+sudo apt install ./audiobookshelf_1.6.45_amd64.deb</code>
       </pre>
 
     <!-- <div class="w-full h-24" /> -->

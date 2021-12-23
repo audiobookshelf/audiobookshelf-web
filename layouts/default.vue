@@ -4,7 +4,7 @@
       <nuxt-link to="/" class="h-12 w-12">
         <img src="/Logo48.png" class="h-12 w-12" />
       </nuxt-link>
-      <nuxt-link to="/" class="text-2xl pl-2 sm:pl-4 font-book hover:underline hidden lg:block">audiobookshelf</nuxt-link>
+      <nuxt-link to="/" class="text-2xl pl-2 sm:pl-4 font-book hover:underline hidden lg:block">Audiobookshelf</nuxt-link>
       <!-- <div class="flex-grow" /> -->
       <nuxt-link to="/install" class="h-full px-3 lg:px-5 flex items-center ml-2 lg:ml-12 cursor-pointer" :class="routeName === 'install' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
         <p class="text-base md:text-lg">Install</p>
