@@ -37,6 +37,9 @@
       <a :href="playStoreUrl" class="hidden md:block">
         <img src="/GetGooglePlayStore.png" class="h-7 ml-2" />
       </a>
+      <a :href="appStoreUrl" class="hidden md:block">
+        <img src="/AppleAppStoreDark.svg" class="h-7 ml-2" />
+      </a>
     </div>
     <div class="page-container w-screen pt-16">
       <div class="w-full h-full overflow-y-auto">
@@ -57,6 +60,7 @@
 export default {
   data() {
     return {
+      appStoreUrl: 'https://testflight.apple.com/join/wiic7QIW',
       dockerHubUrl: 'https://hub.docker.com/repository/docker/advplyr/audiobookshelf',
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.audiobookshelf.app',
       githubUrl: 'https://github.com/advplyr/audiobookshelf'

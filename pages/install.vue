@@ -14,7 +14,7 @@
       >Docker Install
     </h1>
 
-    <p class="mb-2 text-sm md:text-base">Multi-architecture image for amd64 and arm64</p>
+    <p class="mb-2 text-sm md:text-base">Multi-architecture image for amd64, arm64 and arm/v7</p>
 
     <pre>
         <code class="language-bash">docker pull advplyr/audiobookshelf
@@ -35,7 +35,7 @@ docker run -d \
 
     <p class="mt-2 mb-1 font-semibold text-lg">Volume mappings</p>
     <p>• &nbsp;<span class="font-mono">/config</span> will contain the database (users/books/libraries/settings)</p>
-    <p>• &nbsp;<span class="font-mono">/metadata</span> will contain cache, streams, covers, downloads, and backups</p>
+    <p>• &nbsp;<span class="font-mono">/metadata</span> will contain cache, streams, covers, downloads, backups and logs</p>
     <p>• &nbsp;<span class="font-mono">/audiobooks</span> is <em>your</em> audiobook folder</p>
     <p>• &nbsp;Map any other directories you want to use for your book collection (ebooks supported as experimental)</p>
 

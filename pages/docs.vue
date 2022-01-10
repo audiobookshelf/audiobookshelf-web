@@ -228,7 +228,7 @@
 
     <table>
       <tr class="bg-white bg-opacity-10 text-sm text-left font-semibold">
-        <th>ID3 Tag</th>
+        <th>ID3 Tag <span class="text-gray-300 font-normal text-xs">&nbsp;(case-insensitive)</span></th>
         <th>Audiobookshelf Data</th>
       </tr>
       <tr>
@@ -271,6 +271,18 @@
         <td>series-part</td>
         <td>Volume Number</td>
       </tr>
+      <tr>
+        <td>language / lang</td>
+        <td>Language</td>
+      </tr>
+      <tr>
+        <td>isbn</td>
+        <td>ISBN</td>
+      </tr>
+      <tr>
+        <td>asin</td>
+        <td>ASIN</td>
+      </tr>
     </table>
     <p class="text-sm pt-2"><span class="text-sm text-warning">*</span> Genre meta tag can include multiple genres separated by "/", "//", or ";". e.g. "Science Fiction/Fiction/Fantasy"</p>
 
@@ -284,6 +296,36 @@
         >{{ index < 8 ? ', ' : '' }}</span
       >
     </p>
+
+    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
+
+    <h1 id="tracks" class="text-3xl mb-4 -ml-8">
+      <nuxt-link to="#tracks"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
+      >Audio Tracks
+    </h1>
+
+    An audiobook contains tracks. Tracks are audio files assigned a track number. <br />The track number is parsed from the audio filename and from the ID3 tags of the audio file.<br />Audiobooks that are made up of multiple discs or cd's will be ordered first by disc number then by track number.
+
+    <table class="my-4">
+      <tr class="bg-white bg-opacity-10 text-sm text-left font-semibold">
+        <th>Key</th>
+        <th>ID3 Tags <span class="text-gray-300 font-normal text-xs">&nbsp;(case-insensitive)</span></th>
+        <th>Audio Filename</th>
+      </tr>
+      <tr>
+        <td>TrackNumber</td>
+        <td>track, trck, trk</td>
+        <td>First number after removing title, publish year, series, author, disc number</td>
+      </tr>
+      <tr>
+        <td>DiscNumber</td>
+        <td>discnumber, disc, disk, tpos</td>
+        <td>Number following "Disc" or "CD" (example: "Atlas Shrugged CD 01 - 1.mp3")</td>
+      </tr>
+    </table>
+
+    <p class="mb-2">On the first scan the scanner will choose whichever track or disc number is more accurate between the filename and ID3 tag numbers.</p>
+     <p>Tracks can be manually ordered and enabled/disabled by pressing the "Manage Tracks" button on the audiobook page.</p>
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
   </div>
