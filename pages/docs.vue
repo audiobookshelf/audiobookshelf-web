@@ -324,8 +324,8 @@
       </tr>
     </table>
 
-    <p class="mb-2">On the first scan the scanner will choose whichever track or disc number is more accurate between the filename and ID3 tag numbers.</p>
-     <p>Tracks can be manually ordered and enabled/disabled by pressing the "Manage Tracks" button on the audiobook page.</p>
+    <p class="mb-2">The scanner will choose the more accurate track/disc number between the filename and ID3 tag numbers.</p>
+    <p>Tracks can be manually ordered and enabled/disabled by pressing the "Manage Tracks" button on the audiobook page.</p>
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
   </div>
