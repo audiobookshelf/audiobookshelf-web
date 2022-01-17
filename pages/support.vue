@@ -25,7 +25,9 @@
       <nuxt-link to="#docker"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
       >Developers
     </h1>
-    <p class="mb-2">This section will eventually give info on how to run the project locally.</p>
+    <p class="mb-2">This section will eventually give more info on setting up the project locally and contributing.</p>
+    <p class="mb-2">See <a href="https://github.com/advplyr/audiobookshelf/discussions/259#discussioncomment-1869729" target="_blank" class="text-blue-500 underline">this discussion</a> on setting up the audiobookshelf server & web client.</p>
+    <p class="mb-2">See <a href="https://github.com/advplyr/audiobookshelf-app#contributing" target="_blank" class="text-blue-500 underline">mobile app readme</a> for setting up the mobile app locally.</p>
     <p class="mb-2">PRs welcome and highly encouraged. Before working on an issue/feature you should post about it so we don't overlap.</p>
   </div>
 </template>
