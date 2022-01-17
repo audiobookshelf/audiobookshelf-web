@@ -96,8 +96,6 @@ sudo apt install audiobookshelf</code>
 sudo apt install ./audiobookshelf_1.6.59_amd64.deb</code>
       </pre>
 
-    <!-- <div class="w-full h-24" /> -->
-
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
 
     <h1 id="reverse-proxy" class="text-3xl mb-4 -ml-8">
@@ -105,6 +103,21 @@ sudo apt install ./audiobookshelf_1.6.59_amd64.deb</code>
       >Reverse Proxy Setup
     </h1>
     <a href="https://github.com/advplyr/audiobookshelf#reverse-proxy-set-up" class="text-blue-500 hover:text-blue-300 underline">See Github Readme</a>
+
+    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
+
+    <h1 id="mobile" class="text-3xl mb-4 -ml-8">
+      <nuxt-link to="#mobile"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link>
+      Mobile Apps <span class="italic text-xl">(beta)</span>
+    </h1>
+
+    <p class="mb-4">The mobile apps are open source on <a href="https://github.com/advplyr/audiobookshelf-app" class="text-blue-500 hover:text-blue-300 underline" target="_blank">Github</a>. Report bugs and suggest features there.</p>
+
+    <h2 class="text-lg font-semibold">Android</h2>
+    <a href="https://play.google.com/store/apps/details?id=com.audiobookshelf.app" class="text-blue-500 hover:text-blue-300 underline" target="_blank">Install from the Google Play Store.</a>
+
+    <h2 class="text-lg font-semibold mt-4">iOS</h2>
+    <a href="https://testflight.apple.com/join/wiic7QIW" class="text-blue-500 hover:text-blue-300 underline" target="_blank">Join Test Flight beta testing and install the app.</a>
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
   </div>
