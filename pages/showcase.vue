@@ -1,18 +1,23 @@
 <template>
-  <div class="w-full max-w-5xl mx-auto px-2 py-8">
+  <div class="w-full max-w-5xl mx-auto px-2 py-8 min-h-full">
     <div class="flex -ml-8 mb-12">
       <div>
         <span class="material-icons text-warning text-2xl">priority_high</span>
       </div>
-      <p class="pl-2 text-base md:text-lg">Screenshots are out of date! You can help by emailing some screenshots of your bookshelf to <a href="mailto:advplyr@protonmail.com" class="text-blue-500 underline">advplyr@protonmail.com</a> (or <a href="https://github.com/advplyr/audiobookshelf-web" target="_blank" class="text-blue-500 underline">submit a PR</a>).</p>
+      <p class="pl-2 text-base md:text-lg">
+        This should be where we show what Audiobookshelf looks like, but we need to take updated screenshots. Please consider sending screenshots of your bookshelf to <a href="mailto:advplyr@protonmail.com" class="text-blue-500 underline">advplyr@protonmail.com</a> (or <a href="https://github.com/advplyr/audiobookshelf-web" target="_blank" class="text-blue-500 underline">submit a PR</a>) so we can
+        fill this page!
+      </p>
     </div>
 
-    <div class="flex justify-between items-center mb-8">
+    <img src="https://github.com/advplyr/audiobookshelf/raw/master/images/LibraryStream.png" />
+
+    <!-- <div class="flex justify-between items-center mb-8">
       <h1 class="text-3xl">Showcase</h1>
       <a href="https://github.com/advplyr/audiobookshelf/discussions/60" class="text-lg text-blue-500 hover:underline hover:text-blue-300">courtesy of Budlyte</a>
-    </div>
+    </div> -->
 
-    Library View - Sorted by Most Recent Date Added
+    <!-- Library View - Sorted by Most Recent Date Added
     <img src="/showcase/1.png" class="pt-1 pb-8" />
 
     Series View
@@ -55,7 +60,7 @@
     Showing In Progress
     <img src="/showcase/9.png" class="pt-1 pb-8" />
     Using the Searchbar
-    <img src="/showcase/10.png" class="pt-1 pb-8" />
+    <img src="/showcase/10.png" class="pt-1 pb-8" /> -->
   </div>
 </template>
 
