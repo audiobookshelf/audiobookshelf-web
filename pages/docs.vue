@@ -289,13 +289,11 @@
     <p class="my-4">Embedded cover art will be extracted and used only if there are no images in the book folder.</p>
     <p class="my-4">If you have a file named <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">desc.txt</span> in the audiobook folder it will be used as the description.</p>
     <p class="my-4">If you have a file named <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">reader.txt</span> in the audiobook folder it will be used as the narrator.</p>
-    <p class="my-4">
-      If you have an <a href="https://docs.fileformat.com/ebook/opf/" target="_blank" class="text-blue-500 hover:text-blue-300 underline">OPF file</a> with extension <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">.opf</span> in the audiobook folder it will be parsed.<br />Details extracted from OPF:
-      <span v-for="(key, index) in ['title', 'author', 'narrator', 'publishYear', 'publisher', 'isbn', 'description', 'genres', 'language']" :key="key"
-        ><span class="bg-white bg-opacity-10 text-gray-100 rounded-md px-1 py-0.5 font-mono">{{ key }}</span
-        >{{ index < 8 ? ', ' : '' }}</span
-      >
-    </p>
+    <p class="mt-4">If you have an <a href="https://docs.fileformat.com/ebook/opf/" target="_blank" class="text-blue-500 hover:text-blue-300 underline">OPF file</a> with extension <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">.opf</span> in the audiobook folder it will be parsed.<br />Details extracted from OPF:</p>
+    <div v-for="(key, index) in opfKeys" :key="key" class="inline-block">
+      <span class="bg-white bg-opacity-10 text-gray-100 rounded-md px-1 py-0.5 font-mono">{{ key }}</span
+      >{{ index < opfKeys.length - 1 ? ', ' : '' }}
+    </div>
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
 
@@ -334,7 +332,9 @@
 <script>
 export default {
   data() {
-    return {}
+    return {
+      opfKeys: ['title', 'author', 'narrator', 'publishYear', 'publisher', 'isbn', 'description', 'genres', 'language', 'series', 'volumeNumber']
+    }
   },
   computed: {},
   methods: {},
