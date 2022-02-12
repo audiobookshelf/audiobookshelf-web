@@ -10,7 +10,7 @@
       </p>
     </div>
 
-    <img src="https://github.com/advplyr/audiobookshelf/raw/master/images/LibraryStream.png" />
+    <img src="https://github.com/advplyr/audiobookshelf/raw/master/images/LibraryStreamSquare.png" />
 
     <!-- <div class="flex justify-between items-center mb-8">
       <h1 class="text-3xl">Showcase</h1>
