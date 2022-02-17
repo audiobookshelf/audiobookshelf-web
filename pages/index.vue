@@ -6,7 +6,7 @@
           <template v-for="(book, n) in shelf">
             <div :key="`book-${n}`" class="h-full pt-5 md:pt-4 px-3 md:px-4 transition-opacity duration-300" :class="showBooks ? '' : 'opacity-0'">
               <div class="h-24 w-24 md:h-40 md:w-40 relative bg-primary">
-                <img :src="`/square_covers/${book}`" class="absolute top-0 left-0 h-full w-full object-contain box-shadow-book z-10" />
+                <img :src="`/covers/${book}`" class="absolute top-0 left-0 h-full w-full object-contain box-shadow-book z-10" />
               </div>
             </div>
           </template>
