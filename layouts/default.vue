@@ -4,8 +4,8 @@
       <nuxt-link to="/" class="h-12 w-12">
         <img src="/Logo48.png" class="h-12 w-12" />
       </nuxt-link>
-      <nuxt-link to="/" class="text-2xl pl-2 sm:pl-4 font-book hover:underline hidden lg:block">Audiobookshelf</nuxt-link>
-      <!-- <div class="flex-grow" /> -->
+      <nuxt-link to="/" class="text-2xl pl-2 sm:pl-4 font-book hover:underline hidden lg:block">audiobookshelf</nuxt-link>
+
       <nuxt-link to="/install" class="h-full px-3 lg:px-5 flex items-center ml-2 lg:ml-12 cursor-pointer" :class="routeName === 'install' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
         <p class="text-base md:text-lg">Install</p>
       </nuxt-link>
@@ -14,7 +14,6 @@
         <p class="text-base md:text-lg md:hidden">Docs</p>
       </nuxt-link>
       <nuxt-link to="/support" class="h-full px-3 lg:px-5 items-center cursor-pointer flex" :class="routeName === 'support' ? 'bg-bg bg-opacity-50 text-white' : 'hover:text-white hover:bg-bg hover:bg-opacity-50 text-gray-300'">
-        <!-- <p class="text-base md:text-lg">How to Support</p> -->
         <p class="text-base md:text-lg hidden md:block">How to Support</p>
         <p class="text-base md:text-lg md:hidden">Support</p>
       </nuxt-link>
@@ -24,15 +23,14 @@
 
       <div class="flex-grow" />
 
-      <!-- <div class="pr-4 pt-1 hidden lg:inline-block">
-        <a class="github-button" href="https://github.com/advplyr/audiobookshelf" data-color-scheme="no-preference: dark_high_contrast; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Star advplyr/audiobookshelf on GitHub">Star</a>
-      </div> -->
-
-      <a :href="dockerHubUrl">
-        <img src="/docker.svg" class="h-8 text-white" />
+      <a :href="discordUrl" class="mx-2 hidden md:block">
+        <img src="/discord.svg" class="h-5 md:h-7 hover:scale-110 transform duration-100" />
+      </a>
+      <a :href="dockerHubUrl" class="mx-2">
+        <img src="/docker.svg" class="h-8 hover:scale-110 transform duration-100" />
       </a>
       <a :href="githubUrl">
-        <img src="/github.svg" class="h-7 text-white mx-1 sm:mx-3" />
+        <img src="/github.svg" class="h-7 hover:scale-110 transform duration-100 mx-1 sm:mx-2" />
       </a>
       <a :href="playStoreUrl" class="hidden md:block">
         <img src="/GetGooglePlayStore.png" class="h-7 ml-2" />
@@ -47,7 +45,7 @@
         <div class="w-full h-8 flex items-center text-xs text-gray-300 bg-primary px-4">
           <nuxt-link to="/privacy-policy" class="font-mono underline text-blue-200 hover:text-blue-100 text-sm">Privacy Policy</nuxt-link>
           <div class="flex-grow" />
-          <a href="mailto:advplyr@protonmail.com" class="font-mono underline text-blue-200 hover:text-blue-100 text-sm">advplyr@protonmail.com</a>
+          <a href="mailto:advplyr@protonmail.com" class="font-mono underline text-blue-200 hover:text-blue-100 text-sm hidden md:block">advplyr@protonmail.com</a>
 
           <a href="https://github.com/advplyr" target="_blank" class="font-mono underline text-blue-200 hover:text-blue-100 text-sm ml-4">https://github.com/advplyr</a>
         </div>
@@ -63,7 +61,8 @@ export default {
       appStoreUrl: 'https://testflight.apple.com/join/wiic7QIW',
       dockerHubUrl: 'https://hub.docker.com/repository/docker/advplyr/audiobookshelf',
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.audiobookshelf.app',
-      githubUrl: 'https://github.com/advplyr/audiobookshelf'
+      githubUrl: 'https://github.com/advplyr/audiobookshelf',
+      discordUrl: 'https://discord.gg/pJsjuNCKRq'
     }
   },
   watch: {

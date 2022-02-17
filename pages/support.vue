@@ -5,7 +5,8 @@
         <span class="material-icons text-success text-2xl">star</span>
       </div>
       <p class="pl-2 text-base md:text-lg">
-        The best way that <u>everyone</u> can show support is to follow/star the <a href="https://github.com/advplyr/audiobookshelf" target="_blank" class="text-blue-500 underline">github repo</a>, test new features, and open a <a href="https://github.com/advplyr/audiobookshelf/discussions" target="_blank" class="text-blue-500 underline">discussion</a> with ideas on how to improve the project.
+        The best way that <u>everyone</u> can show support is to follow/star the <a href="https://github.com/advplyr/audiobookshelf" target="_blank" class="text-blue-500 underline">github repo</a>, test new features, open a <a href="https://github.com/advplyr/audiobookshelf/discussions" target="_blank" class="text-blue-500 underline">discussion</a> with ideas on how to improve the project. Join
+        the <a href="https://discord.gg/pJsjuNCKRq" target="_blank" class="text-blue-500 underline">discord server</a>.
       </p>
     </div>
     <div class="flex -ml-8">

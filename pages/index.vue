@@ -2,12 +2,11 @@
   <div ref="wrapper" class="w-full h-full bg-gradient overflow-hidden">
     <div class="absolute top-0 left-0 w-full h-screen pointer-events-none max-h-screen max-w-screen overflow-hidden">
       <template v-for="(shelf, index) in shelves">
-        <div :key="index" class="bookshelfRow w-full flex relative h-32 md:h-60 px-3 md:px-12">
+        <div :key="index" class="bookshelfRow w-full flex relative h-32 md:h-48 px-3 md:px-12">
           <template v-for="(book, n) in shelf">
-            <div :key="`book-${n}`" class="h-full pt-5 md:pt-8 px-3 md:px-4 transition-opacity duration-300" :class="showBooks ? '' : 'opacity-0'">
-              <div class="h-24 w-15 md:h-48 md:w-30 relative bg-primary">
-                <div class="w-full h-full absolute top-0 left-0 opacity-25 bg-cover z-0" style="filter: blur(1px)" :style="{ backgroundImage: `url(/covers/${book})` }" />
-                <img :src="`/covers/${book}`" class="absolute top-0 left-0 h-full w-full object-contain box-shadow-book z-10" />
+            <div :key="`book-${n}`" class="h-full pt-5 md:pt-4 px-3 md:px-4 transition-opacity duration-300" :class="showBooks ? '' : 'opacity-0'">
+              <div class="h-24 w-24 md:h-40 md:w-40 relative bg-primary">
+                <img :src="`/square_covers/${book}`" class="absolute top-0 left-0 h-full w-full object-contain box-shadow-book z-10" />
               </div>
             </div>
           </template>
@@ -30,12 +29,15 @@
         <nuxt-link to="/docs" class="text-gray-200 text-lg md:text-3xl font-book py-1 md:py-2 hover:underline block">Documentation</nuxt-link>
         <nuxt-link to="/support" class="text-gray-200 text-lg md:text-3xl font-book py-1 md:py-2 hover:underline block">How to Support</nuxt-link>
 
-        <div class="flex pt-4 md:pt-8 text-gray-300">
+        <div class="flex items-center pt-4 md:pt-8 text-gray-300">
+          <a :href="discordUrl" class="mx-2">
+            <img src="/discord.svg" class="h-7 md:h-9 hover:scale-110 transform duration-100" />
+          </a>
           <a :href="dockerHubUrl" class="mx-2">
-            <img src="/docker.svg" class="h-8 md:h-11 text-white" />
+            <img src="/docker.svg" class="h-8 md:h-11 hover:scale-110 transform duration-100" />
           </a>
           <a :href="githubUrl" class="mx-2">
-            <img src="/github.svg" class="h-7 md:h-10 text-white" />
+            <img src="/github.svg" class="h-7 md:h-10 hover:scale-110 transform duration-100" />
           </a>
           <a :href="playStoreUrl" class="mx-2">
             <img src="/GetGooglePlayStore.png" class="h-7 md:h-10 ml-2" />
@@ -61,27 +63,28 @@ export default {
       dockerHubUrl: 'https://hub.docker.com/repository/docker/advplyr/audiobookshelf',
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.audiobookshelf.app',
       githubUrl: 'https://github.com/advplyr/audiobookshelf',
+      discordUrl: 'https://discord.gg/pJsjuNCKRq',
       shelves: [
-        ['1984.jpg', 'anatomyofthestate.jpg', 'animalfarm.jpg', 'atlasshrugged.jpg', 'democracythegodthatfailed.jpg', 'themythoftherationalvoter.jpg', 'theroadtoserfdom.jpg', 'templeofthewinds.jpg', 'endersgame.jpg', 'theprince.jpg', 'thecountofmontecristo.jpg', 'economicsinonelesson.jpg'],
-        ['bravenewworld.jpg', 'againstdemocracy.jpg', 'fahrenheit451.jpg', 'lordoftheflies.jpg', 'humanaction.jpg', 'theoryofsocialismandcapitalism.jpg', 'thehobbit.jpg', 'warandpeace.jpg', 'anthem.jpg'],
-        ['theanarchisthandbook.jpg', 'faithofthefallen.jpg', 'theidiot.jpg', 'machineryoffreedom.png', 'thefountainhead.jpg'],
-        ['notreason.jpg', 'ethicsofliberty.jpg'],
-        ['theprince.jpg', 'templeofthewinds.jpg'],
+        ['1984.jpg', 'anatomyofthestate.jpg', 'animalfarm.jpg', 'atlasshrugged.jpg', 'democracythegodthatfailed.jpg', 'theroadtoserfdom.jpg', 'faithofthefallen.jpg', 'endersgame.jpg', 'wealthofnations.jpg', 'hackers.jpg'],
+        ['bravenewworld.jpg', 'fahrenheit451.jpg', 'rulesforradicals.jpg', 'humanaction.jpg', 'economicsinonelesson.jpg', 'thecommunistmanifesto.jpg', 'warandpeace.jpg', 'anthem.jpg'],
+        ['theanarchisthandbook.jpg', 'thecreaturefromjekyllisland.jpg', 'theidiot.jpg', 'thefountainhead.jpg', 'themachineryoffreedom.jpg'],
+        ['notreason.jpg', 'endthefed.jpg', 'amanforallmarkets.jpg'],
+        ['theprince.jpg', 'hackers.jpg'],
         ['economicsinonelesson.jpg']
       ]
     }
   },
   methods: {
     async animatePage() {
-      // if (this.$refs.logo) {
-      //   this.$refs.logo.classList.add('animate-roll')
-      // }
-      // if (this.$refs.title) {
-      //   this.$refs.title.classList.add('animate-drop')
-      // }
-      // if (this.$refs.subtitle) {
-      //   this.$refs.subtitle.classList.add('animate-drop-pause')
-      // }
+      if (this.$refs.logo) {
+        this.$refs.logo.classList.add('animate-roll')
+      }
+      if (this.$refs.title) {
+        this.$refs.title.classList.add('animate-drop')
+      }
+      if (this.$refs.subtitle) {
+        this.$refs.subtitle.classList.add('animate-drop-pause')
+      }
       var opacity2 = 0
       var opacity1 = 0
 
