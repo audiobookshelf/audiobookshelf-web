@@ -9,10 +9,60 @@
 </head>
 
 <body>
+  <div id="idle-backdrop"></div>
+  <div id="idle-screen">
+    <div class="idle-content">
+      <img class="logo" src="Logo.png" />
+      Cast an audiobook
+    </div>
+    <div id="waiting-description" class="waitingDescription"></div>
+  </div>
+
   <cast-media-player></cast-media-player>
   <style>
     body {
       --playback-logo-image: url('https://raw.githubusercontent.com/advplyr/audiobookshelf/master/client/static/icon64.png');
+    }
+
+    #idle-backdrop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #000;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url('https://picsum.photos/1280/720');
+    }
+
+    #idle-screen {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: rgba(15, 15, 15, 0.6);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 18px 32px;
+    }
+
+    .idle-content {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      text-align: center;
+      font-size: 3vw;
+      margin-bottom: 3%;
+      margin-left: 5%;
+    }
+
+    .active>#idle-backdrop,
+    .active>#idle-screen {
+      display: none;
     }
 
     cast-media-player {
@@ -25,8 +75,64 @@
     }
   </style>
   <script>
-    const context = cast.framework.CastReceiverContext.getInstance();
-    context.start();
+    const serverDetails = {
+      serverAddress: null,
+      apiToken: null
+    }
+    const context = cast.framework.CastReceiverContext.getInstance()
+
+    const playerManager = context.getPlayerManager()
+    playerManager.addEventListener(
+      cast.framework.events.EventType.MEDIA_STATUS, (event) => {
+        // Write your own event handling code, for example
+        // using the event.mediaStatus value
+      })
+
+    const playerData = {};
+    const playerDataBinder = new cast.framework.ui.PlayerDataBinder(playerData);
+
+    // Update ui according to player state
+    playerDataBinder.addEventListener(
+      cast.framework.ui.PlayerDataEventType.STATE_CHANGED,
+      e => {
+        switch (e.value) {
+          case cast.framework.ui.State.LAUNCHING:
+          case cast.framework.ui.State.IDLE:
+            document.body.className = 'idle'
+            break;
+          case cast.framework.ui.State.LOADING:
+            document.body.className = 'idle'
+            break;
+          case cast.framework.ui.State.BUFFERING:
+            document.body.className = 'active'
+            break;
+          case cast.framework.ui.State.PAUSED:
+            document.body.className = 'active'
+            break;
+          case cast.framework.ui.State.PLAYING:
+            document.body.className = 'active'
+            break;
+        }
+      });
+
+    const CUSTOM_CHANNEL = 'urn:x-cast:com.example.cast.abs'
+    context.addCustomMessageListener(CUSTOM_CHANNEL, (customEvent) => {
+      var data = customEvent.data || {}
+      if (typeof data === 'string') {
+        data = JSON.parse(data)
+      }
+      console.log('Custom message', data)
+
+      if (!data.serverAddress || !data.apiToken) {
+        console.error('Invalid data', data)
+        return
+      }
+
+      serverDetails.serverAddress = data.serverAddress
+      serverDetails.apiToken = data.apiToken
+    })
+
+    context.start()
   </script>
 </body>
 
