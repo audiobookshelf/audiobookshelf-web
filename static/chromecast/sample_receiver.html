@@ -7,7 +7,7 @@
   <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js">
   </script>
   <!-- Cast Debug Logger -->
-  <script src="//www.gstatic.com/cast/sdk/libs/devtools/debug_layer/caf_receiver_logger.js"></script>
+  <!-- <script src="//www.gstatic.com/cast/sdk/libs/devtools/debug_layer/caf_receiver_logger.js"></script> -->
 </head>
 
 <body>
@@ -34,9 +34,9 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: #000;
+      background-color: #222;
       background-position: center;
-      background-size: cover;
+      background-size: contain;
       background-repeat: no-repeat;
       background-image: url('https://picsum.photos/1280/720');
     }
@@ -91,19 +91,19 @@
     cast-media-player {
       --theme-hue: 100;
       --progress-color: rgb(253, 239, 40);
-      --logo-image: url('https://raw.githubusercontent.com/advplyr/audiobookshelf/master/client/static/Logo.png');
+      --logo-image: url('/Logo.png');
       --background-image: linear-gradient(to right bottom, #2e2e2e, #303030, #313131, #333333, #353535, #343434, #323232, #313131, #2c2c2c, #282828, #232323, #1f1f1f);
-      --watermark-image: url('https://raw.githubusercontent.com/advplyr/audiobookshelf/master/client/static/icon64.png');
+      --watermark-image: url('/Logo.png');
+      --watermark-size: 72px;
       --font-family: 'Gentium Book Basic', serif;
     }
   </style>
   <script>
-    const castDebugLogger = cast.debug.CastDebugLogger.getInstance();
+    // const castDebugLogger = cast.debug.CastDebugLogger.getInstance();
     const context = cast.framework.CastReceiverContext.getInstance()
     context.setLoggerLevel(cast.framework.LoggerLevel.DEBUG);
 
     console.log('>> Initialize sample receiver')
-    castDebugLogger.info('ABS', 'Initialize sample receiver')
 
     const serverDetails = {
       serverAddress: null,
@@ -177,8 +177,6 @@
 
     const CUSTOM_CHANNEL = 'urn:x-cast:com.audiobookshelf.cast'
     context.addCustomMessageListener(CUSTOM_CHANNEL, (customEvent) => {
-      castDebugLogger.info(CUSTOM_CHANNEL, customEvent);
-
       var data = customEvent.data || {}
       if (typeof data === 'string') {
         data = JSON.parse(data)
@@ -189,23 +187,12 @@
         serverDetails.covers = data.covers || []
         setBackdropInterval()
       }
-
-      // if (!data.serverAddress || !data.apiToken) {
-      //   console.error('Invalid data', data)
-      //   return
-      // }
-
       // serverDetails.serverAddress = data.serverAddress
       // serverDetails.apiToken = data.apiToken
     })
 
     context.addEventListener(cast.framework.system.EventType.READY, () => {
       console.log('Ready')
-      if (!castDebugLogger.debugOverlayElement_) {
-        // Enable debug logger and show a 'DEBUG MODE' overlay at top left corner.
-        castDebugLogger.setEnabled(true);
-        castDebugLogger.info('ABS', 'Enabled debug logger');
-      }
     });
 
     context.start()
