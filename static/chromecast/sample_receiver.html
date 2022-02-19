@@ -14,10 +14,10 @@
   <div id="idle-backdrop"></div>
   <div id="idle-screen">
     <div class="idle-content">
-      <img class="logo" src="/Logo48.png" />
-      audiobookshelf
+      <img class="logo" src="/Logo.png" />
+      <h1>audiobookshelf</h1>
     </div>
-    <div id="waiting-description" class="waitingDescription"></div>
+    <p>Ready to cast</p>
   </div>
   <div style="height:10px;width:10px;background-color:green;position:absolute;bottom:0;right:0;"></div>
 
@@ -52,6 +52,7 @@
       right: 0;
       bottom: 0;
       padding: 18px 32px;
+      color: white;
     }
 
     .idle-content {
@@ -62,6 +63,16 @@
       font-size: 3vw;
       margin-bottom: 3%;
       margin-left: 5%;
+    }
+
+    .idle-content img.logo {
+      height: 128px;
+      width: 128px;
+    }
+
+    .idle-content h1 {
+      font-size: 3.5rem;
+      color: #ddd;
     }
 
     .active>#idle-backdrop,
@@ -79,6 +90,9 @@
     }
   </style>
   <script>
+    const context = cast.framework.CastReceiverContext.getInstance()
+    cast.receiver.logger.setLevelValue(cast.receiver.LoggerLevel.DEBUG);
+
     const serverDetails = {
       serverAddress: null,
       apiToken: null,
@@ -108,8 +122,6 @@
         if (currentCoverIndex >= serverDetails.covers.length) currentCoverIndex = 0
       }, 5000)
     }
-
-    const context = cast.framework.CastReceiverContext.getInstance()
 
     const playerManager = context.getPlayerManager()
     playerManager.addEventListener(
@@ -152,8 +164,10 @@
         data = JSON.parse(data)
       }
       console.log('Custom message', data)
+      console.debug('Custom message debug', data)
+      console.warn('Custom message warn', data)
 
-      if (data.covers) {
+      if (data.covers && data.covers.length) {
         serverDetails.covers = covers || []
         setBackdropInterval()
       }
