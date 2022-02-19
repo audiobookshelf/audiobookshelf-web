@@ -15,9 +15,9 @@
   <div id="idle-screen">
     <div class="idle-content">
       <img class="logo" src="/Logo.png" />
-      <h1>audiobookshelf</h1>
+      <p>audiobookshelf</p>
     </div>
-    <p>Ready to cast</p>
+    <p class="idle-cast-text">Ready for an audiobook cast</p>
   </div>
   <div style="height:10px;width:10px;background-color:green;position:absolute;bottom:0;right:0;"></div>
 
@@ -63,15 +63,23 @@
       font-size: 3vw;
       margin-bottom: 3%;
       margin-left: 5%;
+      display: flex;
+      align-items: center;
+      font-size: 3.5rem;
+      color: #ddd;
     }
 
     .idle-content img.logo {
-      height: 128px;
-      width: 128px;
+      height: 72px;
+      width: 72px;
     }
 
-    .idle-content h1 {
-      font-size: 3.5rem;
+    .idle-content p {
+      margin-left: 20px;
+    }
+
+    .idle-cast-text {
+      font-size: 2rem;
       color: #ddd;
     }
 
@@ -91,7 +99,7 @@
   </style>
   <script>
     const context = cast.framework.CastReceiverContext.getInstance()
-    cast.receiver.logger.setLevelValue(cast.receiver.LoggerLevel.DEBUG);
+    context.setLoggerLevel(cast.framework.LoggerLevel.DEBUG);
 
     const serverDetails = {
       serverAddress: null,
