@@ -1,0 +1,33 @@
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Basic&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js">
+  </script>
+</head>
+
+<body>
+  <cast-media-player></cast-media-player>
+  <style>
+    body {
+      --playback-logo-image: url('https://raw.githubusercontent.com/advplyr/audiobookshelf/master/client/static/icon64.png');
+    }
+
+    cast-media-player {
+      --theme-hue: 100;
+      --progress-color: rgb(253, 239, 40);
+      --logo-image: url('https://raw.githubusercontent.com/advplyr/audiobookshelf/master/client/static/Logo.png');
+      --background-image: linear-gradient(to right bottom, #2e2e2e, #303030, #313131, #333333, #353535, #343434, #323232, #313131, #2c2c2c, #282828, #232323, #1f1f1f);
+      --watermark-image: url('https://raw.githubusercontent.com/advplyr/audiobookshelf/master/client/static/icon64.png');
+      --font-family: 'Gentium Book Basic', serif;
+    }
+  </style>
+  <script>
+    const context = cast.framework.CastReceiverContext.getInstance();
+    context.start();
+  </script>
+</body>
+
+</html>
