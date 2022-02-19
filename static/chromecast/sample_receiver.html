@@ -14,8 +14,8 @@
   <div id="idle-backdrop"></div>
   <div id="idle-screen">
     <div class="idle-content">
-      <img class="logo" src="/Logo.png" />
-      Cast an audiobook
+      <img class="logo" src="/Logo48.png" />
+      audiobookshelf
     </div>
     <div id="waiting-description" class="waitingDescription"></div>
   </div>
@@ -25,6 +25,7 @@
   <style>
     body {
       --playback-logo-image: url('https://raw.githubusercontent.com/advplyr/audiobookshelf/master/client/static/icon64.png');
+      font-family: 'Gentium Book Basic', serif;
     }
 
     #idle-backdrop {
@@ -80,8 +81,34 @@
   <script>
     const serverDetails = {
       serverAddress: null,
-      apiToken: null
+      apiToken: null,
+      covers: []
     }
+    var isIdle = false
+    var backdropInterval = null
+    var currentCoverIndex = 0
+
+    function setState(state) {
+      if (state === 'idle' && !isIdle) {
+        setBackdropInterval()
+      } else if (state !== 'idle' && isIdle) {
+        clearInterval(backdropInterval)
+      }
+      isIdle = state === 'idle'
+      document.body.className = state
+    }
+
+    function setBackdropInterval() {
+      clearInterval(backdropInterval)
+      backdropInterval = setInterval(() => {
+        var backdropel = document.getElementById('idle-backdrop')
+        backdropel.style.backgroundImage = `url(${serverDetails.covers[currentCoverIndex]})`
+
+        currentCoverIndex++
+        if (currentCoverIndex >= serverDetails.covers.length) currentCoverIndex = 0
+      }, 5000)
+    }
+
     const context = cast.framework.CastReceiverContext.getInstance()
 
     const playerManager = context.getPlayerManager()
@@ -101,24 +128,24 @@
         switch (e.value) {
           case cast.framework.ui.State.LAUNCHING:
           case cast.framework.ui.State.IDLE:
-            document.body.className = 'idle'
+            setState('idle')
             break;
           case cast.framework.ui.State.LOADING:
-            document.body.className = 'idle'
+            setState('idle')
             break;
           case cast.framework.ui.State.BUFFERING:
-            document.body.className = 'active'
+            setState('active')
             break;
           case cast.framework.ui.State.PAUSED:
-            document.body.className = 'active'
+            setState('active')
             break;
           case cast.framework.ui.State.PLAYING:
-            document.body.className = 'active'
+            setState('active')
             break;
         }
       });
 
-    const CUSTOM_CHANNEL = 'urn:x-cast:com.example.cast.abs'
+    const CUSTOM_CHANNEL = 'urn:x-cast:com.audiobookshelf.cast'
     context.addCustomMessageListener(CUSTOM_CHANNEL, (customEvent) => {
       var data = customEvent.data || {}
       if (typeof data === 'string') {
@@ -126,13 +153,18 @@
       }
       console.log('Custom message', data)
 
-      if (!data.serverAddress || !data.apiToken) {
-        console.error('Invalid data', data)
-        return
+      if (data.covers) {
+        serverDetails.covers = covers || []
+        setBackdropInterval()
       }
 
-      serverDetails.serverAddress = data.serverAddress
-      serverDetails.apiToken = data.apiToken
+      // if (!data.serverAddress || !data.apiToken) {
+      //   console.error('Invalid data', data)
+      //   return
+      // }
+
+      // serverDetails.serverAddress = data.serverAddress
+      // serverDetails.apiToken = data.apiToken
     })
 
     context.start()
