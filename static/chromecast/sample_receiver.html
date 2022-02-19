@@ -21,8 +21,6 @@
     </div>
     <p class="idle-cast-text">Ready for an audiobook cast</p>
   </div>
-  <div style="height:10px;width:10px;background-color:green;position:absolute;bottom:0;right:0;"></div>
-
 
   <style>
     body {
@@ -127,6 +125,10 @@
     }
 
     function setBackdropInterval() {
+      if (!serverDetails.covers.length) {
+        return
+      }
+
       clearInterval(backdropInterval)
       backdropInterval = setInterval(() => {
         var coverUrl = serverDetails.covers[currentCoverIndex]
@@ -182,11 +184,9 @@
         data = JSON.parse(data)
       }
       console.log('Custom message', data)
-      console.debug('Custom message debug', data)
-      console.warn('Custom message warn', data)
 
       if (data.covers && data.covers.length) {
-        serverDetails.covers = covers || []
+        serverDetails.covers = data.covers || []
         setBackdropInterval()
       }
 
@@ -204,6 +204,7 @@
       if (!castDebugLogger.debugOverlayElement_) {
         // Enable debug logger and show a 'DEBUG MODE' overlay at top left corner.
         castDebugLogger.setEnabled(true);
+        castDebugLogger.info('ABS', 'Enabled debug logger');
       }
     });
 
