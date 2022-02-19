@@ -20,8 +20,8 @@
         <code class="language-bash">docker pull advplyr/audiobookshelf
 
 docker run -d \
-    -e AUDIOBOOKSHELF_UID=99
-    -e AUDIOBOOKSHELF_GID=100
+    -e AUDIOBOOKSHELF_UID=99 \
+    -e AUDIOBOOKSHELF_GID=100 \
     -p 13378:80 \
     -v &lt;/path/to/audiobooks>:/audiobooks \
     -v &lt;/path/to/config>:/config \
