@@ -12,11 +12,12 @@
   <div id="idle-backdrop"></div>
   <div id="idle-screen">
     <div class="idle-content">
-      <img class="logo" src="Logo.png" />
+      <img class="logo" src="/Logo.png" />
       Cast an audiobook
     </div>
     <div id="waiting-description" class="waitingDescription"></div>
   </div>
+  <div style="height:10px;width:10px;background-color:green;position:absolute;bottom:0;right:0;"></div>
 
   <cast-media-player></cast-media-player>
   <style>
@@ -68,7 +69,7 @@
     cast-media-player {
       --theme-hue: 100;
       --progress-color: rgb(253, 239, 40);
-      --logo-image: url('https://raw.githubusercontent.com/advplyr/audiobookshelf/master/client/static/Logo.png');
+      /* --logo-image: url('https://raw.githubusercontent.com/advplyr/audiobookshelf/master/client/static/Logo.png'); */
       --background-image: linear-gradient(to right bottom, #2e2e2e, #303030, #313131, #333333, #353535, #343434, #323232, #313131, #2c2c2c, #282828, #232323, #1f1f1f);
       --watermark-image: url('https://raw.githubusercontent.com/advplyr/audiobookshelf/master/client/static/icon64.png');
       --font-family: 'Gentium Book Basic', serif;
