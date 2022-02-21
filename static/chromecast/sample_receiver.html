@@ -101,7 +101,13 @@
   <script>
     // const castDebugLogger = cast.debug.CastDebugLogger.getInstance();
     const context = cast.framework.CastReceiverContext.getInstance()
-    context.setLoggerLevel(cast.framework.LoggerLevel.DEBUG);
+    context.setLoggerLevel(cast.framework.LoggerLevel.DEBUG)
+
+    const playerManager = context.getPlayerManager()
+
+    // https://developers.google.com/cast/docs/reference/web_receiver/cast.framework.QueueManager
+    const queueManager = playerManager.getQueueManager()
+    queueManager.setQueueStatusLimit(false)
 
     console.log('>> Initialize sample receiver')
 
@@ -122,6 +128,18 @@
       }
       isIdle = state === 'idle'
       document.body.className = state
+    }
+
+    function sendCheckQueueItems() {
+      console.log('Checking and sending queue items')
+      var items = queueManager.getItems()
+      var currentItem = queueManager.getCurrentItem() || {}
+      console.log(`Queue has ${items.length} items. Current item is ${currentItem.itemId} with index ${queueManager.getCurrentItemIndex()}`)
+      items.forEach((item) => {
+        if (!item) console.error('Invalid Queue Item')
+        else console.log(`> Queue Item ${item.itemId} - Order: ${item.orderId}`)
+      })
+      playerManager.broadcastStatus(true, 1, { type: 'checkQueue' }, true)
     }
 
     function setBackdropInterval() {
@@ -171,9 +189,29 @@
             break;
           case cast.framework.ui.State.PLAYING:
             setState('active')
+            sendCheckQueueItems()
             break;
         }
       });
+
+    playerManager.setMessageInterceptor(
+      cast.framework.messages.MessageType.QUEUE_LOAD,
+      request => {
+        console.log('Queue Load message intercept', request)
+        return request
+      }
+    )
+
+    playerManager.setMessageInterceptor(
+      cast.framework.messages.MessageType.LOAD,
+      request => {
+        console.log('Regular Load message intercept', request)
+        if (request.queueData) {
+          console.log('Request has queue data', request.queueData)
+        }
+        return request
+      }
+    )
 
     const CUSTOM_CHANNEL = 'urn:x-cast:com.audiobookshelf.cast'
     context.addCustomMessageListener(CUSTOM_CHANNEL, (customEvent) => {
