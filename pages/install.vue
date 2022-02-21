@@ -56,6 +56,7 @@ docker run -d \
   METADATA_PATH="/usr/share/audiobookshelf/metadata"
   CONFIG_PATH="/usr/share/audiobookshelf/config"
   FFMPEG_PATH="/usr/lib/audiobookshelf-ffmpeg/ffmpeg"
+  FFPROBE_PATH="/usr/lib/audiobookshelf-ffmpeg/ffprobe"
   PORT=7331</code>
     </pre>
 
