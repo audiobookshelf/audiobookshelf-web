@@ -116,29 +116,25 @@
       apiToken: null,
       covers: []
     }
-    var isIdle = false
+
     var backdropInterval = null
     var currentCoverIndex = 0
 
     function setState(state) {
-      if (state === 'idle' && !isIdle) {
+      if (state === 'idle' && !backdropInterval) {
         setBackdropInterval()
-      } else if (state !== 'idle' && isIdle) {
+      } else if (backdropInterval) {
         clearInterval(backdropInterval)
+        backdropInterval = null
       }
-      isIdle = state === 'idle'
       document.body.className = state
     }
 
     function sendCheckQueueItems() {
-      console.log('Checking and sending queue items')
       var items = queueManager.getItems()
       var currentItem = queueManager.getCurrentItem() || {}
       console.log(`Queue has ${items.length} items. Current item is ${currentItem.itemId} with index ${queueManager.getCurrentItemIndex()}`)
-      items.forEach((item) => {
-        if (!item) console.error('Invalid Queue Item')
-        else console.log(`> Queue Item ${item.itemId} - Order: ${item.orderId}`)
-      })
+
       playerManager.broadcastStatus(true, 1, { type: 'checkQueue' }, true)
     }
 
@@ -150,7 +146,6 @@
       clearInterval(backdropInterval)
       backdropInterval = setInterval(() => {
         var coverUrl = serverDetails.covers[currentCoverIndex]
-        console.log('Set backdrop cover', coverUrl)
         var backdropel = document.getElementById('idle-backdrop')
         backdropel.style.backgroundImage = `url(${coverUrl})`
 
