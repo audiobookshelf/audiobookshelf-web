@@ -38,7 +38,6 @@
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
-      background-image: url('https://picsum.photos/1280/720');
     }
 
     #idle-screen {
@@ -134,7 +133,6 @@
       var items = queueManager.getItems()
       var currentItem = queueManager.getCurrentItem() || {}
       console.log(`Queue has ${items.length} items. Current item is ${currentItem.itemId} with index ${queueManager.getCurrentItemIndex()}`)
-
       playerManager.broadcastStatus(true, 1, { type: 'checkQueue' }, true)
     }
 
@@ -183,26 +181,14 @@
             break;
           case cast.framework.ui.State.PLAYING:
             setState('active')
-            sendCheckQueueItems()
             break;
         }
       });
 
     playerManager.setMessageInterceptor(
-      cast.framework.messages.MessageType.QUEUE_LOAD,
-      request => {
-        console.log('Queue Load message intercept', request)
-        return request
-      }
-    )
-
-    playerManager.setMessageInterceptor(
       cast.framework.messages.MessageType.LOAD,
       request => {
         console.log('Regular Load message intercept', request)
-        if (request.queueData) {
-          console.log('Request has queue data', request.queueData)
-        }
         return request
       }
     )
