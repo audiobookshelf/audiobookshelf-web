@@ -14,6 +14,10 @@
   <cast-media-player></cast-media-player>
 
   <div id="idle-backdrop"></div>
+  <div id="backdrop-image-container">
+    <img id="backdrop-image" src="/Logo.png" />
+  </div>
+
   <div id="idle-screen">
     <div class="idle-content">
       <img class="logo" src="/Logo.png" />
@@ -36,8 +40,25 @@
       bottom: 0;
       background-color: #222;
       background-position: center;
-      background-size: contain;
+      background-size: cover;
       background-repeat: no-repeat;
+      background-image: linear-gradient(to right bottom, #2e2e2e, #303030, #313131, #333333, #353535, #343434, #323232, #313131, #2c2c2c, #282828, #232323, #1f1f1f);
+      filter: blur(8px);
+      -webkit-filter: blur(8px);
+    }
+
+    #backdrop-image-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #backdrop-image {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
     }
 
     #idle-screen {
@@ -108,11 +129,7 @@
     const queueManager = playerManager.getQueueManager()
     queueManager.setQueueStatusLimit(false)
 
-    console.log('>> Initialize sample receiver')
-
     const serverDetails = {
-      serverAddress: null,
-      apiToken: null,
       covers: []
     }
 
@@ -144,19 +161,16 @@
       clearInterval(backdropInterval)
       backdropInterval = setInterval(() => {
         var coverUrl = serverDetails.covers[currentCoverIndex]
+        console.log('Updating backdrop image', coverUrl)
         var backdropel = document.getElementById('idle-backdrop')
         backdropel.style.backgroundImage = `url(${coverUrl})`
+        var backdropimageEl = document.getElementById('backdrop-image')
+        backdropimageEl.src = coverUrl
 
         currentCoverIndex++
         if (currentCoverIndex >= serverDetails.covers.length) currentCoverIndex = 0
       }, 5000)
     }
-
-    playerManager.addEventListener(
-      cast.framework.events.EventType.MEDIA_STATUS, (event) => {
-        // Write your own event handling code, for example
-        // using the event.mediaStatus value
-      })
 
     const playerData = {};
     const playerDataBinder = new cast.framework.ui.PlayerDataBinder(playerData);
@@ -188,7 +202,7 @@
     playerManager.setMessageInterceptor(
       cast.framework.messages.MessageType.LOAD,
       request => {
-        console.log('Regular Load message intercept', request)
+        console.log('Message intercept', request)
         return request
       }
     )
@@ -205,8 +219,6 @@
         serverDetails.covers = data.covers || []
         setBackdropInterval()
       }
-      // serverDetails.serverAddress = data.serverAddress
-      // serverDetails.apiToken = data.apiToken
     })
 
     context.addEventListener(cast.framework.system.EventType.READY, () => {
