@@ -104,6 +104,7 @@
     }
 
     .active>#idle-backdrop,
+    .active>#backdrop-image-container,
     .active>#idle-screen {
       display: none;
     }
@@ -137,9 +138,10 @@
     var currentCoverIndex = 0
 
     function setState(state) {
-      if (state === 'idle' && !backdropInterval) {
-        setBackdropInterval()
+      if (state === 'idle') {
+        if (!backdropInterval) setBackdropInterval()
       } else if (backdropInterval) {
+        console.log('Clear backdrop interval')
         clearInterval(backdropInterval)
         backdropInterval = null
       }
@@ -157,6 +159,7 @@
       if (!serverDetails.covers.length) {
         return
       }
+      console.log('Set Backdrop interval')
 
       clearInterval(backdropInterval)
       backdropInterval = setInterval(() => {
