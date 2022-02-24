@@ -1,6 +1,6 @@
 # AudioBookshelf
 
-This is [audiobookshelf.org](https://audiobookshelf.org), the install guide and documentation for [AudioBookshelf](https://github.com/advplyr/audiobookshelf).
+This is [audiobookshelf.org](https://audiobookshelf.org), the install guide and documentation for [audiobookshelf](https://github.com/advplyr/audiobookshelf).
 
 
 ## Contributing
