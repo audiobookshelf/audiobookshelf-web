@@ -1,4 +1,4 @@
-# AudioBookshelf
+# audiobookshelf
 
 This is [audiobookshelf.org](https://audiobookshelf.org), the install guide and documentation for [audiobookshelf](https://github.com/advplyr/audiobookshelf).
 
