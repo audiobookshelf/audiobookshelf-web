@@ -200,12 +200,16 @@
         <img src="/folder.svg" class="h-6" />
         <p class="pl-2">(1994) - Wizards First Rule - A Really Good Subtitle</p>
       </div>
+      <div class="flex py-1">
+        <img src="/folder.svg" class="h-6" />
+        <p class="pl-2">1 - Wizards First Rule</p>
+      </div>
     </div>
 
     <ul class="list-outside md:list-inside px-6 md:px-0 list-disc my-4 text-sm md:text-base">
-      <li class="py-1">Parsing out subtitles into a separate field is optional and must be enabled in settings.</li>
-      <li class="py-1">Different parts of a name should be separated by " - ", with the exception of the volume number (spaces aren't needed).</li>
-      <li class="py-1">The publish year must be the first part of the name OR directly after a volume number, and separated by " - " on both sides.</li>
+      <li class="py-1"><strong class="underline">Subtitle: </strong>Parsing out subtitles into a separate field is optional and must be enabled in settings. Subtitle must be separated by " - ".</li>
+      <li class="py-1"><strong class="underline">Volume Number: </strong>The volume number can be the first number in the folder name separated by " - " (see last example) OR anywhere in the folder name if "Vol", "Book", or "Volume" is before the number. Case insensitive & decimals supported.</li>
+      <li class="py-1"><strong class="underline">Publish Year: </strong>The publish year must be the first part of the name OR directly after a volume number, and separated by " - " on both sides.</li>
     </ul>
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
@@ -324,6 +328,34 @@
 
     <p class="mb-2">The scanner will choose the more accurate track/disc number between the filename and ID3 tag numbers.</p>
     <p>Tracks can be manually ordered and enabled/disabled by pressing the "Manage Tracks" button on the audiobook page.</p>
+
+    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
+
+    <h1 id="abmetadata" class="text-3xl mb-4 -ml-8">
+      <nuxt-link to="#abmetadata"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
+      >abmetadata file
+    </h1>
+
+    <div class="flex -ml-8 mb-8">
+      <div>
+        <span class="material-icons text-success text-2xl">priority_high</span>
+      </div>
+      <p class="pl-2 text-base md:text-lg">This is the start of setting up a better standard around persisting audiobook metadata and is likely to change, so if you have suggestions around audiobook metadata please join the discord or start a github discussion. The abmetadata file format is based on ffmetadata.</p>
+      <!-- <p class="pl-2 text-base md:text-lg">
+        Help needed writing documentation! This website is on <a href="https://github.com/advplyr/audiobookshelf-web" target="_blank" class="text-blue-500 underline">github</a>. Join the <a href="https://github.com/advplyr/audiobookshelf/discussions" target="_blank" class="text-blue-500 underline">discussion</a>,
+        <a href="https://github.com/advplyr/audiobookshelf/issues" target="_blank" class="text-blue-500 underline">report an issue</a> or contact me directly at <a href="mailto:advplyr@protonmail.com" class="text-blue-500 underline">advplyr@protonmail.com</a>.
+      </p> -->
+    </div>
+
+    <p class="mb-4 text-sm md:text-base">
+      As of v1.7.1 audiobookshelf creates a file named <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">metadata.abs</span> for each book. By default, the file will be saved in <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">/metadata/books/</span> folders, but can be stored in the same folder as your book by enabling the server setting.
+    </p>
+
+    <p class="mb-4 text-sm md:text-base">If you choose to store this file in your book folder, or if you move it to your book folder, it will serve as the source of truth for your book details and overwrite them. If you have enabled the server settings to prefer OPF or prefer audio ID3 metadata, then those will take precedence during scans.</p>
+
+    <p class="mb-4 text-sm md:text-base">Here is a demo of <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">metadata.abs</span> getting updated after saving details from the web app, then showing the metadata file get updated manually within the book folder and those changes getting pulled in after pressing "Re-Scan".</p>
+
+    <img src="https://cdn.discordapp.com/attachments/942931733978943508/947672769481564180/abmetadataDemo.gif" />
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
   </div>
