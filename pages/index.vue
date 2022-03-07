@@ -2,10 +2,10 @@
   <div ref="wrapper" class="w-full h-full bg-gradient overflow-hidden">
     <div class="absolute top-0 left-0 w-full h-screen pointer-events-none max-h-screen max-w-screen overflow-hidden">
       <template v-for="(shelf, index) in shelves">
-        <div :key="index" class="bookshelfRow w-full flex relative h-32 md:h-48 px-3 md:px-12">
+        <div :key="index" class="bookshelfRow w-full flex relative h-32 md:h-44 px-3 md:px-12">
           <template v-for="(book, n) in shelf">
             <div :key="`book-${n}`" class="h-full pt-5 md:pt-4 px-3 md:px-4 transition-opacity duration-300" :class="showBooks ? '' : 'opacity-0'">
-              <div class="h-24 w-24 md:h-40 md:w-40 relative bg-primary">
+              <div class="h-24 w-24 md:h-36 md:w-36 relative bg-primary">
                 <img :src="`/covers/${book}`" class="absolute top-0 left-0 h-full w-full object-contain box-shadow-book z-10" />
               </div>
             </div>
@@ -65,12 +65,16 @@ export default {
       githubUrl: 'https://github.com/advplyr/audiobookshelf',
       discordUrl: 'https://discord.gg/pJsjuNCKRq',
       shelves: [
-        ['1984.jpg', 'anatomyofthestate.jpg', 'animalfarm.jpg', 'atlasshrugged.jpg', 'democracythegodthatfailed.jpg', 'theroadtoserfdom.jpg', 'faithofthefallen.jpg', 'endersgame.jpg', 'wealthofnations.jpg', 'hackers.jpg'],
-        ['bravenewworld.jpg', 'fahrenheit451.jpg', 'rulesforradicals.jpg', 'humanaction.jpg', 'economicsinonelesson.jpg', 'thecommunistmanifesto.jpg', 'warandpeace.jpg', 'anthem.jpg'],
-        ['theanarchisthandbook.jpg', 'thecreaturefromjekyllisland.jpg', 'theidiot.jpg', 'thefountainhead.jpg', 'themachineryoffreedom.jpg'],
-        ['notreason.jpg', 'endthefed.jpg', 'amanforallmarkets.jpg'],
-        ['theprince.jpg', 'hackers.jpg'],
-        ['economicsinonelesson.jpg']
+        ['1984.jpg', 'anatomyofthestate.jpg', 'animalfarm.jpg', 'atlasshrugged.jpg', 'democracythegodthatfailed.jpg', 'theroadtoserfdom.jpg', 'faithofthefallen.jpg', 'endersgame.jpg', 'wealthofnations.jpg', 'hackers.jpg', 'foranewliberty.jpg'],
+        ['bravenewworld.jpg', 'fahrenheit451.jpg', 'rulesforradicals.jpg', 'humanaction.jpg', 'economicsinonelesson.jpg', 'thecommunistmanifesto.jpg', 'warandpeace.jpg', 'anthem.jpg', 'anarchystateandutopia.jpg'],
+        ['theanarchisthandbook.jpg', 'thecreaturefromjekyllisland.jpg', 'theidiot.jpg', 'thefountainhead.jpg', 'themachineryoffreedom.jpg', 'endurance.jpg', 'thelaw.jpg'],
+        ['notreason.jpg', 'endthefed.jpg', 'amanforallmarkets.jpg', 'thebookoffiverings.jpg', 'warisaracket.jpg'],
+        ['theprince.jpg', 'maneconomyandstate.jpg', 'theoryofsocialismandcapitalism.jpg'],
+        ['onliberty.jpg', 'themanversusthestate.jpg'],
+        [],
+        [],
+        [],
+        []
       ]
     }
   },
