@@ -70,7 +70,7 @@ export default {
         ['theanarchisthandbook.jpg', 'thecreaturefromjekyllisland.jpg', 'theidiot.jpg', 'thefountainhead.jpg', 'themachineryoffreedom.jpg', 'endurance.jpg', 'thelaw.jpg'],
         ['notreason.jpg', 'endthefed.jpg', 'amanforallmarkets.jpg', 'thebookoffiverings.jpg', 'warisaracket.jpg'],
         ['theprince.jpg', 'maneconomyandstate.jpg', 'theoryofsocialismandcapitalism.jpg'],
-        ['onliberty.jpg', 'themanversusthestate.jpg'],
+        ['onliberty.jpg', 'themanversusthestate.png'],
         [],
         [],
         [],
