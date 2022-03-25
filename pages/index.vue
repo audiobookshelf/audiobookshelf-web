@@ -60,7 +60,7 @@ export default {
       showBooks: false,
       showInstall: false,
       appStoreUrl: 'https://testflight.apple.com/join/wiic7QIW',
-      dockerHubUrl: 'https://hub.docker.com/repository/docker/advplyr/audiobookshelf',
+      dockerHubUrl: 'https://hub.docker.com/r/advplyr/audiobookshelf',
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.audiobookshelf.app',
       githubUrl: 'https://github.com/advplyr/audiobookshelf',
       discordUrl: 'https://discord.gg/pJsjuNCKRq',
