@@ -2,6 +2,13 @@
   <div class="w-full max-w-5xl mx-auto px-2 py-8">
     <div class="flex -ml-8 mb-8">
       <div>
+        <span class="material-icons text-error text-2xl">priority_high</span>
+      </div>
+      <p class="pl-2 text-base md:text-lg">Server v2.0.0 and higher is not backwards compatible with older mobile app versions! Make sure you are using server v2.0.0 and up with mobile apps v0.9.41-beta and up.</p>
+    </div>
+
+    <div class="flex -ml-8 mb-8">
+      <div>
         <span class="material-icons text-success text-2xl">priority_high</span>
       </div>
       <p class="pl-2 text-base md:text-lg">
@@ -353,9 +360,7 @@
 
     <p class="mb-4 text-sm md:text-base">If you choose to store this file in your book folder, or if you move it to your book folder, it will serve as the source of truth for your book details and overwrite them. If you have enabled the server settings to prefer OPF or prefer audio ID3 metadata, then those will take precedence during scans.</p>
 
-    <p class="mb-4 text-sm md:text-base">Here is a demo of <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">metadata.abs</span> getting updated after saving details from the web app, then showing the metadata file get updated manually within the book folder and those changes getting pulled in after pressing "Re-Scan".</p>
-
-    <img src="https://cdn.discordapp.com/attachments/942931733978943508/947672769481564180/abmetadataDemo.gif" />
+    <!-- <p class="mb-4 text-sm md:text-base">Here is a demo of <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">metadata.abs</span> getting updated after saving details from the web app, then showing the metadata file get updated manually within the book folder and those changes getting pulled in after pressing "Re-Scan".</p> -->
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
   </div>
