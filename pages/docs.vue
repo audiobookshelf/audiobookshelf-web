@@ -355,10 +355,10 @@
     </div>
 
     <p class="mb-4 text-sm md:text-base">
-      As of v1.7.1 audiobookshelf creates a file named <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">metadata.abs</span> for each book. By default, the file will be saved in <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">/metadata/books/</span> folders, but can be stored in the same folder as your book by enabling the server setting.
+      As of v1.7.1 audiobookshelf creates a file named <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">metadata.abs</span> for each library item. By default, the file will be saved in <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">/metadata/items/</span> folders, but can be stored in the same folder as your book/podcast by enabling the server setting.
     </p>
 
-    <p class="mb-4 text-sm md:text-base">If you choose to store this file in your book folder, or if you move it to your book folder, it will serve as the source of truth for your book details and overwrite them. If you have enabled the server settings to prefer OPF or prefer audio ID3 metadata, then those will take precedence during scans.</p>
+    <p class="mb-4 text-sm md:text-base">If this file is in your library item folders it will serve as the source of truth for your metadata details and overwrite them. If you have enabled the server settings to prefer OPF or prefer audio ID3 metadata, then those will take precedence during scans.</p>
 
     <!-- <p class="mb-4 text-sm md:text-base">Here is a demo of <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">metadata.abs</span> getting updated after saving details from the web app, then showing the metadata file get updated manually within the book folder and those changes getting pulled in after pressing "Re-Scan".</p> -->
 

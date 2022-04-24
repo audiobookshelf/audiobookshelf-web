@@ -37,7 +37,7 @@ docker run -d \
     <p>• &nbsp;<span class="font-mono">/config</span> will contain the database (users/books/libraries/settings)</p>
     <p>• &nbsp;<span class="font-mono">/metadata</span> will contain cache, streams, covers, downloads, backups and logs</p>
     <p>• &nbsp;<span class="font-mono">/audiobooks</span> is <em>your</em> audiobook folder</p>
-    <p>• &nbsp;Map any other directories you want to use for your book collection (ebooks supported as experimental)</p>
+    <p>• &nbsp;Map any other directories you want to use for your book and podcast collections (ebooks supported as experimental)</p>
 
     <div class="w-full h-px bg-gray-400 my-6" />
 
@@ -67,6 +67,15 @@ docker run -d \
       >Ubuntu Install (PPA)
     </h2>
 
+    <div class="flex -ml-8 mt-6 mb-4">
+      <div>
+        <span class="material-icons text-warning text-2xl">priority_high</span>
+      </div>
+      <p class="pl-2 text-base md:text-lg">
+        If you get invalid certificate issues with the PPA then update the file <span class="bg-white bg-opacity-10 text-gray-100 rounded-md px-1 py-0.5 font-mono">/etc/apt/sources.list.d/audiobookshelf.list</span> to <span class="bg-white bg-opacity-10 text-gray-100 rounded-md px-1 py-0.5 font-mono">deb [trusted=yes] https://advplyr.github.io/audiobookshelf-ppa ./</span>
+      </p>
+    </div>
+
     <pre>
         <code class="language-bash">curl -s --compressed "https://advplyr.github.io/audiobookshelf-ppa/KEY.gpg" | sudo apt-key add - 
 
@@ -92,9 +101,9 @@ sudo apt install audiobookshelf</code>
     <p class="mb-4 text-sm md:text-base">Grab the latest debian package from the <a href="https://github.com/advplyr/audiobookshelf-ppa" target="_blank" class="underline text-blue-400 hover:text-blue-200">audiobookshelf-ppa</a> github repository, and install.</p>
 
     <pre>
-        <code class="language-bash">wget https://advplyr.github.io/audiobookshelf-ppa/audiobookshelf_2.0.1_amd64.deb
+        <code class="language-bash">wget https://advplyr.github.io/audiobookshelf-ppa/audiobookshelf_2.0.2_amd64.deb
 
-sudo apt install ./audiobookshelf_2.0.1_amd64.deb</code>
+sudo apt install ./audiobookshelf_2.0.2_amd64.deb</code>
       </pre>
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />

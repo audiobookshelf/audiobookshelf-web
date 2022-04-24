@@ -18,12 +18,26 @@
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
 
-    <p>As you can see, this documentation could really use some support.</p>
+    <h1 id="docs" class="text-3xl mb-4 -ml-8">
+      <nuxt-link to="#docs"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
+      >Help with docs & guides
+    </h1>
+    <p class="mb-4">As you can see, this documentation could really use some support. We could use help with..</p>
+
+    <p class="mb-2 pl-4">- Guides on installing audiobookshelf via docker or the PPA.</p>
+
+    <p class="mb-2 pl-4">- Guides on setting up audiobookshelf like adding libraries, reverse proxy, etc.</p>
+
+    <p class="mb-2 pl-4">- Guides on how to run the server and mobile apps locally.</p>
+
+    <p class="mb-2 pl-4">- Any other ideas you have to help the community get familiar with audiobookshelf.</p>
+
+    <p class="my-4">If you want to contribute reach out via github, discord or email.</p>
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
 
-    <h1 id="docker" class="text-3xl mb-4 -ml-8">
-      <nuxt-link to="#docker"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
+    <h1 id="developers" class="text-3xl mb-4 -ml-8">
+      <nuxt-link to="#developers"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
       >Developers
     </h1>
     <p class="mb-2">This section will eventually give more info on setting up the project locally and contributing.</p>

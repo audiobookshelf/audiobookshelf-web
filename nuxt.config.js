@@ -2,7 +2,7 @@ export default {
   target: 'static',
 
   head: {
-    title: 'Audiobookshelf',
+    title: 'audiobookshelf',
     htmlAttrs: {
       lang: 'en'
     },
@@ -13,7 +13,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' },
       {
         property: 'og:title',
-        content: 'AudioBookshelf',
+        content: 'audiobookshelf',
         vmid: 'og:title'
       },
       {
@@ -23,7 +23,7 @@ export default {
       },
       {
         property: 'og:description',
-        content: 'Self-hosted audiobook server for managing and playing audiobooks',
+        content: 'Self-hosted audiobook and podcast server',
         vmid: 'og:description'
       },
       {
@@ -38,7 +38,7 @@ export default {
       },
       {
         property: 'twitter:description',
-        content: 'Self-hosted audiobook server for managing and playing audiobooks',
+        content: 'Self-hosted audiobook and podcast server',
         vmid: 'twitter:description'
       },
       {

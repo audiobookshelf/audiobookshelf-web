@@ -1,66 +1,49 @@
 <template>
   <div class="w-full max-w-5xl mx-auto px-2 py-8 min-h-full">
-    <div class="flex -ml-8 mb-12">
+    <div class="flex -ml-8 mb-6">
       <div>
         <span class="material-icons text-warning text-2xl">priority_high</span>
       </div>
-      <p class="pl-2 text-base md:text-lg">
-        This should be where we show what Audiobookshelf looks like, but we need to take updated screenshots. Please consider sending screenshots of your bookshelf to <a href="mailto:advplyr@protonmail.com" class="text-blue-500 underline">advplyr@protonmail.com</a> (or <a href="https://github.com/advplyr/audiobookshelf-web" target="_blank" class="text-blue-500 underline">submit a PR</a>) so we can
-        fill this page!
-      </p>
+      <p class="pl-2 text-base md:text-lg">Consider sending screenshots of your collection to <a href="mailto:advplyr@protonmail.com" class="text-blue-500 underline">advplyr@protonmail.com</a> (or <a href="https://github.com/advplyr/audiobookshelf-web" target="_blank" class="text-blue-500 underline">submit a PR</a>) so we can show it off!</p>
     </div>
 
-    <img src="https://github.com/advplyr/audiobookshelf/raw/master/images/LibraryStreamSquare.png" />
-
-    <!-- <div class="flex justify-between items-center mb-8">
-      <h1 class="text-3xl">Showcase</h1>
-      <a href="https://github.com/advplyr/audiobookshelf/discussions/60" class="text-lg text-blue-500 hover:underline hover:text-blue-300">courtesy of Budlyte</a>
-    </div> -->
-
-    <!-- Library View - Sorted by Most Recent Date Added
-    <img src="/showcase/1.png" class="pt-1 pb-8" />
-
-    Series View
-    <img src="/showcase/series1.png" class="pt-1 pb-8" />
-
-    Viewing Author - Sorted by Volume # Ascending - Showing list of sorting options
-    <img src="/showcase/2.png" class="pt-1 pb-8" />
-
-    Using Keyword Filter - Sorting by Author (First Last) Descending - Showing available Filter Options
-    <img src="/showcase/3.png" class="pt-1 pb-8" />
-
-    <div class="flex justify-around mb-8">
-      <div>
-        Series Filter Options
-        <img src="/showcase/4.png" />
-      </div>
-      <div>
-        Authors Filter Options
-        <img src="/showcase/5.png" />
-      </div>
-      <div>
-        Progress Filter Options
-        <img src="/showcase/6.png" />
-      </div>
+    <div class="py-8">
+      <img src="https://github.com/advplyr/audiobookshelf/raw/master/images/LibraryStreamSquare.png" />
     </div>
 
-    Series View - View of item being moused over, and a closer look at the In-Progress progress bar
-    <img src="/showcase/series2.png" class="pt-1 pb-8" />
+    <div class="py-8">
+      <div class="flex items-center justify-between">
+        <p class="text-lg mb-2">Series view</p>
 
-    Series View - View inside of Series
-    <img src="/showcase/series3.png" class="pt-1 pb-8" />
+        <p class="text-sm mt-2 text-gray-200">from&nbsp;<a href="https://noted.lol/audiobookshelf-a-self-hosted-audiobook-and-podcast-server-with-phone-apps/" target="_blank" class="underline text-blue-500 hover:text-blue-300">noted.lol</a></p>
+      </div>
+      <img src="/showcase/series.png" />
+    </div>
 
-    Series View - Using the Keyword Filter
-    <img src="/showcase/series4.png" class="pt-1 pb-8" />
+    <div class="py-8">
+      <div class="flex items-center justify-between">
+        <p class="text-lg mb-2">Podcast library</p>
 
-    Showing Marked Read items - Sorted by Author (Last, First) Ascending
-    <img src="/showcase/7.png" class="pt-1 pb-8" />
-    Showing Unread Items - Sorted by Data Added Ascending (Most Recent)
-    <img src="/showcase/8.png" class="pt-1 pb-8" />
-    Showing In Progress
-    <img src="/showcase/9.png" class="pt-1 pb-8" />
-    Using the Searchbar
-    <img src="/showcase/10.png" class="pt-1 pb-8" /> -->
+        <p class="text-sm mt-2 text-gray-200">from&nbsp;<a href="https://noted.lol/audiobookshelf-a-self-hosted-audiobook-and-podcast-server-with-phone-apps/" target="_blank" class="underline text-blue-500 hover:text-blue-300">noted.lol</a></p>
+      </div>
+      <img src="/showcase/podcasts.png" />
+    </div>
+
+    <div class="py-8">
+      <div class="flex items-center justify-between">
+        <p class="text-lg mb-2">Matching book metadata</p>
+
+        <p class="text-sm mt-2 text-gray-200">from&nbsp;<a href="https://noted.lol/audiobookshelf-a-self-hosted-audiobook-and-podcast-server-with-phone-apps/" target="_blank" class="underline text-blue-500 hover:text-blue-300">noted.lol</a></p>
+      </div>
+      <img src="/showcase/match-book.gif" />
+    </div>
+
+    <div class="py-8">
+      <div class="flex items-center">
+        <p class="text-lg mb-2">Library stats</p>
+      </div>
+      <img src="/showcase/library-stats.png" />
+    </div>
   </div>
 </template>
 
