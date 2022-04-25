@@ -17,7 +17,7 @@
     <p class="mb-2 text-sm md:text-base">Multi-architecture image for amd64, arm64 and arm/v7</p>
 
     <pre>
-        <code class="language-bash">docker pull advplyr/audiobookshelf
+        <code class="language-bash">docker pull ghcr.io/advplyr/audiobookshelf
 
 docker run -d \
     -e AUDIOBOOKSHELF_UID=99 \
@@ -27,7 +27,7 @@ docker run -d \
     -v &lt;/path/to/config>:/config \
     -v &lt;/path/to/metadata>:/metadata \
     --name audiobookshelf \
-    --rm advplyr/audiobookshelf</code>
+    --rm ghcr.io/advplyr/audiobookshelf</code>
     </pre>
 
     <p class="text-error">Note: Volume mappings should all be separate directories that are not contained in eachother.</p>
