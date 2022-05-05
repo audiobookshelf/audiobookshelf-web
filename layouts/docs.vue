@@ -67,7 +67,7 @@ export default {
           text: 'Directory Structure'
         }
       ],
-      currentHash: null
+      currentHash: '#intro'
     }
   },
   computed: {},
