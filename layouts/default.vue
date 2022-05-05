@@ -26,7 +26,7 @@
       <a :href="discordUrl" class="mx-2 hidden md:block">
         <img src="/discord.svg" class="h-5 md:h-7 hover:scale-110 transform duration-100" />
       </a>
-      <a :href="dockerHubUrl" class="mx-2">
+      <a :href="dockerHubUrl" class="mx-2 hidden md:block">
         <img src="/docker.svg" class="h-8 hover:scale-110 transform duration-100" />
       </a>
       <a :href="githubUrl">
