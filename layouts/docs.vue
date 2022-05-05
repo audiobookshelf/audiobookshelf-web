@@ -67,7 +67,7 @@ export default {
           text: 'Directory Structure'
         }
       ],
-      currentHash: '#intro'
+      currentHash: null
     }
   },
   computed: {},
@@ -116,6 +116,8 @@ export default {
     if (this.$route.hash) {
       this.scrollTo(this.$route.hash)
       this.currentHash = this.$route.hash
+    } else {
+      this.currentHash = '#intro'
     }
   },
   beforeDestroy() {
