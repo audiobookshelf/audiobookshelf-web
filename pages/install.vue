@@ -1,15 +1,6 @@
 <template>
-  <div class="w-full max-w-5xl mx-auto px-2 py-8">
-    <div class="flex -ml-8">
-      <div>
-        <span class="material-icons text-warning text-2xl">priority_high</span>
-      </div>
-      <p class="pl-2 text-base md:text-lg">Default username is "root" with no password.</p>
-    </div>
-
-    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
-
-    <h1 id="docker" class="text-3xl mb-4 -ml-8">
+  <div>
+    <h1 id="docker" class="text-3xl mb-6 -ml-8">
       <nuxt-link to="#docker"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
       >Docker Install
     </h1>
@@ -23,9 +14,10 @@ docker run -d \
     -e AUDIOBOOKSHELF_UID=99 \
     -e AUDIOBOOKSHELF_GID=100 \
     -p 13378:80 \
-    -v &lt;/path/to/audiobooks>:/audiobooks \
     -v &lt;/path/to/config>:/config \
     -v &lt;/path/to/metadata>:/metadata \
+    -v &lt;/path/to/audiobooks>:/audiobooks \
+    -v &lt;/path/to/podcasts>:/podcasts \
     --name audiobookshelf \
     --rm ghcr.io/advplyr/audiobookshelf</code>
     </pre>
@@ -36,7 +28,6 @@ docker run -d \
     <p class="mt-2 mb-1 font-semibold text-lg">Volume mappings</p>
     <p>• &nbsp;<span class="font-mono">/config</span> will contain the database (users/books/libraries/settings)</p>
     <p>• &nbsp;<span class="font-mono">/metadata</span> will contain cache, streams, covers, downloads, backups and logs</p>
-    <p>• &nbsp;<span class="font-mono">/audiobooks</span> is <em>your</em> audiobook folder</p>
     <p>• &nbsp;Map any other directories you want to use for your book and podcast collections (ebooks supported as experimental)</p>
 
     <div class="w-full h-px bg-gray-400 my-6" />
@@ -52,8 +43,7 @@ docker run -d \
     <p class="mb-2 mt-1 text-sm md:text-base">Will use config file <span class="bg-white bg-opacity-10 text-gray-100 rounded-md px-1 py-0.5 font-mono">/etc/default/audiobookshelf</span> if exists or create the following default config:</p>
 
     <pre>
-      <code class="language-bash">  AUDIOBOOK_PATH="/usr/share/audiobookshelf/audiobooks"
-  METADATA_PATH="/usr/share/audiobookshelf/metadata"
+      <code class="language-bash">  METADATA_PATH="/usr/share/audiobookshelf/metadata"
   CONFIG_PATH="/usr/share/audiobookshelf/config"
   FFMPEG_PATH="/usr/lib/audiobookshelf-ffmpeg/ffmpeg"
   FFPROBE_PATH="/usr/lib/audiobookshelf-ffmpeg/ffprobe"
