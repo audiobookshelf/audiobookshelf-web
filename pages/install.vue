@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1 id="docker" class="text-3xl mb-6 -ml-8">
+  <div class="w-full max-w-5xl mx-auto px-2 py-8">
+    <h1 id="docker" class="text-3xl mb-2 -ml-8">
       <nuxt-link to="#docker"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
       >Docker Install
     </h1>
