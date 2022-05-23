@@ -24,7 +24,7 @@
       <div class="flex py-1 max-w-2xl">
         <span class="text-white text-opacity-25">&nbsp;-&nbsp;&nbsp;-&nbsp;</span>
         <img src="/folder.svg" class="h-6" />
-        <p class="pl-2">Vol 1 - 1994 - Wizards First Rule</p>
+        <p class="pl-2">Vol 1 - 1994 - Wizards First Rule {Sam Tsoutsouvas}</p>
         <div class="hidden md:block flex-grow" />
         <span class="hidden md:block text-white text-opacity-50 pl-4">&lt;-- Title&nbsp;</span>
       </div>
@@ -76,7 +76,7 @@
       <div class="flex py-1 max-w-2xl">
         <span class="text-white text-opacity-25">&nbsp;-&nbsp;</span>
         <img src="/folder.svg" class="h-6" />
-        <p class="pl-2">Hackers - Heroes of the Computer Revolution</p>
+        <p class="pl-2">Hackers - Heroes of the Computer Revolution {Mike Chamberlain}</p>
         <div class="hidden md:block flex-grow" />
         <span class="hidden md:block text-white text-opacity-50 pl-4">&lt;-- Title&nbsp;</span>
       </div>
