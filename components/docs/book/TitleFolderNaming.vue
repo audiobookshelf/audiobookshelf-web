@@ -5,13 +5,17 @@
       >Title Folder Naming
     </h1>
 
-    <p class="mb-4">In addition to the book title, the title folder can include the publish year, volume number, and the subtitle.</p>
+    <p class="mb-4">In addition to the book title, the title folder can include the publish year, volume number, the subtitle, and the narrator.</p>
     <p class="mb-4">Here are a bunch of ways the same book could be named:</p>
 
     <div class="p-4 border border-opacity-10 bg-primary bg-opacity-20 font-mono">
       <div class="flex py-1">
         <img src="/folder.svg" class="h-6" />
         <p class="pl-2">Wizards First Rule</p>
+      </div>
+      <div class="flex py-1">
+        <img src="/folder.svg" class="h-6" />
+        <p class="pl-2">Wizards First Rule {Sam Tsoutsouvas}</p>
       </div>
       <div class="flex py-1">
         <img src="/folder.svg" class="h-6" />
@@ -35,7 +39,7 @@
       </div>
       <div class="flex py-1">
         <img src="/folder.svg" class="h-6" />
-        <p class="pl-2">Vol. 1 - 1994 - Wizards First Rule - A Really Good Subtitle</p>
+        <p class="pl-2">Vol. 1 - 1994 - Wizards First Rule - A Really Good Subtitle  {Sam Tsoutsouvas}</p>
       </div>
       <div class="flex py-1">
         <img src="/folder.svg" class="h-6" />
@@ -51,6 +55,7 @@
       <li class="py-1"><strong class="underline">Subtitle: </strong>Parsing out subtitles into a separate field is optional and must be enabled in settings. Subtitle must be separated by " - ".</li>
       <li class="py-1"><strong class="underline">Volume Number: </strong>The volume number can be the first number in the folder name separated by " - " (see last example) OR anywhere in the folder name if "Vol", "Book", or "Volume" is before the number. Case insensitive & decimals supported.</li>
       <li class="py-1"><strong class="underline">Publish Year: </strong>The publish year must be the first part of the name OR directly after a volume number, and separated by " - " on both sides.</li>
+      <li class="py-1"><strong class="underline">Narrator: </strong>The Narrator must be at the end of the folder name in {curly braces}.</li>
     </ul>
   </div>
 </template>
