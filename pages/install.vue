@@ -58,10 +58,10 @@ services:
     ports:
       - 13378:80
     volumes:
-      - &#60;/path/to/your/audiobooks&#62;:/audiobooks
-      - &#60;/path/to/your/podcasts&#62;:/podcasts
-      - &#60;/path/to/config&#62;:/config
-      - &#60;/path/to/metadata&#62;:/metadata
+      - &lt;/path/to/config>:/audiobooks
+      - &lt;/path/to/config>:/podcasts
+      - &lt;/path/to/config>:/config
+      - &lt;/path/to/config>:/metadata
             
             </code>
         </pre>
@@ -175,16 +175,16 @@ docker start audiobookshelf
     
 <p> Docker Compose V1
   <pre>
-    <code class="language-bash">docker-compose --file <path/to/config>/docker-compose.yml pull
-docker-compose --file <path/to/config>/docker-compose.yml up -d
+    <code class="language-bash">docker-compose --file &lt;/path/to/config>/docker-compose.yml pull
+docker-compose --file &lt;/path/to/config>/docker-compose.yml up -d
     </code>
     </pre>
 
 </p>
 <p> Docker Compose V2
   <pre>
-    <code class="language-bash">docker compose --file <path/to/config>/docker-compose.yml pull
-docker compose --file <path/to/config>/docker-compose.yml up -d
+    <code class="language-bash">docker compose --file &lt;/path/to/config>/docker-compose.yml pull
+docker compose --file &lt;/path/to/config>/docker-compose.yml up -d
     </code>
     </pre>
 
