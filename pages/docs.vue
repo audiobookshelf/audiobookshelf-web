@@ -32,6 +32,18 @@
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
 
+    <docs-install-docker />
+
+    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
+
+    <docs-install-docker-compose />
+
+    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
+
+    <docs-updating-docker />
+
+    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
+
     <docs-book-directory-structure />
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
