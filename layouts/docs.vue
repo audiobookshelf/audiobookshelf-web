@@ -1,4 +1,5 @@
 <template>
+
   <div class="w-screen h-screen max-w-full max-h-screen text-white bg-gradient overflow-hidden">
     <div id="sidebar" class="hidden md:block fixed top-0 left-0 h-full bg-primary border-r border-white border-opacity-25">
       <div class="flex justify-center items-center py-4 mb-6">
@@ -9,6 +10,14 @@
       </div>
 
       <sidebar-nav-item v-for="item in introItems" :key="item.hash" :hash="item.hash" :text="item.text" :selected="currentHash === item.hash" />
+
+      <p class="px-4 py-1 text-xs font-bold text-white uppercase mt-6 mb-1">Install</p>
+
+      <sidebar-nav-item v-for="item in installItems" :key="item.hash" :hash="item.hash" :text="item.text" :selected="currentHash === item.hash" />
+
+      <p class="px-4 py-1 text-xs font-bold text-white uppercase mt-6 mb-1">Updating</p>
+
+      <sidebar-nav-item v-for="item in updateItems" :key="item.hash" :hash="item.hash" :text="item.text" :selected="currentHash === item.hash" />
 
       <p class="px-4 py-1 text-xs font-bold text-white uppercase mt-6 mb-1">Books</p>
 
@@ -33,6 +42,22 @@ export default {
         {
           hash: '#intro',
           text: 'Introduction'
+        }
+      ],
+      installItems: [
+        {
+          hash: '#install-docker',
+          text: 'Docker'
+        },
+        {
+          hash: '#install-docker-compose',
+          text: 'Docker-compose'
+        }
+      ],
+      updateItems: [
+        {
+          hash: '#updating-docker',
+          text: 'Docker'
         }
       ],
       bookItems: [
@@ -91,7 +116,7 @@ export default {
       // const scrollingUp = evt.target.scrollTop - this.lastScrollTop < 0
       // this.lastScrollTop = evt.target.scrollTop
 
-      const allItems = this.introItems.concat(this.bookItems).concat(this.podcastItems)
+      const allItems = this.introItems.concat(this.installItems).concat(this.updateItems).concat(this.bookItems).concat(this.podcastItems)
 
       var closestItem = null
       for (let i = 0; i < allItems.length; i++) {
