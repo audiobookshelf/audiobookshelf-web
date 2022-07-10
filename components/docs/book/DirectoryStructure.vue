@@ -104,7 +104,7 @@
       </div>
     </div>
 
-    <p class="my-4 text-sm md:text-base"><span class="text-warning">*</span> Audio files in the root of the folder will each be treated as audiobooks.</p>
+    <p class="my-4 text-sm md:text-base"><span class="text-warning">*</span> Audio files in the root of the folder will each be treated as books.</p>
   </div>
 </template>
 

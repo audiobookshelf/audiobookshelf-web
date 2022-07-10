@@ -2,13 +2,6 @@
   <div id="intro" class="py-10 md:py-40">
     <div class="flex md:-ml-8 mb-8">
       <div>
-        <span class="material-icons text-error text-2xl">priority_high</span>
-      </div>
-      <p class="pl-2 text-sm md:text-lg">Server v2.0.0 and higher is not backwards compatible with older mobile app versions! Make sure you are using server v2.0.0 and up with mobile apps v0.9.41-beta and up.</p>
-    </div>
-
-    <div class="flex md:-ml-8 mb-8">
-      <div>
         <span class="material-icons text-success text-2xl">priority_high</span>
       </div>
       <p class="pl-2 text-sm md:text-lg">
