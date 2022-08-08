@@ -83,7 +83,6 @@ Wireless-LAN-Adapter WLAN:
    Subnet Mask . . . . . . . . . . . : 255.255.255.0  
    Default Gateway . . . . . . . . . : fe80::1234:3:2:a379%13  
                                        192.168.0.1  
-  
 ```
 On Ubuntu server it looks like this:  
 ```bash
@@ -166,6 +165,7 @@ Updating the local repository:
 ```bash
 sudo apt-get update
 ```
+
 Installing dependencies for docker:  
 ```bash
 sudo apt-get install ca-certificates curl gnupg lsb-release
@@ -182,9 +182,9 @@ Set up the repository:
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 Updating the local repository to include docker:   
-```
-sudo apt-get update
 ```bash
+sudo apt-get update
+```
 Installing docker:   
 ```
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
