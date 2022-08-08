@@ -97,11 +97,7 @@ export default {
   },
   computed: {},
   watch: {
-    $route(newVal, oldVal) {
-      console.log('Route updated', newVal, oldVal)
-    },
     '$route.hash'(newVal) {
-      console.log('Update hash', newVal)
       if (newVal) {
         this.scrollTo(newVal)
         this.currentHash = newVal

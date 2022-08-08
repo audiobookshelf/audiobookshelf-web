@@ -76,7 +76,16 @@ export default {
   ],
 
   modules: [
+    '@nuxt/content'
   ],
+
+  content: {
+    markdown: {
+      prism: {
+        theme: false
+      }
+    }
+  },
 
   build: {
   }

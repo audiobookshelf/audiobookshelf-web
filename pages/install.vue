@@ -7,9 +7,6 @@
 
     <p class="mb-2 text-sm md:text-base">Multi-architecture image for amd64, arm64 and arm/v7. Also available in Unraid Community Apps.</p>
 
-    <p class="text-error">Note: Before coping and pasting the below command from a teminal window type <code class="language-bash"> id </code> This will output your UID (User ID) and your GID (Group ID for Docker)</p>
-    
-
     <pre>
         <code class="language-bash">docker pull ghcr.io/advplyr/audiobookshelf
 
@@ -25,7 +22,9 @@ docker run -d \
     --rm ghcr.io/advplyr/audiobookshelf</code>
     </pre>
 
-    <p class="text-error">Note: Volume mappings should all be separate directories that are not contained in eachother.</p>
+    <p class="text-error">Note: Remember to change the path to your actual directory and remove the &#60;&#62; symbols</p>
+    <p class="text-error">Note: Volume mappings should all be separate directories that are not contained in eachother</p>
+    <p class="text-error">Note: Windows users will need to remove the \ and run this as a single line</p>
     <!-- <p class="text-warning py-1">Unraid users: it is recommended that you map <span class="font-mono">/config</span> and <span class="font-mono">/metadata</span> to <span class="font-mono">/mnt/user/appdata/audiobookshelf/config</span> and <span class="font-mono">/mnt/user/appdata/audiobookshelf/metadata</span> respectively.</p> -->
 
     <p class="mt-2 mb-1 font-semibold text-lg">Volume mappings</p>
@@ -37,15 +36,12 @@ docker run -d \
 
     <br />
 
-        <h1 id="docker" class="text-3xl mb-2 -ml-8">
+    <h1 id="docker" class="text-3xl mb-2 -ml-8">
       <nuxt-link to="#docker"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
       >Docker-compose Setup
     </h1>
 
     <p class="mb-2 text-sm md:text-base">Multi-architecture image for amd64, arm64 and arm/v7. Also available in Unraid Community Apps.</p>
-
-    <p class="text-error">Note: Before coping and pasting the below information into a Docker-compose file. You need to run the following command from a teminal window type <code class="language-bash">id</code> This will output your UID (User ID) and your GID (Group ID for Docker)</p>
-    
 
 <pre>
             <code class="language-bash">version: "3.7"
@@ -66,7 +62,7 @@ services:
             </code>
         </pre>
 
-        <p class="text-error">Note: Remember to change the path to your acutal directory and remove the &#60;&#62; symbols </p>
+        <p class="text-error">Note: Remember to change the path to your actual directory and remove the &#60;&#62; symbols </p>
         <p class="text-error">Note: Volume mappings should all be separate directories that are not contained in eachother.</p>
         <!-- <p class="text-warning py-1">Unraid users: it is recommended that you map <span class="font-mono">/config</span> and <span class="font-mono">/metadata</span> to <span class="font-mono">/mnt/user/appdata/audiobookshelf/config</span> and <span class="font-mono">/mnt/user/appdata/audiobookshelf/metadata</span> respectively.</p> -->
 
@@ -134,11 +130,11 @@ sudo apt install audiobookshelf</code>
 
     <p class="mb-4 text-sm md:text-base">Grab the latest debian package from the <a href="https://github.com/advplyr/audiobookshelf-ppa" target="_blank" class="underline text-blue-400 hover:text-blue-200">audiobookshelf-ppa</a> github repository, and install.</p>
 
-    <pre>
-        <code class="language-bash">wget https://advplyr.github.io/audiobookshelf-ppa/audiobookshelf_2.1.2_amd64.deb
+    <pre class="prose dark:prose-invert">
+      <code class="language-bash">wget https://advplyr.github.io/audiobookshelf-ppa/audiobookshelf_2.1.2_amd64.deb
 
 sudo apt install ./audiobookshelf_2.1.2_amd64.deb</code>
-      </pre>
+    </pre>
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
 
@@ -147,7 +143,7 @@ sudo apt install ./audiobookshelf_2.1.2_amd64.deb</code>
       >Updating Instructions
     </h1>
 
-    <h1 id="docker-update" class="text-3xl mb-2 -ml-8">
+    <h1 id="docker-update" class="text-2xl mb-2 -ml-8">
       <nuxt-link to="#docker-update"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
       >Docker Update
     </h1>
@@ -159,35 +155,29 @@ sudo apt install ./audiobookshelf_2.1.2_amd64.deb</code>
 docker rm audiobookshelf
 docker image prune -a
 docker pull ghcr.io/advplyr/audiobookshelf:latest
-docker start audiobookshelf
-    </code>
+# then use initial run command again</code>
     </pre>
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
 
-    <h1 id="docker-compose-update" class="text-3xl mb-2 -ml-8">
+    <h1 id="docker-compose-update" class="text-2xl mb-2 -ml-8">
       <nuxt-link to="#docker-compose-update"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
       >Docker-Compose Update
     </h1>
 
-    <p>To update Docker-compose please run one of the following commands.</p>
-    <p class="text-error">Note: To check which version of Docker Compose you are running run the following:<code class="language-bash">docker-compose --version</code> or <code class="language-bash">docker compose version</code></p>
+    <p class="mb-2">To update Docker-compose please run one of the following commands.</p>
     
 <p> Docker Compose V1
   <pre>
     <code class="language-bash">docker-compose --file &lt;/path/to/config>/docker-compose.yml pull
-docker-compose --file &lt;/path/to/config>/docker-compose.yml up -d
-    </code>
-    </pre>
-
+docker-compose --file &lt;/path/to/config>/docker-compose.yml up -d</code>
+  </pre>
 </p>
 <p> Docker Compose V2
   <pre>
     <code class="language-bash">docker compose --file &lt;/path/to/config>/docker-compose.yml pull
-docker compose --file &lt;/path/to/config>/docker-compose.yml up -d
-    </code>
-    </pre>
-
+docker compose --file &lt;/path/to/config>/docker-compose.yml up -d</code>
+  </pre>
 </p>
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
