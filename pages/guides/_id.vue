@@ -18,6 +18,10 @@ export default {
   },
   computed: {},
   methods: {},
-  mounted() {}
+  mounted() {
+    if (typeof Prism !== undefined) {
+      Prism.highlightAll()
+    }
+  }
 }
 </script>
