@@ -44,7 +44,7 @@ docker run -d \
     <p class="mb-2 text-sm md:text-base">Multi-architecture image for amd64, arm64 and arm/v7. Also available in Unraid Community Apps.</p>
 
 <pre>
-            <code class="language-bash">version: "3.7"
+<code class="language-bash">version: "3.7"
 services:
   audiobookshelf:
     image: ghcr.io/advplyr/audiobookshelf:latest
@@ -57,10 +57,8 @@ services:
       - &lt;/path/to/config>:/audiobooks
       - &lt;/path/to/config>:/podcasts
       - &lt;/path/to/config>:/config
-      - &lt;/path/to/config>:/metadata
-            
-            </code>
-        </pre>
+      - &lt;/path/to/config>:/metadata</code>
+</pre>
 
         <p class="text-error">Note: Remember to change the path to your actual directory and remove the &#60;&#62; symbols </p>
         <p class="text-error">Note: Volume mappings should all be separate directories that are not contained in eachother.</p>
@@ -82,13 +80,13 @@ services:
     <span class="text-error">Note: Only for amd64 architecture</span>
     <p class="mb-2 mt-1 text-sm md:text-base">Will use config file <span class="bg-white bg-opacity-10 text-gray-100 rounded-md px-1 py-0.5 font-mono">/etc/default/audiobookshelf</span> if exists or create the following default config:</p>
 
-    <pre>
-      <code class="language-bash">  METADATA_PATH="/usr/share/audiobookshelf/metadata"
-  CONFIG_PATH="/usr/share/audiobookshelf/config"
-  FFMPEG_PATH="/usr/lib/audiobookshelf-ffmpeg/ffmpeg"
-  FFPROBE_PATH="/usr/lib/audiobookshelf-ffmpeg/ffprobe"
-  PORT=7331</code>
-    </pre>
+  <pre>
+<code class="language-bash">METADATA_PATH="/usr/share/audiobookshelf/metadata"
+CONFIG_PATH="/usr/share/audiobookshelf/config"
+FFMPEG_PATH="/usr/lib/audiobookshelf-ffmpeg/ffmpeg"
+FFPROBE_PATH="/usr/lib/audiobookshelf-ffmpeg/ffprobe"
+PORT=7331</code>
+  </pre>
 
     <br />
 
