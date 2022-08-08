@@ -9,7 +9,6 @@
 export default {
   async asyncData ({ $content, params }) {
     const page = await $content(params.id).fetch()
-    console.log('Page', page)
     return {
       page
     }
