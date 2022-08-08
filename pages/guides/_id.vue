@@ -30,4 +30,7 @@ export default {
 .prose :where(code):not(:where([class~=not-prose]*))::before {
     content: "";
 }
+.prose :where(code):not(:where([class~=not-prose]*))::after {
+    content: "";
+}
 </style>
