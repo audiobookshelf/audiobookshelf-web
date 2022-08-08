@@ -25,3 +25,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.prose :where(code):not(:where([class~=not-prose]*))::before {
+    content: "";
+}
+</style>
