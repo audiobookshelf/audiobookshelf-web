@@ -186,7 +186,7 @@ Updating the local repository to include docker:
 sudo apt-get update
 ```
 Installing docker:   
-```
+```bash
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 ```
 
