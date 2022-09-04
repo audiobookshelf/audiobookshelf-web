@@ -68,6 +68,7 @@
           <li style="padding-left: 3em">If it is not at the beginning of the folder name, it must be preceded by " - " and "Vol" "Vol." "Volume" or "Book"</li>
         </ul>
       <li class="py-1"><strong><u>Publish Year</u>:</strong> The publish year must be the first part of the name OR directly after a volume number, and separated by " - " on both sides.</li>
+      <li class="py-1"><strong><u>Discs and Disc Numbers</u>:</strong> You have to name each folder in the format of CD1, CD01, or CD001; Disk Folder support is not fully supported yet.</li>
     </ul>
   </div>
 </template>
