@@ -54,10 +54,10 @@ services:
     ports:
       - 13378:80
     volumes:
-      - &lt;/path/to/config>:/audiobooks
-      - &lt;/path/to/config>:/podcasts
+      - &lt;/path/to/audiobooks>:/audiobooks
+      - &lt;/path/to/podcasts>:/podcasts
       - &lt;/path/to/config>:/config
-      - &lt;/path/to/config>:/metadata</code>
+      - &lt;/path/to/metadata>:/metadata</code>
 </pre>
 
         <p class="text-error">Note: Remember to change the path to your actual directory and remove the &#60;&#62; symbols </p>
