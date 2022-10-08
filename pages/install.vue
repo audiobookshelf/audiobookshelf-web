@@ -81,11 +81,13 @@ services:
     <p class="mb-2 mt-1 text-sm md:text-base">Will use config file <span class="bg-white bg-opacity-10 text-gray-100 rounded-md px-1 py-0.5 font-mono">/etc/default/audiobookshelf</span> if exists or create the following default config:</p>
 
   <pre>
-<code class="language-bash">METADATA_PATH="/usr/share/audiobookshelf/metadata"
-CONFIG_PATH="/usr/share/audiobookshelf/config"
-FFMPEG_PATH="/usr/lib/audiobookshelf-ffmpeg/ffmpeg"
-FFPROBE_PATH="/usr/lib/audiobookshelf-ffmpeg/ffprobe"
-PORT=7331</code>
+<code>METADATA_PATH=/usr/share/audiobookshelf/metadata
+CONFIG_PATH=/usr/share/audiobookshelf/config
+FFMPEG_PATH=/usr/lib/audiobookshelf-ffmpeg/ffmpeg
+FFPROBE_PATH=/usr/lib/audiobookshelf-ffmpeg/ffprobe
+TONE_PATH=/usr/lib/audiobookshelf-ffmpeg/tone
+PORT=7331
+HOST=0.0.0.0</code>
   </pre>
 
     <br />
