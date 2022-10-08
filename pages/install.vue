@@ -86,7 +86,7 @@ CONFIG_PATH=/usr/share/audiobookshelf/config
 FFMPEG_PATH=/usr/lib/audiobookshelf-ffmpeg/ffmpeg
 FFPROBE_PATH=/usr/lib/audiobookshelf-ffmpeg/ffprobe
 TONE_PATH=/usr/lib/audiobookshelf-ffmpeg/tone
-PORT=7331
+PORT=13378
 HOST=0.0.0.0</code>
   </pre>
 
