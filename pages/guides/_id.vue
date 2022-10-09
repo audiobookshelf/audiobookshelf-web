@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  layout: 'guides',
   async asyncData ({ $content, params }) {
     const page = await $content(params.id).fetch()
     return {

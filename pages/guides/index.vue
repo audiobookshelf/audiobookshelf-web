@@ -1,13 +1,13 @@
 <template>
-  <div class="w-full h-screen p-8 max-w-5xl mx-auto">
-    <h1 class="text-3xl mb-4">Guides</h1>
-
-    <nuxt-link to="/guides/docker-install">Install ABS using docker</nuxt-link>
-  </div>
+  <div></div>
 </template>
 
 <script>
 export default {
+  async asyncData({ $content, redirect }) {
+    const all = await $content().fetch()
+    return redirect(`/guides/${all[0].slug}`)
+  },
   data() {
     return {}
   },
