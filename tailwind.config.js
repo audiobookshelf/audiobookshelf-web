@@ -1,14 +1,11 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: {
-    options: {
-      safelist: [
-        'bg-success'
-      ]
-    }
-  },
-  darkMode: false,
+  content: [
+    './pages/**/*.{html,js,vue}',
+    './components/**/*.{html,js,vue}',
+    './layouts/**/*.{html,js,vue}'
+  ],
   theme: {
     extend: {
       width: {
@@ -45,9 +42,9 @@ module.exports = {
     }
   },
   variants: {
-    extend: {},
+    extend: {}
   },
   plugins: [
-    require('@tailwindcss/typography'),
-  ],
+    require('@tailwindcss/typography')
+  ]
 }

@@ -8,10 +8,11 @@
 <script>
 export default {
   layout: 'guides',
-  async asyncData ({ $content, params }) {
-    const page = await $content(params.id).fetch()
+  async asyncData({ $content, params }) {
+    const slug = params.id || 'index'
+    const results = await $content().where({ slug }).fetch()
     return {
-      page
+      page: results[0]
     }
   },
   data() {
@@ -28,10 +29,10 @@ export default {
 </script>
 
 <style>
-.prose :where(code):not(:where([class~=not-prose]*))::before {
-    content: "";
+.prose :where(code):not(:where([class~='not-prose']*))::before {
+  content: '';
 }
-.prose :where(code):not(:where([class~=not-prose]*))::after {
-    content: "";
+.prose :where(code):not(:where([class~='not-prose']*))::after {
+  content: '';
 }
 </style>

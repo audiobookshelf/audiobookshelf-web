@@ -8,7 +8,7 @@
         <nuxt-link to="/" class="text-2xl pl-2 sm:pl-4 font-book hover:underline">audiobookshelf</nuxt-link>
       </div>
 
-      <nuxt-link v-for="item in content" :key="item.slug" :to="`/guides/${item.slug}`" class="px-4 py-1.5 text-sm font-semibold block mr-6 mb-2" :class="item.slug === selectedSlug ? 'bg-white bg-opacity-10 rounded-r-full text-yellow-400' : 'text-gray-300 hover:text-white'">{{ item.title }}</nuxt-link>
+      <nuxt-link v-for="item in content" :key="item.slug" :to="item.fullpath" class="px-4 py-1.5 text-sm font-semibold block mr-6 mb-2" :class="item.fullpath === routePath ? 'bg-white bg-opacity-10 rounded-r-full text-yellow-400' : 'text-gray-300 hover:text-white'">{{ item.title }}</nuxt-link>
     </div>
     <div id="guides-content" class="overflow-y-auto max-w-full overflow-x-hidden">
       <div class="flex items-center py-6 px-8">
@@ -49,6 +49,7 @@
 export default {
   async fetch() {
     this.content = await this.$content().fetch()
+    if (process.env.NODE_ENV === 'development') console.log('CONTENT', this.content)
   },
   data() {
     return {
@@ -61,8 +62,8 @@ export default {
     }
   },
   computed: {
-    selectedSlug() {
-      return this.$route.path.split('/').pop()
+    routePath() {
+      return this.$route.path
     }
   },
   methods: {},
