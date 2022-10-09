@@ -1,5 +1,5 @@
 <template>
-  <article class="prose prose-sm md:prose-base max-w-5xl mx-auto dark:prose-invert py-8 md:py-12 px-2">
+  <article class="prose prose-invert prose-sm md:prose-base max-w-5xl mx-auto py-8 md:py-12 px-2">
     <h1>{{ page.title }}</h1>
     <nuxt-content :document="page" />
   </article>
