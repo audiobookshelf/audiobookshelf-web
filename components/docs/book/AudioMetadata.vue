@@ -74,9 +74,14 @@
           <td>asin</td>
           <td>ASIN</td>
         </tr>
+        <tr>
+          <td>Overdrive MediaMarkers</td>
+          <td>Chapters<span class="text-sm text-warning">**</span></td>
+        </tr>
       </tbody>
     </table>
     <p class="text-sm pt-2"><span class="text-sm text-warning">*</span> Genre meta tag can include multiple genres separated by "/", "//", or ";". e.g. "Science Fiction/Fiction/Fantasy"</p>
+    <p class="text-sm pt-2"><span class="text-sm text-warning">**</span> Chapter extraction from Overdrive MediaMarkers must be enabled in your server settings</p>
 
     <p class="my-4">Embedded cover art will be extracted and used only if there are no images in the book folder.</p>
   </div>
