@@ -70,26 +70,6 @@
 
     <docs-podcast-directory-structure />
 
-    <!-- <h1 id="abmetadata" class="text-3xl mb-4 -ml-8">
-      <nuxt-link to="#abmetadata"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
-      >abmetadata file
-    </h1>
-
-    <div class="flex -ml-8 mb-8">
-      <div>
-        <span class="material-icons text-success text-2xl">priority_high</span>
-      </div>
-      <p class="pl-2 text-base md:text-lg">This is the start of setting up a better standard around persisting audiobook metadata and is likely to change, so if you have suggestions around audiobook metadata please join the discord or start a github discussion. The abmetadata file format is based on ffmetadata.</p>
-    </div>
-
-    <p class="mb-4 text-sm md:text-base">
-      As of v1.7.1 audiobookshelf creates a file named <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">metadata.abs</span> for each library item. By default, the file will be saved in <span class="bg-white bg-opacity-10 text-gray-100 rounded-md p-1 font-mono">/metadata/items/</span> folders, but can be stored in the same folder as your book/podcast by enabling the
-      server setting.
-    </p>
-
-    <p class="mb-4 text-sm md:text-base">If this file is in your library item folders it will serve as the source of truth for your metadata details and overwrite them. If you have enabled the server settings to prefer OPF or prefer audio ID3 metadata, then those will take precedence during scans.</p> -->
-
-    <!-- <div class="w-full bg-white bg-opacity-20 h-px my-8" /> -->
   </div>
 </template>
 
