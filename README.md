@@ -16,10 +16,14 @@ cd audiobookshelf-web
 
 Install necessary NPM packages with
 
-`npm install`
+```
+npm install
+```
 
 To run a local, dynamically updating development version of the website at `http://localhost:3000` use
 
-`npm run dev`
+```
+npm run dev
+```
 
 Happy coding!
