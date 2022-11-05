@@ -186,7 +186,7 @@ export default {
     document.documentElement.style.setProperty('--angle', '-' + deg + 'deg')
 
     this.device.ios = /(iPad|iPhone|iPod)/i.test(window.navigator.platform)
-    this.device.android = /(android)/i.test(window.navigator.ua)
+    this.device.android = /(android)/i.test(window.navigator.userAgent)
 
     if (document.readyState === 'complete') {
       this.windowLoaded()
