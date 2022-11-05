@@ -42,7 +42,7 @@
           <a :href="playStoreUrl" class="mx-2">
             <img src="/GetGooglePlayStore.png" class="h-7 md:h-10 ml-2" />
           </a>
-          <a :href="appStoreUrl" class="hidden md:block">
+          <a :href="appStoreUrl" class="mx-2">
             <img src="/AppleAppStoreDark.svg" class="h-7 md:h-10 ml-2" />
           </a>
           <!-- <img src="/GetAppleAppStore.png" class="h-7 ml-1" /> -->
