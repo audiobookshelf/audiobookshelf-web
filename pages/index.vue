@@ -114,7 +114,7 @@ export default {
     currentMobileDeviceClass() {
       return [
         this.device.ios && 'device-ios',
-        this.device.android && 'device.android'
+        this.device.android && 'device-android'
       ].filter((i) => !!i)
     }
   },
