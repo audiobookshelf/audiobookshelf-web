@@ -39,11 +39,11 @@
           <a :href="githubUrl" class="mx-2">
             <img src="/github.svg" class="h-7 md:h-10 hover:scale-110 transform duration-100" />
           </a>
-          <a :href="playStoreUrl" class="mx-2">
-            <img src="/GetGooglePlayStore.png" class="h-7 md:h-10 ml-2" />
+          <a :href="playStoreUrl" :class="['mx-2', 'app-icon-android', currentMobileDeviceClass]" >
+            <img src="/GetGooglePlayStore.png" class="h-7 md:h-10" />
           </a>
-          <a :href="appStoreUrl" class="hidden md:block">
-            <img src="/AppleAppStoreDark.svg" class="h-7 md:h-10 ml-2" />
+          <a :href="appStoreUrl" :class="['ml-2', 'app-icon-ios', currentMobileDeviceClass]">
+            <img src="/AppleAppStoreDark.svg" class="h-7 md:h-10" />
           </a>
           <!-- <img src="/GetAppleAppStore.png" class="h-7 ml-1" /> -->
         </div>
@@ -103,7 +103,19 @@ export default {
         'onliberty.jpg',
         'themanversusthestate.png'
       ],
-      shelves: []
+      shelves: [],
+      device: {
+        android: false,
+        ios: false
+      }
+    }
+  },
+  computed: {
+    currentMobileDeviceClass() {
+      return [
+        this.device.ios && 'device-ios',
+        this.device.android && 'device-android'
+      ].filter((i) => !!i)
     }
   },
   methods: {
@@ -156,6 +168,7 @@ export default {
         this.shelves.push(shelf)
       }
     },
+
     windowLoaded() {
       this.showBooks = true
       this.setShelves()
@@ -171,6 +184,9 @@ export default {
     var angle = Math.atan(height / width)
     var deg = angle * (180 / Math.PI) + 180
     document.documentElement.style.setProperty('--angle', '-' + deg + 'deg')
+
+    this.device.ios = /(iPad|iPhone|iPod)/i.test(window.navigator.platform)
+    this.device.android = /(android)/i.test(window.navigator.userAgent)
 
     if (document.readyState === 'complete') {
       this.windowLoaded()
@@ -219,6 +235,16 @@ export default {
   to {
     transform: translate(60vw, 0px) rotate(1280deg);
   }
+}
+
+/* if we're on an ios device, hide the android app icon */
+.app-icon-android.device-ios {
+  display: none;
+}
+
+/* and the opposite for ios */
+.app-icon-ios.device-android {
+  display: none;
 }
 
 .animate-drop {
