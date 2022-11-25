@@ -25,7 +25,7 @@
       </div>
 
       <div class="absolute bottom-6 right-6 md:bottom-12 md:right-12 text-right">
-        <nuxt-link to="/install" class="text-gray-200 text-lg md:text-3xl font-book py-1 md:py-2 hover:underline block">Install Guides</nuxt-link>
+        <nuxt-link to="/install" class="text-gray-200 text-lg md:text-3xl font-book py-1 md:py-2 hover:underline block">Install Guide</nuxt-link>
         <nuxt-link to="/docs" class="text-gray-200 text-lg md:text-3xl font-book py-1 md:py-2 hover:underline block">Documentation</nuxt-link>
         <nuxt-link to="/support" class="text-gray-200 text-lg md:text-3xl font-book py-1 md:py-2 hover:underline block">How to Support</nuxt-link>
 
@@ -39,7 +39,7 @@
           <a :href="githubUrl" class="mx-2">
             <img src="/github.svg" class="h-7 md:h-10 hover:scale-110 transform duration-100" />
           </a>
-          <a :href="playStoreUrl" :class="['mx-2', 'app-icon-android', currentMobileDeviceClass]" >
+          <a :href="playStoreUrl" :class="['mx-2', 'app-icon-android', currentMobileDeviceClass]">
             <img src="/GetGooglePlayStore.png" class="h-7 md:h-10" />
           </a>
           <a :href="appStoreUrl" :class="['ml-2', 'app-icon-ios', currentMobileDeviceClass]">
@@ -112,10 +112,7 @@ export default {
   },
   computed: {
     currentMobileDeviceClass() {
-      return [
-        this.device.ios && 'device-ios',
-        this.device.android && 'device-android'
-      ].filter((i) => !!i)
+      return [this.device.ios && 'device-ios', this.device.android && 'device-android'].filter((i) => !!i)
     }
   },
   methods: {
