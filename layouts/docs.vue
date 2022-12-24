@@ -1,5 +1,4 @@
 <template>
-
   <div class="w-screen h-screen max-w-full max-h-screen text-white bg-gradient overflow-hidden">
     <div id="sidebar" class="hidden md:block fixed top-0 left-0 h-full bg-primary border-r border-white border-opacity-25">
       <div class="flex justify-center items-center py-4 mb-6">
@@ -9,23 +8,14 @@
         <nuxt-link to="/" class="text-2xl pl-2 sm:pl-4 font-book hover:underline">audiobookshelf</nuxt-link>
       </div>
 
-      <sidebar-nav-item v-for="item in introItems" :key="item.hash" :hash="item.hash" :text="item.text" :selected="currentHash === item.hash" />
+      <template v-for="category in pageGrouping">
+        <div :key="category.title">
+          <p v-if="category.title !== 'Introduction'" class="px-4 py-1 text-xs font-bold text-white uppercase mt-6 mb-1">{{ category.title }}</p>
 
-      <p class="px-4 py-1 text-xs font-bold text-white uppercase mt-6 mb-1">Install</p>
+          <sidebar-nav-item v-for="item in category.pages" :key="item.slug" :hash="item.hash" :text="item.title" :selected="currentHash === item.hash" />
+        </div>
+      </template>
 
-      <sidebar-nav-item v-for="item in installItems" :key="item.hash" :hash="item.hash" :text="item.text" :selected="currentHash === item.hash" />
-
-      <p class="px-4 py-1 text-xs font-bold text-white uppercase mt-6 mb-1">Updating</p>
-
-      <sidebar-nav-item v-for="item in updateItems" :key="item.hash" :hash="item.hash" :text="item.text" :selected="currentHash === item.hash" />
-
-      <p class="px-4 py-1 text-xs font-bold text-white uppercase mt-6 mb-1">Books</p>
-
-      <sidebar-nav-item v-for="item in bookItems" :key="item.hash" :hash="item.hash" :text="item.text" :selected="currentHash === item.hash" />
-
-      <p class="px-4 py-1 text-xs font-bold text-white uppercase mt-6 mb-1">Podcasts</p>
-
-      <sidebar-nav-item v-for="item in podcastItems" :key="item.hash" :hash="item.hash" :text="item.text" :selected="currentHash === item.hash" />
     </div>
     <div id="docs-content" class="overflow-y-auto max-w-full overflow-x-hidden">
       <Nuxt />
@@ -35,70 +25,38 @@
 
 <script>
 export default {
+  async fetch() {
+    this.content = await this.$content('docs', { deep: true }).fetch()
+    this.content.sort((a, b) => Number(a.slug.split('.').shift()) - Number(b.slug.split('.').shift()))
+
+    if (process.env.NODE_ENV === 'development') console.log('CONTENT', this.content)
+  },
   data() {
     return {
-      lastScrollTop: 0,
-      introItems: [
-        {
-          hash: '#intro',
-          text: 'Introduction'
-        }
-      ],
-      installItems: [
-        {
-          hash: '#install-docker',
-          text: 'Docker'
-        },
-        {
-          hash: '#install-docker-compose',
-          text: 'Docker-compose'
-        }
-      ],
-      updateItems: [
-        {
-          hash: '#updating-docker',
-          text: 'Docker'
-        }
-      ],
-      bookItems: [
-        {
-          hash: '#book-structure',
-          text: 'Directory Structure'
-        },
-        {
-          hash: '#book-author-folder',
-          text: 'Author Folder Naming'
-        },
-        {
-          hash: '#book-title-folder',
-          text: 'Title Folder Naming'
-        },
-        {
-          hash: '#book-audio-metadata',
-          text: 'Audio Metadata'
-        },
-        {
-          hash: '#book-additional-metadata',
-          text: 'Additional Metadata'
-        },
-        {
-          hash: '#book-tracks',
-          text: 'Audio Tracks'
-        }
-      ],
-      podcastItems: [
-        {
-          hash: '#podcast-structure',
-          text: 'Directory Structure'
-        }
-      ],
+      content: [],
       currentHash: null
     }
   },
-  computed: {},
+  computed: {
+    pageGrouping() {
+      const group = {}
+      this.content.forEach((c) => {
+        if (!group[c.category]) {
+          group[c.category] = {
+            title: c.category,
+            pages: [c]
+          }
+        } else {
+          group[c.category].pages.push(c)
+        }
+      })
+      return group
+    }
+  },
   watch: {
     '$route.hash'(newVal) {
       if (newVal) {
+        console.log('Hash changed', newVal)
         this.scrollTo(newVal)
         this.currentHash = newVal
       }
@@ -109,17 +67,31 @@ export default {
       location.href = hashtag
     },
     onScroll(evt) {
-      // const scrollingUp = evt.target.scrollTop - this.lastScrollTop < 0
-      // this.lastScrollTop = evt.target.scrollTop
+      const clientHeight = evt.target.clientHeight
+      const scrollTop = evt.target.scrollTop
+      const scrollHeight = evt.target.scrollHeight
 
-      const allItems = this.introItems.concat(this.installItems).concat(this.updateItems).concat(this.bookItems).concat(this.podcastItems)
+      // Bottom of page
+      const bottomY = scrollHeight - scrollTop - clientHeight
+      if (bottomY < 200) {
+        const lastItem = this.content[this.content.length - 1]
+        if (lastItem.hash !== this.currentHash) {
+          history.pushState({}, '', lastItem.hash)
+          this.currentHash = lastItem.hash
+        }
 
-      var closestItem = null
-      for (let i = 0; i < allItems.length; i++) {
-        const item = allItems[i]
-        var div = document.querySelector(item.hash)
-        var box = div.getBoundingClientRect()
+        return
+      }
 
+      let closestItem = null
+      for (let i = 0; i < this.content.length; i++) {
+        const item = this.content[i]
+        const div = document.querySelector(item.hash)
+        if (!div) {
+          console.error('Item not found', item)
+          return
+        }
+        const box = div.getBoundingClientRect()
         if (box.top > 0 && box.top < 100) {
           closestItem = item
           break

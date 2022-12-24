@@ -83,7 +83,6 @@ export default {
     async routes() {
       const { $content } = require('@nuxt/content')
       const files = await $content({ deep: true }).fetch()
-      console.log('FILES', files)
       return files.map(file => file.fullpath)
     }
   },

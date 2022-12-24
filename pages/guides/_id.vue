@@ -10,7 +10,7 @@ export default {
   layout: 'guides',
   async asyncData({ $content, params }) {
     const slug = params.id || 'index'
-    const results = await $content().where({ slug }).fetch()
+    const results = await $content('guides').where({ slug }).fetch()
     return {
       page: results[0]
     }

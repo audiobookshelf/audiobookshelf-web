@@ -1,11 +1,6 @@
 <template>
-  <div id="podcast-structure" class="py-10 md:py-20">
-    <h1 class="text-xl md:text-3xl mb-4 md:-ml-8">
-      <nuxt-link to="#podcast-structure"><span class="material-icons text-lg md:text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
-      >Podcast Directory Structure
-    </h1>
-
-    <p class="mb-4 text-sm md:text-base">Here is an example supported directory structure</p>
+  <div id="podcast-structure" class="not-prose">
+    <p class="mb-4 text-sm md:text-base">Here is an example supported directory structure for Podcasts</p>
 
     <div class="p-4 border border-opacity-10 bg-primary bg-opacity-20 font-mono">
       <div class="flex py-1 max-w-2xl">

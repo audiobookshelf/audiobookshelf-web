@@ -1,10 +1,5 @@
 <template>
-  <div id="book-audio-metadata" class="py-10 md:py-20">
-    <h1 class="text-xl md:text-3xl mb-4 md:-ml-8">
-      <nuxt-link to="#book-audio-metadata"><span class="material-icons text-lg md:text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
-      >Audio File Metadata
-    </h1>
-
+  <div id="book-audio-metadata" class="not-prose">
     <p class="mb-4 text-sm md:text-base">Audiobookshelf uses the ID3 metadata tags in audio files to populate data.</p>
 
     <div class="flex -ml-8 mb-4">

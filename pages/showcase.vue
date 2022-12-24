@@ -4,7 +4,7 @@
       <div>
         <span class="material-icons text-warning text-2xl">priority_high</span>
       </div>
-      <p class="pl-2 text-base md:text-lg">Consider sending screenshots of your collection to <a href="mailto:advplyr@protonmail.com" class="text-blue-500 underline">advplyr@protonmail.com</a> (or <a href="https://github.com/advplyr/audiobookshelf-web" target="_blank" class="text-blue-500 underline">submit a PR</a>) so we can show it off!</p>
+      <p class="pl-2 text-base md:text-lg">Consider sending screenshots of your audiobookshelf to <a href="mailto:advplyr@protonmail.com" class="text-blue-500 underline">advplyr@protonmail.com</a> (or <a href="https://github.com/advplyr/audiobookshelf-web" target="_blank" class="text-blue-500 underline">submit a PR</a>) so we can show it off!</p>
     </div>
 
     <div class="py-8">

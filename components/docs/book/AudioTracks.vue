@@ -1,10 +1,5 @@
 <template>
-  <div id="book-tracks" class="py-10 md:py-20">
-    <h1 class="text-xl md:text-3xl mb-4 md:-ml-8">
-      <nuxt-link to="#book-tracks"><span class="material-icons text-lg md:text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
-      >Audio Tracks
-    </h1>
-
+  <div id="book-tracks" class="not-prose">
     <p class="text-sm md:text-base">An audiobook contains tracks. Tracks are audio files assigned a track number. <br />The track number is parsed from the audio filename and from the ID3 tags of the audio file.<br />Audiobooks that are made up of multiple discs or cd's will be ordered first by disc number then by track number.</p>
 
     <table class="my-4">

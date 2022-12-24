@@ -23,61 +23,37 @@
 
       <div class="flex-grow" />
 
-      <nuxt-link to="/install" class="text-base md:text-lg font-semibold text-gray-200 hover:text-white hover:underline mx-1.5 md:mx-4">Install</nuxt-link>
+      <nuxt-link to="/guides" class="text-base md:text-lg font-semibold text-gray-200 hover:text-white hover:underline mx-1.5 md:mx-4">Guides</nuxt-link>
       <nuxt-link to="/support" class="text-base md:text-lg font-semibold text-gray-200 hover:text-white hover:underline mx-1.5 md:mx-4">Support</nuxt-link>
       <nuxt-link to="/showcase" class="text-base md:text-lg font-semibold text-gray-200 hover:text-white hover:underline mx-1.5 md:mx-4">Showcase</nuxt-link>
     </div>
 
-    <docs-introduction />
+    <article v-for="page in content" :key="page.slug" :id="page.hash.slice(1)" class="prose prose-invert prose-sm md:prose-base max-w-5xl flex items-center" style="min-height: 60vh">
+      <div class="px-2 py-8 md:py-20 max-w-full">
+        <h1 class="text-xl md:text-3xl mb-4 md:-ml-8">
+          <nuxt-link :to="page.hash"><span class="material-icons text-lg md:text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
+          >{{ page.title }}
+        </h1>
 
-    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
-
-    <docs-install-docker />
-
-    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
-
-    <docs-install-docker-compose />
-
-    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
-
-    <docs-updating-docker />
-
-    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
-
-    <docs-book-directory-structure />
-
-    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
-
-    <docs-book-author-folder-naming />
-
-    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
-
-    <docs-book-title-folder-naming />
-
-    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
-
-    <docs-book-audio-metadata />
-
-    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
-
-    <docs-book-additional-metadata-files />
-
-    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
-
-    <docs-book-audio-tracks />
-
-    <div class="w-full bg-white bg-opacity-20 h-px my-8" />
-
-    <docs-podcast-directory-structure />
-
+        <nuxt-content :document="page" />
+      </div>
+    </article>
   </div>
 </template>
 
 <script>
 export default {
   layout: 'docs',
+  async fetch() {
+    this.content = await this.$content('docs', { deep: true }).fetch()
+    // this.content.sort((a, b) => a.slug.localeCompare(b.slug, undefined, { sensitivity: 'base' }))
+    this.content.sort((a, b) => Number(a.slug.split('.').shift()) - Number(b.slug.split('.').shift()))
+
+    if (process.env.NODE_ENV === 'development') console.log('CONTENT', this.content)
+  },
   data() {
     return {
+      content: null,
       appStoreUrl: 'https://testflight.apple.com/join/wiic7QIW',
       dockerHubUrl: 'https://hub.docker.com/r/advplyr/audiobookshelf',
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.audiobookshelf.app',
@@ -105,5 +81,16 @@ th {
 table td,
 th {
   padding: 5px 15px;
+}
+
+.prose :where(code):not(:where([class~='not-prose']*))::before {
+  content: '';
+}
+.prose :where(code):not(:where([class~='not-prose']*))::after {
+  content: '';
+}
+.prose :where(blockquote):not(:where([class~='not-prose'] *)) {
+  quotes: none;
+  font-style: normal;
 }
 </style>

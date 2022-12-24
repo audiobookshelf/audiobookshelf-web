@@ -9,37 +9,38 @@
       </div>
       <nuxt-link v-for="item in content" :key="item.slug" :to="item.fullpath" class="px-4 py-1.5 text-sm font-semibold block mr-6 mb-2" :class="item.fullpath === routePath ? 'bg-white bg-opacity-10 rounded-r-full text-yellow-400' : 'text-gray-300 hover:text-white'">{{ item.title }}</nuxt-link>
     </div>
-    <div id="guides-content" class="overflow-y-auto max-w-full overflow-x-hidden">
-      <div class="flex items-center py-6 px-8">
-        <nuxt-link to="/" class="h-8 w-8 md:hidden mx-1.5">
-          <img src="/favicon.ico" class="h-full w-full" />
-        </nuxt-link>
+    <div id="guides-content" class="overflow-y-auto max-w-full overflow-x-hidden" style="scrollbar-gutter: stable">
+      <div class="w-full max-w-5xl mx-auto px-2 py-8">
+        <div class="flex items-center py-1">
+          <nuxt-link to="/" class="h-8 w-8 md:hidden mx-1.5">
+            <img src="/favicon.ico" class="h-full w-full" />
+          </nuxt-link>
 
-        <a :href="discordUrl" class="mx-2 hidden md:block">
-          <img src="/discord.svg" class="h-5 md:h-7 hover:scale-110 transform duration-100" />
-        </a>
-        <a :href="dockerHubUrl" class="mx-2 hidden md:block">
-          <img src="/docker.svg" class="h-8 hover:scale-110 transform duration-100" />
-        </a>
-        <a :href="githubUrl" class="hidden md:block">
-          <img src="/github.svg" class="h-7 hover:scale-110 transform duration-100 mx-1 sm:mx-2" />
-        </a>
-        <a :href="playStoreUrl" class="hidden lg:block">
-          <img src="/GetGooglePlayStore.png" class="h-7 ml-2" />
-        </a>
-        <a :href="appStoreUrl" class="hidden lg:block">
-          <img src="/AppleAppStoreDark.svg" class="h-7 ml-2" />
-        </a>
+          <a :href="discordUrl" class="mx-2 hidden md:block">
+            <img src="/discord.svg" class="h-5 md:h-7 hover:scale-110 transform duration-100" />
+          </a>
+          <a :href="dockerHubUrl" class="mx-2 hidden md:block">
+            <img src="/docker.svg" class="h-8 hover:scale-110 transform duration-100" />
+          </a>
+          <a :href="githubUrl" class="hidden md:block">
+            <img src="/github.svg" class="h-7 hover:scale-110 transform duration-100 mx-1 sm:mx-2" />
+          </a>
+          <a :href="playStoreUrl" class="hidden lg:block">
+            <img src="/GetGooglePlayStore.png" class="h-7 ml-2" />
+          </a>
+          <a :href="appStoreUrl" class="hidden lg:block">
+            <img src="/AppleAppStoreDark.svg" class="h-7 ml-2" />
+          </a>
 
-        <div class="flex-grow" />
+          <div class="flex-grow" />
 
-        <nuxt-link to="/docs" class="text-base md:text-lg font-semibold text-gray-200 hover:text-white hover:underline mx-1.5 md:mx-4">Docs</nuxt-link>
-        <nuxt-link to="/install" class="text-base md:text-lg font-semibold text-gray-200 hover:text-white hover:underline mx-1.5 md:mx-4">Install</nuxt-link>
-        <nuxt-link to="/support" class="text-base md:text-lg font-semibold text-gray-200 hover:text-white hover:underline mx-1.5 md:mx-4">Support</nuxt-link>
-        <nuxt-link to="/showcase" class="text-base md:text-lg font-semibold text-gray-200 hover:text-white hover:underline mx-1.5 md:mx-4">Showcase</nuxt-link>
+          <nuxt-link to="/docs" class="text-base md:text-lg font-semibold text-gray-200 hover:text-white hover:underline mx-1.5 md:mx-4">Docs</nuxt-link>
+          <nuxt-link to="/support" class="text-base md:text-lg font-semibold text-gray-200 hover:text-white hover:underline mx-1.5 md:mx-4">Support</nuxt-link>
+          <nuxt-link to="/showcase" class="text-base md:text-lg font-semibold text-gray-200 hover:text-white hover:underline mx-1.5 md:mx-4">Showcase</nuxt-link>
+        </div>
+
+        <Nuxt />
       </div>
-
-      <Nuxt />
     </div>
   </div>
 </template>
@@ -47,7 +48,7 @@
 <script>
 export default {
   async fetch() {
-    this.content = await this.$content().fetch()
+    this.content = await this.$content('guides').fetch()
     if (process.env.NODE_ENV === 'development') console.log('CONTENT', this.content)
   },
   data() {

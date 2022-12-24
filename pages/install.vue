@@ -209,6 +209,9 @@ docker compose --file &lt;/path/to/config>/docker-compose.yml up -d</code>
 
 <script>
 export default {
+  asyncData({ redirect }) {
+    return redirect('/docs')
+  },
   data() {
     return {}
   },

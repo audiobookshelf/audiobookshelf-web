@@ -1,10 +1,5 @@
 <template>
-  <div id="book-author-folder" class="py-10 md:py-20">
-    <h1 class="text-xl md:text-3xl mb-4 md:-ml-8">
-      <nuxt-link to="#book-author-folder"><span class="material-icons text-lg text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
-      >Author Folder Naming
-    </h1>
-
+  <div id="book-author-folder" class="not-prose">
     <p class="mb-4 text-sm md:text-base">Supports "Last, First" author naming as well as multiple authors separated by "," or "&".<br /><br />Valid author folder names:</p>
 
     <div class="p-4 border border-opacity-10 bg-primary bg-opacity-20 font-mono">
