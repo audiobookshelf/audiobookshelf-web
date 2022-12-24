@@ -209,7 +209,13 @@ docker compose --file &lt;/path/to/config>/docker-compose.yml up -d</code>
 
 <script>
 export default {
-  asyncData({ redirect }) {
+  asyncData({ redirect, route }) {
+    console.log(route.hash)
+    if (route.hash === '#debian' || route.hash === '#ubuntu') {
+      return redirect('/docs#linux-install')
+    } else if (route.hash === '#docker') {
+      return redirect('/docs#docker-install')
+    }
     return redirect('/docs')
   },
   data() {

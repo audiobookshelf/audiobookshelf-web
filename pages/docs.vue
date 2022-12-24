@@ -46,7 +46,6 @@ export default {
   layout: 'docs',
   async fetch() {
     this.content = await this.$content('docs', { deep: true }).fetch()
-    // this.content.sort((a, b) => a.slug.localeCompare(b.slug, undefined, { sensitivity: 'base' }))
     this.content.sort((a, b) => Number(a.slug.split('.').shift()) - Number(b.slug.split('.').shift()))
 
     if (process.env.NODE_ENV === 'development') console.log('CONTENT', this.content)
