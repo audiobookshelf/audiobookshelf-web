@@ -113,3 +113,12 @@ export default {
   mounted() {}
 }
 </script>
+
+<style scoped>
+p {
+  margin: 0px;
+}
+img {
+  margin: 0px;
+}
+</style>
