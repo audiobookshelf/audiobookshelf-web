@@ -16,19 +16,22 @@
             <img src="/favicon.ico" class="h-full w-full" />
           </nuxt-link>
 
-          <a :href="discordUrl" class="mx-2 hidden md:block">
+          <a :href="matrixUrl" aria-label="Join discussion in Matrix space" class="mx-2 hidden md:block">
+            <img src="/matrix.svg" class="h-5 md:h-7 hover:scale-110 transform duration-100" />
+          </a>
+          <a :href="discordUrl" aria-label="Join discussion in Discord" class="mx-2 hidden md:block">
             <img src="/discord.svg" class="h-5 md:h-7 hover:scale-110 transform duration-100" />
           </a>
-          <a :href="dockerHubUrl" class="mx-2 hidden md:block">
+          <a :href="dockerHubUrl" aria-label="Audiobookshelf on DockerHub" class="mx-2 hidden md:block">
             <img src="/docker.svg" class="h-8 hover:scale-110 transform duration-100" />
           </a>
-          <a :href="githubUrl" class="hidden md:block">
+          <a :href="githubUrl" aria-label="Code on GitHub" class="hidden md:block">
             <img src="/github.svg" class="h-7 hover:scale-110 transform duration-100 mx-1 sm:mx-2" />
           </a>
-          <a :href="playStoreUrl" class="hidden lg:block">
+          <a :href="playStoreUrl" aria-label="Audiobookshelf for Android on Google Play" class="hidden lg:block">
             <img src="/GetGooglePlayStore.png" class="h-7 ml-2" />
           </a>
-          <a :href="appStoreUrl" class="hidden lg:block">
+          <a :href="appStoreUrl" aria-label="Audiobookshelf for iOS on Apple App Store" class="hidden lg:block">
             <img src="/AppleAppStoreDark.svg" class="h-7 ml-2" />
           </a>
 
@@ -58,7 +61,8 @@ export default {
       dockerHubUrl: 'https://hub.docker.com/r/advplyr/audiobookshelf',
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.audiobookshelf.app',
       githubUrl: 'https://github.com/advplyr/audiobookshelf',
-      discordUrl: 'https://discord.gg/pJsjuNCKRq'
+      discordUrl: 'https://discord.gg/pJsjuNCKRq',
+		matrixUrl: 'https://matrix.to/#/#audiobookshelf:matrix.org'
     }
   },
   computed: {
