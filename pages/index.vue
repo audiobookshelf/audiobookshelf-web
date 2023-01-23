@@ -30,19 +30,22 @@
         <nuxt-link to="/support" class="text-gray-200 text-lg md:text-3xl font-book py-1 md:py-2 hover:underline block">How to Support</nuxt-link>
 
         <div class="flex items-center pt-4 md:pt-8 text-gray-300">
-          <a :href="discordUrl" class="mx-2">
+          <a :href="matrixUrl" aria-label="Join discussion in Matrix space" class="mx-2">
+            <img src="/matrix.svg" class="h-7 md:h-9 hover:scale-110 transform duration-100" />
+          </a>
+          <a :href="discordUrl" aria-label="Join discussion in Discord" class="mx-2">
             <img src="/discord.svg" class="h-7 md:h-9 hover:scale-110 transform duration-100" />
           </a>
-          <a :href="dockerHubUrl" class="mx-2">
+          <a :href="dockerHubUrl" aria-label="Audiobookshelf on DockerHub" class="mx-2">
             <img src="/docker.svg" class="h-8 md:h-11 hover:scale-110 transform duration-100" />
           </a>
-          <a :href="githubUrl" class="mx-2">
+          <a :href="githubUrl" aria-label="Code on GitHub" class="mx-2">
             <img src="/github.svg" class="h-7 md:h-10 hover:scale-110 transform duration-100" />
           </a>
-          <a :href="playStoreUrl" :class="['mx-2', 'app-icon-android', currentMobileDeviceClass]">
+          <a :href="playStoreUrl" aria-label="Audiobookshelf for Android on Google Play" :class="['mx-2', 'app-icon-android', currentMobileDeviceClass]">
             <img src="/GetGooglePlayStore.png" class="h-7 md:h-10" />
           </a>
-          <a :href="appStoreUrl" :class="['ml-2', 'app-icon-ios', currentMobileDeviceClass]">
+          <a :href="appStoreUrl" aria-label="Audiobookshelf for iOS on Apple App Store" :class="['ml-2', 'app-icon-ios', currentMobileDeviceClass]">
             <img src="/AppleAppStoreDark.svg" class="h-7 md:h-10" />
           </a>
           <!-- <img src="/GetAppleAppStore.png" class="h-7 ml-1" /> -->
@@ -64,6 +67,7 @@ export default {
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.audiobookshelf.app',
       githubUrl: 'https://github.com/advplyr/audiobookshelf',
       discordUrl: 'https://discord.gg/pJsjuNCKRq',
+		matrixUrl: 'https://matrix.to/#/#audiobookshelf:matrix.org',
       covers: [
         '1984.jpg',
         'anatomyofthestate.jpg',
