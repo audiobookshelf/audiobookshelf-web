@@ -11,8 +11,6 @@
         <code class="language-bash">docker pull ghcr.io/advplyr/audiobookshelf
 
 docker run -d \
-    -e AUDIOBOOKSHELF_UID=99 \
-    -e AUDIOBOOKSHELF_GID=100 \
     -p 13378:80 \
     -v &lt;/path/to/config>:/config \
     -v &lt;/path/to/metadata>:/metadata \
