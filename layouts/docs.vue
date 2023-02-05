@@ -1,6 +1,6 @@
 <template>
   <div class="w-screen h-screen max-w-full max-h-screen text-white bg-gradient overflow-hidden">
-    <div id="sidebar" class="hidden md:block fixed top-0 left-0 h-full bg-primary border-r border-white border-opacity-25">
+    <div id="sidebar" class="hidden md:block overflow-y-auto fixed top-0 left-0 h-full bg-primary border-r border-white border-opacity-25">
       <div class="flex justify-center items-center py-4 mb-6">
         <nuxt-link to="/" class="h-12 w-12 -ml-4">
           <img src="/Logo48.png" class="h-full w-full" />
