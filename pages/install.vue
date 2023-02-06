@@ -46,9 +46,6 @@ docker run -d \
 services:
   audiobookshelf:
     image: ghcr.io/advplyr/audiobookshelf:latest
-    environment:
-      - AUDIOBOOKSHELF_UID=99
-      - AUDIOBOOKSHELF_GID=100
     ports:
       - 13378:80
     volumes:
