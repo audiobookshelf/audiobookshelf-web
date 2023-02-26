@@ -30,3 +30,25 @@ pre[class*="language-"] {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #6b6b6b;
 }
+
+.warn {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: rgb(38, 38, 38);
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  margin: 2px 0;
+}
+
+.warn::before {
+  color: orange;
+  content: '⚠';
+  display: inline-block;
+  font-size: x-large;
+  margin: 4px 14px;
+}
+
+.warn li {
+  margin: 0;
+}
