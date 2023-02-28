@@ -66,7 +66,7 @@ export default {
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.audiobookshelf.app',
       githubUrl: 'https://github.com/advplyr/audiobookshelf',
       discordUrl: 'https://discord.gg/pJsjuNCKRq',
-		matrixUrl: 'https://matrix.to/#/#audiobookshelf:matrix.org'
+      matrixUrl: 'https://matrix.to/#/#audiobookshelf:matrix.org'
     }
   },
   watch: {

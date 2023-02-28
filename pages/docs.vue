@@ -31,7 +31,7 @@
       <nuxt-link to="/showcase" class="text-base md:text-lg font-semibold text-gray-200 hover:text-white hover:underline mx-1.5 md:mx-4">Showcase</nuxt-link>
     </div>
 
-    <article v-for="page in content" :key="page.slug" :id="page.hash.slice(1)" class="prose prose-invert prose-sm md:prose-base max-w-5xl flex items-center" style="min-height: 60vh">
+    <article v-for="page in content" :key="page.hash" :id="page.hash.slice(1)" class="prose prose-invert prose-sm md:prose-base max-w-5xl flex items-center" style="min-height: 60vh">
       <div class="px-2 py-8 md:py-20 max-w-full">
         <h1 class="text-xl md:text-3xl mb-4 md:-ml-8">
           <nuxt-link :to="page.hash"><span class="material-icons text-lg md:text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
@@ -49,7 +49,7 @@ export default {
   layout: 'docs',
   async fetch() {
     this.content = await this.$content('docs', { deep: true }).fetch()
-    this.content.sort((a, b) => Number(a.slug.split('.').shift()) - Number(b.slug.split('.').shift()))
+    this.content.sort((a, b) => Number(a.order) - Number(b.order))
 
     if (process.env.NODE_ENV === 'development') console.log('CONTENT', this.content)
   },
@@ -61,7 +61,7 @@ export default {
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.audiobookshelf.app',
       githubUrl: 'https://github.com/advplyr/audiobookshelf',
       discordUrl: 'https://discord.gg/pJsjuNCKRq',
-		matrixUrl: 'https://matrix.to/#/#audiobookshelf:matrix.org'
+      matrixUrl: 'https://matrix.to/#/#audiobookshelf:matrix.org'
     }
   },
   computed: {},
