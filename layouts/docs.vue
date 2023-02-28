@@ -12,10 +12,9 @@
         <div :key="category.title">
           <p v-if="category.title !== 'Introduction'" class="px-4 py-1 text-xs font-bold text-white uppercase mt-6 mb-1">{{ category.title }}</p>
 
-          <sidebar-nav-item v-for="item in category.pages" :key="item.slug" :hash="item.hash" :text="item.title" :selected="currentHash === item.hash" />
+          <sidebar-nav-item v-for="item in category.pages" :key="item.hash" :hash="item.hash" :text="item.title" :selected="currentHash === item.hash" />
         </div>
       </template>
-
     </div>
     <div id="docs-content" class="overflow-y-auto max-w-full overflow-x-hidden">
       <Nuxt />
@@ -27,7 +26,7 @@
 export default {
   async fetch() {
     this.content = await this.$content('docs', { deep: true }).fetch()
-    this.content.sort((a, b) => Number(a.slug.split('.').shift()) - Number(b.slug.split('.').shift()))
+    this.content.sort((a, b) => Number(a.order) - Number(b.order))
 
     if (process.env.NODE_ENV === 'development') console.log('CONTENT', this.content)
   },
