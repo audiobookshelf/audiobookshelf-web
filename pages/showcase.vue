@@ -8,7 +8,7 @@
     </div>
 
     <div class="py-8">
-      <img src="https://github.com/advplyr/audiobookshelf/raw/master/images/LibraryStreamSquare.png" />
+      <img src="https://github.com/advplyr/audiobookshelf/raw/master/images/DemoLibrary.png" />
     </div>
 
     <div class="py-8">
