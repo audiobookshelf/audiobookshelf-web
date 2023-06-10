@@ -89,6 +89,24 @@ export default {
 
   content: {
     markdown: {
+      remarkPlugins: [
+        'remark-squeeze-paragraphs',
+        'remark-slug',
+        ['remark-autolink-headings', {
+          content: {
+            type: 'element',
+            tagName: 'span',
+            properties: { className: ['material-icons'] },
+            children: [{
+              type: 'text',
+              value: 'tag'
+            }]
+          }
+        }],
+        'remark-external-links',
+        'remark-footnotes',
+        'remark-gfm'
+      ],
       prism: {
         theme: false
       }
