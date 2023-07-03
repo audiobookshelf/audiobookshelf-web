@@ -55,7 +55,7 @@
         </tr>
         <tr>
           <td>series-part</td>
-          <td>Volume Number</td>
+          <td>Series Sequence</td>
         </tr>
         <tr>
           <td>language / lang</td>
