@@ -16,8 +16,7 @@ docker run -d \
     -v &lt;/path/to/metadata>:/metadata \
     -v &lt;/path/to/audiobooks>:/audiobooks \
     -v &lt;/path/to/podcasts>:/podcasts \
-    --name audiobookshelf \
-    --rm ghcr.io/advplyr/audiobookshelf</code>
+    --name audiobookshelf</code>
     </pre>
 
     <p class="text-error">Note: Remember to change the path to your actual directory and remove the &#60;&#62; symbols</p>
