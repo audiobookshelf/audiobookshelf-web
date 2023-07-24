@@ -50,11 +50,11 @@
           <td>Genres <span class="text-sm text-warning">*</span></td>
         </tr>
         <tr>
-          <td>series</td>
+          <td>series / mvnm</td>
           <td>Series</td>
         </tr>
         <tr>
-          <td>series-part</td>
+          <td>series-part / mvin</td>
           <td>Series Sequence</td>
         </tr>
         <tr>
@@ -66,7 +66,7 @@
           <td>ISBN</td>
         </tr>
         <tr>
-          <td>asin</td>
+          <td>asin / audible_asin</td>
           <td>ASIN</td>
         </tr>
         <tr>
