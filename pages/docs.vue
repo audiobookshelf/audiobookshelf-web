@@ -27,6 +27,7 @@
       <div class="flex-grow" />
 
       <nuxt-link to="/guides" class="text-base md:text-lg font-semibold text-gray-200 hover:text-white hover:underline mx-1.5 md:mx-4">Guides</nuxt-link>
+      <nuxt-link to="/faq" class="text-base md:text-lg font-semibold text-gray-200 hover:text-white hover:underline mx-1.5 md:mx-4">FAQ</nuxt-link>
       <nuxt-link to="/support" class="text-base md:text-lg font-semibold text-gray-200 hover:text-white hover:underline mx-1.5 md:mx-4">Support</nuxt-link>
       <nuxt-link to="/showcase" class="text-base md:text-lg font-semibold text-gray-200 hover:text-white hover:underline mx-1.5 md:mx-4">Showcase</nuxt-link>
     </div>
@@ -50,8 +51,6 @@ export default {
   async fetch() {
     this.content = await this.$content('docs', { deep: true }).fetch()
     this.content.sort((a, b) => Number(a.order) - Number(b.order))
-
-    if (process.env.NODE_ENV === 'development') console.log('CONTENT', this.content)
   },
   data() {
     return {
