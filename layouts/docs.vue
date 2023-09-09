@@ -25,7 +25,7 @@
 <script>
 export default {
   async fetch() {
-    this.content = await this.$content('docs', { deep: true }).fetch()
+    this.content = await this.$content(this.$route.name, { deep: true }).fetch()
     this.content.sort((a, b) => Number(a.order) - Number(b.order))
 
     if (process.env.NODE_ENV === 'development') console.log('CONTENT', this.content)
@@ -55,7 +55,6 @@ export default {
   watch: {
     '$route.hash'(newVal) {
       if (newVal) {
-        console.log('Hash changed', newVal)
         this.scrollTo(newVal)
         this.currentHash = newVal
       }
@@ -98,19 +97,21 @@ export default {
       }
 
       if (closestItem && closestItem.hash !== this.currentHash) {
-        history.pushState({}, '', closestItem.hash)
+        this.$router.push(closestItem.hash)
         this.currentHash = closestItem.hash
       }
     }
   },
   mounted() {
     window['docs-content'].addEventListener('scroll', this.onScroll)
-    if (this.$route.hash) {
-      this.scrollTo(this.$route.hash)
-      this.currentHash = this.$route.hash
-    } else {
-      this.currentHash = '#intro'
-    }
+    setTimeout(() => {
+      if (this.$route.hash) {
+        this.scrollTo(this.$route.hash)
+        this.currentHash = this.$route.hash
+      } else {
+        this.currentHash = '#intro'
+      }
+    }, 100)
   },
   beforeDestroy() {
     window['docs-content'].removeEventListener('scroll', this.onScroll)
