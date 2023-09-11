@@ -88,7 +88,9 @@ export default {
   },
   mounted() {
     if (this.$route.hash) {
-      this.scrollTo(this.$route.hash)
+      setTimeout(() => {
+        this.scrollTo(this.$route.hash)
+      }, 100)
     }
   }
 }
