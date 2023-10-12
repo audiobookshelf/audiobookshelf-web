@@ -2,7 +2,7 @@
   <div class="not-prose">
     <p class="mb-4 text-sm md:text-base">Here is an example supported directory structure for Books</p>
 
-    <div class="p-4 border border-opacity-10 bg-primary bg-opacity-20 font-mono">
+    <div class="my-4 border border-opacity-10 bg-primary bg-opacity-20 font-mono">
       <div class="flex py-1 max-w-2xl">
         <img src="/folder.svg" class="h-6" />
         <p class="pl-2">Terry Goodkind</p>
@@ -95,11 +95,10 @@
         <span class="material-icons">audiotrack</span>
         <p class="pl-2">Animal Farm.m4b</p>
         <div class="hidden md:block flex-grow" />
-        <span class="hidden md:block text-white text-opacity-50 pl-4">&lt;-- Title<span class="text-warning">*</span></span>
+        <span class="hidden md:block text-white text-opacity-50 pl-4">&lt;-- Title</span>
       </div>
     </div>
-
-    <p class="my-4 text-sm md:text-base"><span class="text-warning">*</span> Audio files in the root of the folder will each be treated as books.</p>
+    <p class="mb-2">Books are designated by folders. Any audio files (or ebook files) within a folder will be grouped into that book, except in the root folder where each audio file will be treated as an individual book.</p>
   </div>
 </template>
 
