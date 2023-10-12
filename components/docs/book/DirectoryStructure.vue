@@ -95,13 +95,10 @@
         <span class="material-icons">audiotrack</span>
         <p class="pl-2">Animal Farm.m4b</p>
         <div class="hidden md:block flex-grow" />
-        <span class="hidden md:block text-white text-opacity-50 pl-4">&lt;-- Title<span class="text-warning">*</span></span>
+        <span class="hidden md:block text-white text-opacity-50 pl-4">&lt;-- Title</span>
       </div>
     </div>
-    <p class="mb-2">
-        Books are designated by folders. Any audio files within a folder
-        will be grouped into that book, except in the root folder where each audio file will be treated as an individual book.
-    </p>
+    <p class="mb-2">Books are designated by folders. Any audio files (or ebook files) within a folder will be grouped into that book, except in the root folder where each audio file will be treated as an individual book.</p>
   </div>
 </template>
 
