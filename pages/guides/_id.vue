@@ -35,4 +35,10 @@ export default {
 .prose :where(code):not(:where([class~='not-prose']*))::after {
   content: '';
 }
+.md\:prose-base :where(tbody td:first-child, tfoot td:first-child):not(:where([class~='not-prose'] *)) {
+  padding-left: 0.5714286em !important;
+}
+.md\:prose-base :where(thead th:first-child, tfoot th:first-child):not(:where([class~='not-prose'] *)) {
+  padding-left: 0.5714286em !important;
+}
 </style>
