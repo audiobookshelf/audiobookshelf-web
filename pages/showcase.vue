@@ -1,59 +1,61 @@
 <template>
-  <div class="w-full max-w-5xl mx-auto px-2 py-8 min-h-full">
-    <div class="flex -ml-8 mb-6">
-      <div>
-        <span class="material-icons text-warning text-2xl">priority_high</span>
+  <div class="w-full max-w-5xl mx-auto px-2 py-8">
+
+    <article v-for="page in content" :key="page.hash" :id="page.hash.slice(1)" class="prose prose-invert prose-sm md:prose-base max-w-5xl flex items-center" style="min-height: 60vh">
+      <div class="px-2 py-8 md:py-20 max-w-full">
+        <h1 class="text-xl md:text-3xl mb-4 md:-ml-8">
+          <nuxt-link :to="page.hash"><span class="material-icons text-lg md:text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
+          >{{ page.title }}
+        </h1>
+
+        <nuxt-content :document="page" />
       </div>
-      <p class="pl-2 text-base md:text-lg">Consider sending screenshots of your audiobookshelf to <a href="mailto:advplyr@protonmail.com" class="text-blue-500 underline">advplyr@protonmail.com</a> (or <a href="https://github.com/advplyr/audiobookshelf-web" target="_blank" class="text-blue-500 underline">submit a PR</a>) so we can show it off!</p>
-    </div>
-
-    <div class="py-8">
-      <img src="https://github.com/advplyr/audiobookshelf/raw/master/images/DemoLibrary.png" />
-    </div>
-
-    <div class="py-8">
-      <div class="flex items-center justify-between">
-        <p class="text-lg mb-2">Series view</p>
-
-        <p class="text-sm mt-2 text-gray-200">from&nbsp;<a href="https://noted.lol/audiobookshelf-a-self-hosted-audiobook-and-podcast-server-with-phone-apps/" target="_blank" class="underline text-blue-500 hover:text-blue-300">noted.lol</a></p>
-      </div>
-      <img src="/showcase/series.png" />
-    </div>
-
-    <div class="py-8">
-      <div class="flex items-center justify-between">
-        <p class="text-lg mb-2">Podcast library</p>
-
-        <p class="text-sm mt-2 text-gray-200">from&nbsp;<a href="https://noted.lol/audiobookshelf-a-self-hosted-audiobook-and-podcast-server-with-phone-apps/" target="_blank" class="underline text-blue-500 hover:text-blue-300">noted.lol</a></p>
-      </div>
-      <img src="/showcase/podcasts.png" />
-    </div>
-
-    <div class="py-8">
-      <div class="flex items-center justify-between">
-        <p class="text-lg mb-2">Matching book metadata</p>
-
-        <p class="text-sm mt-2 text-gray-200">from&nbsp;<a href="https://noted.lol/audiobookshelf-a-self-hosted-audiobook-and-podcast-server-with-phone-apps/" target="_blank" class="underline text-blue-500 hover:text-blue-300">noted.lol</a></p>
-      </div>
-      <img src="/showcase/match-book.gif" />
-    </div>
-
-    <div class="py-8">
-      <div class="flex items-center">
-        <p class="text-lg mb-2">Library stats</p>
-      </div>
-      <img src="/showcase/library-stats.png" />
-    </div>
+    </article>
   </div>
 </template>
 
 <script>
 export default {
+  layout: 'guides',
+  async fetch() {
+    this.content = await this.$content('showcase', { deep: true }).fetch()
+    this.content.sort((a, b) => Number(a.order) - Number(b.order))
+  },
   data() {
-    return {}
+    return {
+      content: null
+    }
   },
   computed: {},
   methods: {},
-  mounted() {}
+  mounted() {
+    if (typeof Prism !== undefined) {
+      Prism.highlightAll()
+    }
+  }
 }
 </script>
+
+<style>
+table,
+tr,
+td,
+th {
+  border: 1px solid #666;
+}
+table td,
+th {
+  padding: 5px 15px;
+}
+
+.prose :where(code):not(:where([class~='not-prose']*))::before {
+  content: '';
+}
+.prose :where(code):not(:where([class~='not-prose']*))::after {
+  content: '';
+}
+.prose :where(blockquote):not(:where([class~='not-prose'] *)) {
+  quotes: none;
+  font-style: normal;
+}
+</style>
