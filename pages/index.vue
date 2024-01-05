@@ -66,8 +66,8 @@ export default {
       dockerHubUrl: 'https://hub.docker.com/r/advplyr/audiobookshelf',
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.audiobookshelf.app',
       githubUrl: 'https://github.com/advplyr/audiobookshelf',
-      discordUrl: 'https://discord.gg/pJsjuNCKRq',
-		matrixUrl: 'https://matrix.to/#/#audiobookshelf:matrix.org',
+      discordUrl: 'https://discord.gg/HQgCbd6E75',
+      matrixUrl: 'https://matrix.to/#/#audiobookshelf:matrix.org',
       covers: [
         '1984.jpg',
         'anatomyofthestate.jpg',

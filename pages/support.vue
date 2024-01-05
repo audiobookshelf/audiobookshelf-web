@@ -6,7 +6,7 @@
       </div>
       <p class="pl-2 text-base md:text-lg">
         The best way that <u>everyone</u> can show support is to follow/star the <a href="https://github.com/advplyr/audiobookshelf" target="_blank" class="text-blue-500 underline">github repo</a>, test new features, open a <a href="https://github.com/advplyr/audiobookshelf/discussions" target="_blank" class="text-blue-500 underline">discussion</a> with ideas on how to improve the project. Join
-        the <a href="https://discord.gg/pJsjuNCKRq" target="_blank" class="text-blue-500 underline">discord server</a> or our <a href="https://matrix.to/#/#audiobookshelf:matrix.org" target="_blank" class="text-blue-500 underline">matrix space</a>.
+        the <a href="https://discord.gg/HQgCbd6E75" target="_blank" class="text-blue-500 underline">discord server</a> or our <a href="https://matrix.to/#/#audiobookshelf:matrix.org" target="_blank" class="text-blue-500 underline">matrix space</a>.
       </p>
     </div>
     <div class="flex -ml-8">
