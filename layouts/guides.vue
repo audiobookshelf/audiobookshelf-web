@@ -11,7 +11,8 @@
     </div>
     <div id="guides-content" class="overflow-y-auto max-w-full overflow-x-hidden" style="scrollbar-gutter: stable">
       <div class="w-full max-w-5xl mx-auto px-2 py-8">
-    <header-PageHeader></header-PageHeader>
+
+        <header-PageHeader></header-PageHeader>
 
         <Nuxt />
       </div>
@@ -27,13 +28,7 @@ export default {
   },
   data() {
     return {
-      content: [],
-      appStoreUrl: 'https://testflight.apple.com/join/wiic7QIW',
-      dockerHubUrl: 'https://hub.docker.com/r/advplyr/audiobookshelf',
-      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.audiobookshelf.app',
-      githubUrl: 'https://github.com/advplyr/audiobookshelf',
-      discordUrl: 'https://discord.gg/HQgCbd6E75',
-      matrixUrl: 'https://matrix.to/#/#audiobookshelf:matrix.org'
+      content: []
     }
   },
   computed: {
