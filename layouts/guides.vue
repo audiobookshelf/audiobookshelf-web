@@ -45,6 +45,8 @@ export default {
     async fetchContent() {
       if (this.$route.name === 'guides-id') {
         this.content = await this.$content('guides').fetch()
+      } else if (this.$route.name === 'faq-id') {
+        this.content = await this.$content('faq').fetch()
       } else {
         this.content = await this.$content(this.$route.name, { deep: true }).fetch()
       }
