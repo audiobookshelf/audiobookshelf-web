@@ -23,12 +23,16 @@
 <script>
 export default {
   async fetch() {
-    this.content = await this.$content('guides').fetch()
-    if (process.env.NODE_ENV === 'development') console.log('CONTENT', this.content)
+    this.fetchContent();
   },
   data() {
     return {
       content: []
+    }
+  },
+  watch: {
+    '$route'(to, from) {
+      this.fetchContent()
     }
   },
   computed: {
@@ -37,7 +41,17 @@ export default {
       return routePath.replace(/\/$/, '')
     }
   },
-  methods: {},
+  methods: {
+    async fetchContent() {
+      if (this.$route.name === 'guides-id') {
+        this.content = await this.$content('guides').fetch()
+      } else {
+        this.content = await this.$content(this.$route.name, { deep: true }).fetch()
+      }
+      this.content.sort((a, b) => Number(a.order) - Number(b.order))
+      if (process.env.NODE_ENV === 'development') console.log('CONTENT', this.content)
+    }
+  },
   mounted() {}
 }
 </script>
