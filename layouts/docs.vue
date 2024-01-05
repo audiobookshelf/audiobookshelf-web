@@ -12,7 +12,13 @@
         <div :key="category.title">
           <p v-if="category.title !== 'Introduction'" class="px-4 py-1 text-xs font-bold text-white uppercase mt-6 mb-1">{{ category.title }}</p>
 
-          <sidebar-nav-item v-for="item in category.pages" :key="item.hash" :hash="item.hash" :text="item.title" :selected="currentHash === item.hash" />
+          <sidebar-nav-item v-for="item in category.pages"
+              :key="item.hash"
+              :subpath="$route.path"
+              :hash="item.hash"
+              :text="item.title"
+              :selected="currentHash === item.hash"
+              />
         </div>
       </template>
     </div>
@@ -62,7 +68,10 @@ export default {
   },
   methods: {
     scrollTo(hashtag) {
-      location.href = hashtag
+      const element = document.querySelector(hashtag);
+      if (element) {
+        element.scrollIntoView();
+      }
     },
     onScroll(evt) {
       const clientHeight = evt.target.clientHeight
@@ -74,7 +83,6 @@ export default {
       if (bottomY < 200) {
         const lastItem = this.content[this.content.length - 1]
         if (lastItem.hash !== this.currentHash) {
-          history.pushState({}, '', lastItem.hash)
           this.currentHash = lastItem.hash
         }
 
@@ -90,14 +98,13 @@ export default {
           return
         }
         const box = div.getBoundingClientRect()
-        if (box.top > 0 && box.top < 100) {
+        if (box.top >= 0 && box.top < window.innerHeight) {
           closestItem = item
           break
         }
       }
 
       if (closestItem && closestItem.hash !== this.currentHash) {
-        this.$router.push(closestItem.hash)
         this.currentHash = closestItem.hash
       }
     }
