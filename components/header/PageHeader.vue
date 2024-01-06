@@ -27,7 +27,7 @@
 
     <nuxt-link to="/docs"     class="text-base md:text-lg font-semibold hover:text-white hover:underline mx-1.5 md:mx-4" :class="routeName === 'docs'     ? 'text-yellow-400' : 'text-gray-300'">Docs</nuxt-link>
     <nuxt-link to="/guides"   class="text-base md:text-lg font-semibold hover:text-white hover:underline mx-1.5 md:mx-4" :class="routeName === 'guides-id'? 'text-yellow-300' : 'text-gray-300'">Guides</nuxt-link>
-    <nuxt-link to="/faq"      class="text-base md:text-lg font-semibold hover:text-white hover:underline mx-1.5 md:mx-4" :class="routeName === 'faq'      ? 'text-yellow-300' : 'text-gray-300'">FAQ</nuxt-link>
+    <nuxt-link to="/faq"      class="text-base md:text-lg font-semibold hover:text-white hover:underline mx-1.5 md:mx-4" :class="routeName === 'faq-id'   ? 'text-yellow-300' : 'text-gray-300'">FAQ</nuxt-link>
     <nuxt-link to="/support"  class="text-base md:text-lg font-semibold hover:text-white hover:underline mx-1.5 md:mx-4" :class="routeName === 'support'  ? 'text-yellow-300' : 'text-gray-300'">Support</nuxt-link>
     <nuxt-link to="/showcase" class="text-base md:text-lg font-semibold hover:text-white hover:underline mx-1.5 md:mx-4" :class="routeName === 'showcase' ? 'text-yellow-300' : 'text-gray-300'">Showcase</nuxt-link>
   </div>
