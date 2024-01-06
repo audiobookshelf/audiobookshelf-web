@@ -48,7 +48,7 @@ export default {
       } else if (this.$route.name === 'faq-id') {
         this.content = await this.$content('faq').fetch()
       } else {
-        this.content = await this.$content(this.$route.name, { deep: true }).fetch()
+        this.content = []
       }
       this.content.sort((a, b) => Number(a.order) - Number(b.order))
       if (process.env.NODE_ENV === 'development') console.log('CONTENT', this.content)
