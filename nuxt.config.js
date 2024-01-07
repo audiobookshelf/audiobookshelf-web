@@ -67,7 +67,9 @@ export default {
     '@/assets/app.css'
   ],
 
-  plugins: [],
+  plugins: [
+    '@/plugins/init.client.js'
+  ],
 
   components: true,
 

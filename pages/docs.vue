@@ -1,7 +1,5 @@
 <template>
-  <div class="w-full max-w-5xl mx-auto px-2 py-8">
-    <header-PageHeader></header-PageHeader>
-
+  <div class="w-full">
     <article v-for="page in content" :key="page.hash" :id="page.hash.slice(1)" class="prose prose-invert prose-sm md:prose-base max-w-5xl flex items-center" style="min-height: 60vh">
       <div class="px-2 py-8 md:py-20 max-w-full">
         <h1 class="text-xl md:text-3xl mb-4 md:-ml-8">

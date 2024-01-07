@@ -1,18 +1,10 @@
 <template>
   <div class="w-screen h-screen max-w-full max-h-screen text-white bg-gradient overflow-hidden">
-    <div id="guides-sidebar" class="hidden md:block fixed top-0 left-0 h-full bg-primary border-r border-white border-opacity-25">
-      <div class="flex justify-center items-center py-4 mb-6">
-        <nuxt-link to="/" class="h-12 w-12 -ml-4">
-          <img src="/Logo48.png" class="h-full w-full" />
-        </nuxt-link>
-        <nuxt-link to="/" class="text-2xl pl-2 sm:pl-4 font-book hover:underline">audiobookshelf</nuxt-link>
-      </div>
-      <nuxt-link v-for="item in content" :key="item.slug" :to="item.fullpath" class="px-4 py-1.5 text-sm font-semibold block mr-6 mb-2" :class="item.fullpath === routePath ? 'bg-white bg-opacity-10 rounded-r-full text-yellow-400' : 'text-gray-300 hover:text-white'">{{ item.title }}</nuxt-link>
-    </div>
+    <side-nav :content="content" :is-mobile="isMobile" :is-open.sync="drawerOpen" />
+
     <div id="guides-content" class="overflow-y-auto max-w-full overflow-x-hidden" style="scrollbar-gutter: stable">
       <div class="w-full max-w-5xl mx-auto px-2 py-8">
-
-        <header-PageHeader></header-PageHeader>
+        <header-page-header :has-content="hasContent" :is-mobile="isMobile" @openDrawer="openDrawer" />
 
         <Nuxt />
       </div>
@@ -23,25 +15,32 @@
 <script>
 export default {
   async fetch() {
-    this.fetchContent();
+    this.fetchContent()
   },
   data() {
     return {
+      drawerOpen: false,
+      isMobile: false,
       content: []
     }
   },
   watch: {
-    '$route'(to, from) {
+    $route(to, from) {
       this.fetchContent()
+      if (this.isMobile) {
+        this.drawerOpen = false
+      }
     }
   },
   computed: {
-    routePath() {
-      const routePath = this.$route.path || ''
-      return routePath.replace(/\/$/, '')
+    hasContent() {
+      return !!this.content.length
     }
   },
   methods: {
+    openDrawer() {
+      this.drawerOpen = true
+    },
     async fetchContent() {
       if (this.$route.name === 'guides-id') {
         this.content = await this.$content('guides').fetch()
@@ -50,24 +49,36 @@ export default {
       } else {
         this.content = []
       }
-      this.content.sort((a, b) => Number(a.order) - Number(b.order))
+
+      // Sort pages by the markdown filename. e.g. "0.index.md" comes before "1.docker-windows.md"
+      this.content.sort((a, b) => {
+        const aDirname = a.path?.split('/').pop() || ''
+        const bDirname = b.path?.split('/').pop() || ''
+        return aDirname.localeCompare(bDirname, 'en', { numeric: true })
+      })
       if (process.env.NODE_ENV === 'development') console.log('CONTENT', this.content)
+    },
+    resize() {
+      this.isMobile = window.innerWidth < 640 || window.innerHeight < 640
+      this.drawerOpen = !this.isMobile
     }
   },
-  mounted() {}
+  mounted() {
+    this.resize()
+    window.addEventListener('resize', this.resize)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.resize)
+  }
 }
 </script>
 
 <style>
 :root {
-  --guides-sidebar-width: 280px;
-}
-
-#guides-sidebar {
-  width: var(--guides-sidebar-width);
+  --sidebar-width: 288px;
 }
 #guides-content {
-  margin-left: var(--guides-sidebar-width);
+  margin-left: var(--sidebar-width);
   height: 100vh;
 }
 @media (max-width: 767px) {

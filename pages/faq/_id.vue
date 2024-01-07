@@ -9,7 +9,7 @@
 export default {
   layout: 'guides',
   async asyncData({ $content, params }) {
-    const slug = params.id || 'index'
+    const slug = params.id || 'general'
     const results = await $content('faq').where({ slug }).fetch()
     return {
       page: results[0]

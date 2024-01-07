@@ -1,8 +1,11 @@
 <template>
   <div class="flex items-center py-1">
-    <nuxt-link to="/" class="h-8 w-8 md:hidden mx-1.5">
+    <nuxt-link v-if="!hasContent" to="/" class="h-8 w-8 md:hidden mx-1.5">
       <img src="/favicon.ico" class="h-full w-full" />
     </nuxt-link>
+    <button v-else class="h-8 w-8 sm:hidden mx-1.5 flex items-center justify-center" @click="clickMobileMenu">
+      <span class="material-icons">menu</span>
+    </button>
 
     <a :href="matrixUrl" aria-label="Join discussion in Matrix space" class="mx-2 hidden md:block">
       <img src="/matrix.svg" class="h-5 md:h-7 hover:scale-110 transform duration-100" />
@@ -25,17 +28,20 @@
 
     <div class="flex-grow" />
 
-    <nuxt-link to="/docs"     class="text-base md:text-lg font-semibold hover:text-white hover:underline mx-1.5 md:mx-4" :class="routeName === 'docs'     ? 'text-yellow-400' : 'text-gray-300'">Docs</nuxt-link>
-    <nuxt-link to="/guides"   class="text-base md:text-lg font-semibold hover:text-white hover:underline mx-1.5 md:mx-4" :class="routeName === 'guides-id'? 'text-yellow-400' : 'text-gray-300'">Guides</nuxt-link>
-    <nuxt-link to="/faq"      class="text-base md:text-lg font-semibold hover:text-white hover:underline mx-1.5 md:mx-4" :class="routeName === 'faq-id'   ? 'text-yellow-400' : 'text-gray-300'">FAQ</nuxt-link>
-    <nuxt-link to="/support"  class="text-base md:text-lg font-semibold hover:text-white hover:underline mx-1.5 md:mx-4" :class="routeName === 'support'  ? 'text-yellow-400' : 'text-gray-300'">Support</nuxt-link>
+    <nuxt-link to="/docs" class="text-base md:text-lg font-semibold hover:text-white hover:underline mx-1.5 md:mx-4" :class="routeName === 'docs' ? 'text-yellow-400' : 'text-gray-300'">Docs</nuxt-link>
+    <nuxt-link to="/guides" class="text-base md:text-lg font-semibold hover:text-white hover:underline mx-1.5 md:mx-4" :class="routeName === 'guides-id' ? 'text-yellow-400' : 'text-gray-300'">Guides</nuxt-link>
+    <nuxt-link to="/faq" class="text-base md:text-lg font-semibold hover:text-white hover:underline mx-1.5 md:mx-4" :class="routeName === 'faq-id' ? 'text-yellow-400' : 'text-gray-300'">FAQ</nuxt-link>
+    <nuxt-link to="/support" class="text-base md:text-lg font-semibold hover:text-white hover:underline mx-1.5 md:mx-4" :class="routeName === 'support' ? 'text-yellow-400' : 'text-gray-300'">Support</nuxt-link>
     <nuxt-link to="/showcase" class="text-base md:text-lg font-semibold hover:text-white hover:underline mx-1.5 md:mx-4" :class="routeName === 'showcase' ? 'text-yellow-400' : 'text-gray-300'">Showcase</nuxt-link>
   </div>
 </template>
 
 <script>
 export default {
-  fetch() {},
+  props: {
+    hasContent: Boolean,
+    isMobile: Boolean
+  },
   data() {
     return {
       content: null,
@@ -49,11 +55,14 @@ export default {
   },
   computed: {
     routeName() {
-      console.log(this.$route.name)
       return this.$route.name
     }
   },
-  methods: {},
+  methods: {
+    clickMobileMenu() {
+      this.$emit('openDrawer')
+    }
+  },
   mounted() {}
 }
 </script>
