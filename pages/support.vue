@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full max-w-5xl mx-auto h-full px-2 py-8">
+  <div class="w-full max-w-5xl mx-auto h-full pl-8 pr-2 md:px-2 py-8">
     <div class="flex -ml-8 mb-4">
       <div>
         <span class="material-icons text-success text-2xl">star</span>
@@ -18,7 +18,7 @@
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
 
-    <h1 id="docs" class="text-3xl mb-4 -ml-8">
+    <h1 id="docs" class="text-2xl md:text-3xl mb-4 -ml-8">
       <nuxt-link to="#docs"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
       >Help with docs & guides
     </h1>
@@ -36,7 +36,7 @@
 
     <div class="w-full bg-white bg-opacity-20 h-px my-8" />
 
-    <h1 id="developers" class="text-3xl mb-4 -ml-8">
+    <h1 id="developers" class="text-2xl md:text-3xl mb-4 -ml-8">
       <nuxt-link to="#developers"><span class="material-icons text-xl text-gray-400 hover:text-white cursor-pointer mr-2">tag</span></nuxt-link
       >Developers
     </h1>
@@ -49,6 +49,7 @@
 
 <script>
 export default {
+  layout: 'guides',
   data() {
     return {}
   },
