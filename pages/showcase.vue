@@ -49,6 +49,7 @@
 
 <script>
 export default {
+  layout: 'guides',
   data() {
     return {}
   },

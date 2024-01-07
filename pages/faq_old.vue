@@ -10,11 +10,7 @@
 
 <script>
 export default {
-  layout: 'default',
-  async fetch() {
-    this.content = await this.$content('faq', { deep: true }).fetch()
-    this.content.sort((a, b) => Number(a.order) - Number(b.order))
-  },
+  layout: 'guides',
   data() {
     return {
       content: null,
