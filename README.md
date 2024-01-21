@@ -9,6 +9,10 @@ This is a static [Nuxt.js](https://nuxtjs.org/) site using [TailwindCss](https:/
 
 To contribute to this website, clone the repository and open it:
 
+Required:
+
+* [Node.js](https://nodejs.org/en) (version 20)
+
 ```
 git clone https://github.com/advplyr/audiobookshelf-web.git
 cd audiobookshelf-web
