@@ -44,6 +44,33 @@
       </div>
       <img src="/showcase/library-stats.png" />
     </div>
+
+    <div class="py-8">
+      <div class="flex items-center justify-between">
+        <p class="text-lg mb-2">User stats</p>
+
+        <p class="text-sm mt-2 text-gray-200">from Colin</p>
+      </div>
+      <img src="/showcase/user-stats.png" />
+    </div>
+
+    <div class="py-8">
+      <div class="flex items-center justify-between">
+        <p class="text-lg mb-2">Authors view</p>
+
+        <p class="text-sm mt-2 text-gray-200">from Colin</p>
+      </div>
+      <img src="/showcase/authors-page.png" />
+    </div>
+
+    <div class="py-8">
+      <div class="flex items-center justify-between">
+        <p class="text-lg mb-2">Collections view</p>
+
+        <p class="text-sm mt-2 text-gray-200">from Colin</p>
+      </div>
+      <img src="/showcase/collections-page.png" />
+    </div>
   </div>
 </template>
 
