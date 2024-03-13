@@ -14,7 +14,7 @@ Required:
 * [Node.js](https://nodejs.org/en) (version 20)
 
 ```
-git clone https://github.com/advplyr/audiobookshelf-web.git
+git clone https://github.com/audiobookshelf/audiobookshelf-web.git
 cd audiobookshelf-web
 ```
 
