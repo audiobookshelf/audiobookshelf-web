@@ -30,6 +30,8 @@
 
     <p class="mb-2 pl-4">- Guides on how to run the server and mobile apps locally.</p>
 
+    <p class="mb-2 pl-4">- <a class="text-blue-500 underline" href=/faq#how-do-i-help-with-translations>Translations</a> of the web client and mobile apps.</p>
+
     <p class="mb-2 pl-4">- Any other ideas you have to help the community get familiar with audiobookshelf.</p>
 
     <p class="my-4">If you want to contribute reach out via github, discord or email.</p>
