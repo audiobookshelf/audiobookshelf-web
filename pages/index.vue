@@ -21,12 +21,12 @@
       <div key="homePage" class="h-full flex flex-col items-center justify-center">
         <img ref="logo" src="/Logo.png" class="h-28 md:h-40" />
         <h1 ref="title" class="text-white text-4xl md:text-6xl pt-4 md:pt-8 font-book">audiobookshelf</h1>
-        <p ref="subtitle" class="text-gray-300 text-center text-sm md:text-lg pt-4">Self-hosted audiobook and podcast server</p>
+        <p ref="subtitle" class="text-gray-300 text-center text-sm md:text-lg pt-2 sm:pt-4">Self-hosted audiobook and podcast server</p>
       </div>
 
       <div class="absolute bottom-6 right-6 md:bottom-12 md:right-12 text-right">
         <nuxt-link to="/docs" class="text-gray-200 text-lg md:text-3xl font-book py-1 md:py-2 hover:underline block">Documentation</nuxt-link>
-        <nuxt-link to="/guides" class="text-gray-200 text-lg md:text-3xl font-book py-1 md:py-2 hover:underline block">User Guides</nuxt-link>
+        <nuxt-link to="/guides" class="text-gray-200 text-lg md:text-3xl font-book py-1 md:py-2 hover:underline hidden sm:block">User Guides</nuxt-link>
         <nuxt-link to="/faq" class="text-gray-200 text-lg md:text-3xl font-book py-1 md:py-2 hover:underline block">Common Questions</nuxt-link>
         <nuxt-link to="/support" class="text-gray-200 text-lg md:text-3xl font-book py-1 md:py-2 hover:underline block">How to Support</nuxt-link>
         <nuxt-link to="/showcase" class="text-gray-200 text-lg md:text-3xl font-book py-1 md:py-2 hover:underline block">Showcase</nuxt-link>
