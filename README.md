@@ -7,7 +7,9 @@ This is [audiobookshelf.org](https://audiobookshelf.org), the install guide and 
 
 This is a static [Nuxt.js](https://nuxtjs.org/) site using [TailwindCss](https://tailwindcss.com/) for styling and [PrismJs](https://prismjs.com/) for syntax highlighting.
 
-To contribute to this website, clone the repository and open it:
+To contribute to this website, make a fork and open a Pull Request. :)
+
+To run the website locally, clone the repository and use the following commands:
 
 Required:
 
