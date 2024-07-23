@@ -32,9 +32,6 @@
         <nuxt-link to="/showcase" class="text-gray-200 text-lg md:text-3xl font-book py-1 md:py-2 hover:underline block">Showcase</nuxt-link>
 
         <div class="flex items-center pt-4 md:pt-8 text-gray-300">
-          <a :href="matrixUrl" aria-label="Join discussion in Matrix space" class="mx-2">
-            <img src="/matrix.svg" class="h-7 md:h-9 hover:scale-110 transform duration-100" />
-          </a>
           <a :href="discordUrl" aria-label="Join discussion in Discord" class="mx-2">
             <img src="/discord.svg" class="h-7 md:h-9 hover:scale-110 transform duration-100" />
           </a>
@@ -69,7 +66,6 @@ export default {
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.audiobookshelf.app',
       githubUrl: 'https://github.com/advplyr/audiobookshelf',
       discordUrl: 'https://discord.gg/HQgCbd6E75',
-      matrixUrl: 'https://matrix.to/#/#audiobookshelf:matrix.org',
       covers: [
         '1984.jpg',
         'anatomyofthestate.jpg',

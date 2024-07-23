@@ -23,9 +23,6 @@
 
       <div class="flex-grow" />
 
-      <a :href="matrixUrl" aria-label="Join discussion in Matrix space" class="mx-2 hidden md:block">
-        <img src="/matrix.svg" class="h-5 md:h-7 hover:scale-110 transform duration-100" />
-      </a>
       <a :href="discordUrl" aria-label="Join discussion in Discord" class="mx-2 hidden md:block">
         <img src="/discord.svg" class="h-5 md:h-7 hover:scale-110 transform duration-100" />
       </a>
@@ -65,8 +62,7 @@ export default {
       dockerHubUrl: 'https://hub.docker.com/r/advplyr/audiobookshelf',
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.audiobookshelf.app',
       githubUrl: 'https://github.com/advplyr/audiobookshelf',
-      discordUrl: 'https://discord.gg/HQgCbd6E75',
-      matrixUrl: 'https://matrix.to/#/#audiobookshelf:matrix.org'
+      discordUrl: 'https://discord.gg/HQgCbd6E75'
     }
   },
   watch: {
