@@ -2,6 +2,14 @@
   <article class="prose prose-invert prose-sm md:prose-base max-w-5xl mx-auto py-8 md:py-12 px-2">
     <h1>{{ page.title }}</h1>
     <nuxt-content :document="page" />
+
+    <div v-if="otherPages.length" class="mt-8">
+      <ul class="list-decimal">
+        <li v-for="p in otherPages" :key="p.slug" class="text-sm">
+          <nuxt-link :to="p.fullpath" class="text-slate-100">{{ p.title }}</nuxt-link>
+        </li>
+      </ul>
+    </div>
   </article>
 </template>
 
@@ -10,9 +18,21 @@ export default {
   layout: 'guides',
   async asyncData({ $content, params }) {
     const slug = params.id || 'index'
-    const results = await $content('guides').where({ slug }).fetch()
+
+    let page = null
+    let otherPages = []
+    if (!params.id) {
+      const results = await $content('guides').fetch()
+      page = results.find((p) => p.slug === 'index')
+      otherPages = results.filter((p) => p.slug !== 'index').sort((a, b) => a.title.localeCompare(b.title))
+    } else {
+      const results = await $content('guides').where({ slug }).fetch()
+      page = results[0]
+    }
+
     return {
-      page: results[0]
+      page,
+      otherPages
     }
   },
   data() {
