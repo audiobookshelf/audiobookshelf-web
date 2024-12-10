@@ -26,11 +26,25 @@ export default {
     }
   },
   computed: {},
-  methods: {},
+  methods: {
+    async getLatestWindowsRelease() {
+      const data = await fetch('https://api.github.com/repos/mikiher/audiobookshelf-windows/releases/latest').then((res) => res.json())
+
+      const windowsDownloadUrl = data?.assets?.find((asset) => asset.name.endsWith('.exe'))?.browser_download_url
+      if (windowsDownloadUrl) {
+        this.$store.commit('setWindowsDownloadUrl', windowsDownloadUrl)
+      }
+
+      if (data?.name) {
+        this.$store.commit('setWindowsLatestReleaseName', data.name)
+      }
+    }
+  },
   mounted() {
     if (typeof Prism !== undefined) {
       Prism.highlightAll()
     }
+    this.getLatestWindowsRelease()
   }
 }
 </script>
