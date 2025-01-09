@@ -73,7 +73,7 @@
         <strong><u>Narrator</u>:</strong> Must be wrapped in curly braces. e.g. {Sam Tsoutsouvas}.
       </li>
       <li class="py-1">
-        <strong><u>Discs and Disc Numbers</u>:</strong> You have to name each folder in the format of CD1, CD01, or CD001; Disk Folder support is not fully supported yet.
+        <strong><u>Disc Numbers</u>:</strong> The title folder can contain subfolders for discs as long as they are named "Disc", "CD", or "Disk" with a number following (case insensitive). Example: "Disc 1", "CD 2", "Disk 3", "Disc 004", or no space between like "Disc1".
       </li>
     </ul>
   </div>
