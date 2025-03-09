@@ -6,7 +6,7 @@
       <div>
         <span class="material-icons text-warning text-2xl">priority_high</span>
       </div>
-      <p class="pl-2 text-sm md:text-base">Data parsed from the folder structure and filenames takes priority over ID3 tags unless you have enabled the scanner setting "Prefer Audio Metadata".</p>
+      <p class="pl-2 text-sm md:text-base">Ensure your settings for the <a href="/guides/book-scanner#book-metadata-parsing">metadata priority settings</a> matches your file structure.</p>
     </div>
 
     <p class="mb-4 text-sm md:text-base">Metadata on audio files will be mapped as follows (second tag after "/" is a fallback):</p>
