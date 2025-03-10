@@ -3,7 +3,7 @@
     <nuxt-link v-if="!hasContent" to="/" class="h-8 w-8 md:hidden mx-1.5">
       <img src="/favicon.ico" class="h-full w-full" />
     </nuxt-link>
-    <button v-else class="h-8 w-8 sm:hidden mx-1.5 flex items-center justify-center" @click.stop="clickMobileMenu">
+    <button v-else class="h-8 w-8 md:hidden mx-1.5 flex items-center justify-center" @click.stop="clickMobileMenu">
       <span class="material-icons">menu</span>
     </button>
 

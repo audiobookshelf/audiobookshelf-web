@@ -40,7 +40,7 @@ export default {
       this.drawerOpen = true
     },
     resize() {
-      this.isMobile = window.innerWidth < 640 || window.innerHeight < 640
+      this.isMobile = window.innerWidth < 767 || window.innerHeight < 767
       this.drawerOpen = !this.isMobile
     }
   },

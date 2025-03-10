@@ -59,7 +59,7 @@ export default {
       if (process.env.NODE_ENV === 'development') console.log('CONTENT', this.content)
     },
     resize() {
-      this.isMobile = window.innerWidth < 640 || window.innerHeight < 640
+      this.isMobile = window.innerWidth < 767 || window.innerHeight < 767
       this.drawerOpen = !this.isMobile
     }
   },
