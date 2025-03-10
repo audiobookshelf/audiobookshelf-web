@@ -36,6 +36,8 @@
         <p class="pl-2">#69 - Get Off My Lawn.mp3</p>
       </div>
     </div>
+
+    <p class="mb-4 text-sm md:text-base">Podcasts only support a flat directory structure for each podcast (meaning no season folders). All episodes and the cover image must be in the same podcast folder.</p>
   </div>
 </template>
 
