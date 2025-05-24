@@ -1,4 +1,8 @@
 site_name: audiobookshelf
+
+repo_name: advplyr/audiobookshelf
+repo_url: https://github.com/advplyr/audiobookshelf
+
 theme:
   name: material
   custom_dir: docs/overrides
@@ -7,6 +11,8 @@ theme:
   font:
     text: Gentium Book Basic
     code: Gentium Book Basic
+  icon:
+    repo: fontawesome/brands/github
   palette:
     scheme: slate
     primary: custom
