@@ -1,7 +1,6 @@
 ---
 title: General FAQ
 slug: general
-fullpath: /faq
 ---
 
 This page aims to answer common general questions.

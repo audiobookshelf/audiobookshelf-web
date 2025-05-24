@@ -35,20 +35,20 @@ services:
 - Map any other directories you want to use for your book and podcast collections (ebooks supported)
   Still confused about Docker? Check out [this FAQ](/faq/server#im-still-confused-about-what-docker-and-containers-are-and-how-they-work)
 
-**`💡` Prefer the CLI? This is our docker run command. YMMV**
+**💡 Prefer the CLI? This is our docker run command. YMMV**
 
-> ```bash
-> docker pull ghcr.io/advplyr/audiobookshelf
->
-> docker run -d \
->  -p 13378:80 \
->  -v </path/to/config>:/config \
->  -v </path/to/metadata>:/metadata \
->  -v </path/to/audiobooks>:/audiobooks \
->  -v </path/to/podcasts>:/podcasts \
->  --name audiobookshelf \
->  -e TZ="America/Toronto" \
->  ghcr.io/advplyr/audiobookshelf
-> ```
+```bash
+docker pull ghcr.io/advplyr/audiobookshelf
 
-`⚠️` Windows users will need to remove the \ and run this as a single line
+docker run -d \
+-p 13378:80 \
+-v </path/to/config>:/config \
+-v </path/to/metadata>:/metadata \
+-v </path/to/audiobooks>:/audiobooks \
+-v </path/to/podcasts>:/podcasts \
+--name audiobookshelf \
+-e TZ="America/Toronto" \
+ghcr.io/advplyr/audiobookshelf
+```
+
+⚠️ Windows users will need to remove the \ and run this as a single line

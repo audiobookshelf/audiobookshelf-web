@@ -1,0 +1,5 @@
+:root  > * {
+  --md-primary-fg-color:        #c7a717;
+  --md-typeset-a-color:         #f5cc15; /* Link color */
+  --md-accent-fg-color:         var(--md-typeset-a-color);
+}

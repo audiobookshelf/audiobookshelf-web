@@ -1,0 +1,75 @@
+site_name: audiobookshelf
+theme:
+  name: material
+  custom_dir: docs/overrides
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+  font:
+    text: Gentium Book Basic
+    code: Gentium Book Basic
+  palette:
+    scheme: slate
+    primary: custom
+  feature:
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+
+markdown_extensions:
+  - pymdownx.highlight
+
+nav:
+  - Home: index.md
+  - Docs:
+      - Install:
+          - Docker Compose: docs/install/docker-compose-install.md
+          - Linux (Deb): docs/install/linux-install-deb.md
+          - Linux (RPM): docs/install/linux-install-rpm.md
+          - Linux (Nix): docs/install/linux-install-nix.md
+          - Windows: docs/install/windows-install.md
+          - Reverse Proxy: docs/install/reverse-proxy-setup.md
+          - EasyPanel: docs/install/deploy-on-easypanel.md
+          - Podman: docs/install/podman.md
+          - Mobile Apps: docs/install/mobile-apps.md
+      - Updating:
+          - Docker Install: docs/updating/docker-install.md
+          - Docker Compose Install: docs/updating/docker-compose-install.md
+          - Podman Install: docs/updating/podman-install.md
+      - Configuration:
+          - Environment variables: docs/configuration/configuration.md
+      - Books:
+          - Directory Structure: docs/books/directory-structure.md
+          - Author Folder Naming: docs/books/author-folder-naming.md
+          - Title Folder Naming: docs/books/title-folder-naming.md
+          - Audio Metadata: docs/books/audio-metadata.md
+          - Audio Tracks: docs/books/audio-tracks.md
+          - Additional Metadata Files: docs/books/additional-metadata-files.md
+      - Podcasts:
+          - Directory Structure: docs/podcasts/directory-structure.md
+  - Guides:
+      - Android App Shared Storage: guides/android-app-shared-storage.md
+      - Book Scanner: guides/book-scanner.md
+      - Checking file metadata: guides/ffprobe.md
+      - Collections and Playlists: guides/collections.md
+      - Custom Metadata Providers: guides/custom-metadata-providers.md
+      - Docker setup with Nginx Proxy Manager: guides/nginxproxymanager-docker.md
+      - Docker Windows Install: guides/docker-windows.md
+      - Ebooks: guides/ebooks.md
+      - Media Item Shares: guides/media-item-shares.md
+      - Migration and Backups: guides/migration-and-backups.md
+      - OIDC Authentication: guides/oidc-authentication.md
+      - Podcasts: guides/podcasts.md
+      - Power Query and Stats in Excel: guides/power-query.md
+      - RSS Feeds: guides/rss-feeds.md
+      - Send to E-Reader: guides/send-to-ereader.md
+      - Server logs: guides/server-logs.md
+      - Setup a Library: guides/library-setup.md
+      - Subseries Management: guides/subseries-management.md
+      - User Management and Access Control: guides/users.md
+  - FAQ:
+      - General: faq/general.md
+      - Server: faq/server.md
+      - App: faq/app.md
+extra_css:
+  - stylesheets/extra.css

@@ -1,7 +1,6 @@
 ---
 title: Server FAQ
 slug: server
-fullpath: /faq/server
 ---
 
 This section aims to answer common questions related to the server and managing files.

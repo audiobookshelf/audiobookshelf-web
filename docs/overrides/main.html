@@ -1,0 +1,276 @@
+{% if page.url == "" or page.url == "index.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Audiobookshelf</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      background: url('assets/wood_panels.jpg') repeat;
+    }
+
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      background: none;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      grid-auto-rows: 160px;
+      row-gap: 20px;
+      column-gap: 10px;
+      padding: 10px;
+      flex: 1;
+      box-sizing: border-box;
+      z-index: 1;
+      position: relative;
+    }
+
+    .tile {
+      position: relative;
+      width: 100%;
+      padding-top: 100%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      overflow: hidden;
+      border-radius: 0px;
+    }
+
+    .tile img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 0px;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: linear-gradient(
+      to bottom right,
+      rgba(48, 48, 48, 0) 0%,
+      rgba(39, 39, 39, 0) 36%,
+      rgba(46, 46, 46, 1) 50%,
+      rgba(48, 48, 48, 1) 71%,
+      rgba(34, 34, 34, 1) 86%,
+      rgba(25, 25, 25, 1) 100%
+      );
+      z-index: 2;
+    }
+
+    .home-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      font-family: sans-serif;
+    }
+
+    .title {
+      font-size: 2.25rem; /* ~36px */
+      margin-top: 1rem;
+    }
+
+    .subtitle {
+      font-size: 0.875rem; /* ~14px */
+      color: #d1d5db; /* light gray */
+      margin-top: 0.5rem;
+    }
+
+    .bottom-section {
+      position: absolute;
+      right: 3rem;
+      bottom: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 2rem;
+      z-index: 10;
+      pointer-events: auto;
+    }
+
+    /* Text links on top */
+    .text-links {
+      text-align: right;
+      font-size: 1.5rem;
+      color: #d1d5db;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+
+    .text-links a {
+      display: block;
+      padding: 0.25rem 0;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .text-links a:hover {
+      text-decoration: underline;
+    }
+
+    .hide-sm {
+      display: none;
+    }
+
+    @media (min-width: 640px) {
+      .hide-sm {
+        display: block;
+      }
+    }
+
+    /* Icons at bottom, centered */
+    .icon-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      width: 100%;
+    }
+
+    .icon-row a {
+      display: inline-block;
+      transition: transform 0.15s ease;
+    }
+
+    .icon-row a:hover {
+      transform: scale(1.1);
+    }
+
+    .icon-row img {
+      height: 2.25rem;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container" id="grid"></div>
+  <div class="overlay"></div>
+
+  <div id="home-center">
+    <img src="assets/logo.png" alt="Logo" />
+    <h1>audiobookshelf</h1>
+    <p>Self-hosted audiobook and podcast server</p>
+  </div>
+
+  <div class="bottom-section">
+    <div class="text-links">
+      <a href="/docs" class="link">Documentation</a>
+      <a href="/guides" class="link hide-sm">User Guides</a>
+      <a href="/faq" class="link">Common Questions</a>
+      <a href="/support" class="link">How to Support</a>
+      <a href="/showcase" class="link">Showcase</a>
+    </div>
+
+    <div class="icon-row">
+      <a href="https://discord.gg/HQgCbd6E75" aria-label="Join discussion in Discord">
+        <img src="/assets/discord.svg" alt="Discord" />
+      </a>
+      <a href="https://hub.docker.com/r/advplyr/audiobookshelf" aria-label="Audiobookshelf on DockerHub">
+        <img src="/assets/docker.svg" alt="DockerHub" />
+      </a>
+      <a href="https://github.com/advplyr/audiobookshelf" aria-label="Code on GitHub">
+        <img src="/assets/github.svg" alt="GitHub" />
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.audiobookshelf.app" aria-label="Audiobookshelf for Android on Google Play">
+        <img src="/assets/GetGooglePlayStore.png" alt="Google Play Store" />
+      </a>
+      <a href="https://testflight.apple.com/join/wiic7QIW" aria-label="Audiobookshelf for iOS on Apple App Store">
+        <img src="/assets/AppleAppStoreDark.svg" alt="Apple App Store" />
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const imageSources = [
+      'assets/covers/1984.jpg',
+      'assets/covers/amanforallmarkets.jpg',
+      'assets/covers/anarchystateandutopia.jpg',
+      'assets/covers/atlasshrugged.jpg',
+      'assets/covers/democracythegodthatfailed.jpg',
+      'assets/covers/theroadtoserfdom.jpg',
+      'assets/covers/faithofthefallen.jpg',
+      'assets/covers/endersgame.jpg',
+      'assets/covers/wealthofnations.jpg',
+      'assets/covers/hackers.jpg',
+      'assets/covers/foranewliberty.jpg',
+      'assets/covers/bravenewworld.jpg',
+      'assets/covers/fahrenheit451.jpg',
+      'assets/covers/rulesforradicals.jpg',
+      'assets/covers/humanaction.jpg',
+      'assets/covers/economicsinonelesson.jpg',
+      'assets/covers/thecommunistmanifesto.jpg',
+      'assets/covers/warandpeace.jpg',
+      'assets/covers/anthem.jpg',
+      'assets/covers/anarchystateandutopia.jpg',
+      'assets/covers/theanarchisthandbook.jpg',
+      'assets/covers/thecreaturefromjekyllisland.jpg',
+      'assets/covers/theidiot.jpg',
+      'assets/covers/thefountainhead.jpg',
+      'assets/covers/themachineryoffreedom.jpg',
+      'assets/covers/endurance.jpg',
+      'assets/covers/thelaw.jpg',
+      'assets/covers/notreason.jpg',
+      'assets/covers/endthefed.jpg',
+      'assets/covers/amanforallmarkets.jpg',
+      'assets/covers/thebookoffiverings.jpg',
+      'assets/covers/warisaracket.jpg',
+      'assets/covers/theprince.jpg',
+      'assets/covers/maneconomyandstate.jpg',
+      'assets/covers/theoryofsocialismandcapitalism.jpg',
+      'assets/covers/onliberty.jpg',
+      'assets/covers/themanversusthestate.png'
+    ];
+
+    function fillGrid() {
+      const grid = document.getElementById('grid');
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      const gap = 10;
+      const tileSize = 150 + gap;
+      const cols = Math.floor((width + gap) / tileSize);
+      const rows = Math.floor((height + gap) / tileSize);
+
+      const totalTiles = cols * rows;
+
+      grid.innerHTML = '';
+      grid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+
+      for (let i = 0; i < totalTiles; i++) {
+        const tile = document.createElement('div');
+        tile.className = 'tile';
+        const img = document.createElement('img');
+        img.src = imageSources[i % imageSources.length];
+        img.loading = 'lazy';
+        tile.appendChild(img);
+        grid.appendChild(tile);
+      }
+    }
+
+    window.addEventListener('resize', fillGrid);
+    window.addEventListener('load', fillGrid);
+  </script>
+</body>
+</html>
+{% else %}
+  {% extends "base.html" %}
+{% endif %}

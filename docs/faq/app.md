@@ -1,7 +1,6 @@
 ---
 title: App FAQ
 slug: app
-fullpath: /faq/app
 ---
 
 This section aims to answer common questions related to the app.
