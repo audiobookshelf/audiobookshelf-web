@@ -89,3 +89,6 @@ sw.*
 # Vim swap files
 *.swp
 .old/
+
+# Python virtual env
+.venv/
