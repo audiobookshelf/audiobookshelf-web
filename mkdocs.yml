@@ -1,4 +1,5 @@
 site_name: audiobookshelf
+site_url: http://localhost:8000
 
 repo_name: advplyr/audiobookshelf
 repo_url: https://github.com/advplyr/audiobookshelf
@@ -16,11 +17,14 @@ theme:
   palette:
     scheme: slate
     primary: custom
-  feature:
+  features:
     - navigation.tabs
     - navigation.indexes
     - navigation.instant
-    - navigation.instant.progress
+    #- navigation.instant.progress
+
+plugins:
+  - privacy
 
 markdown_extensions:
   - pymdownx.highlight
