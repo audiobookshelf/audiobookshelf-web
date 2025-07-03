@@ -56,7 +56,7 @@ Here is a list of all available options:
 - `DISABLE_SSRF_REQUEST_FILTER` (default: `'0'`)
   - Disables the security of using the "Server Side Request Forgery" filter.
   - If you are self-hosting a podcast from the same server, you may need to disable the SSRF filter.
-- `SSRF_FILTER_REQUEST_WHITELIST`
+- `SSRF_REQUEST_FILTER_WHITELIST`
   - A comma-separated whitelist of domains to exclude from the SSRF filter
 - `ALLOW_IFRAME` (default: `'0'`)
   - Allow use of iframes. This can also be done at the reverse proxy level.
