@@ -10,7 +10,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Site",
+  title: "Audiobookshelf",
   tagline: "Dinosaurs are cool",
   favicon: "img/favicon.ico",
 
@@ -27,8 +27,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: "audiobookshelf", // Usually your GitHub org/user name.
+  projectName: "audiobookshelf", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -79,12 +79,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: "img/docusaurus-social-card.jpg",
+      image: "img/Logo.png",
       navbar: {
-        title: "My Site",
+        title: "Audiobookshelf",
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+          alt: "Audiobookshelf Logo",
+          src: "img/Logo48.png",
         },
         items: [
           {
@@ -95,7 +95,7 @@ const config = {
           },
           { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/advplyr/audiobookshelf",
             label: "GitHub",
             position: "right",
           },
