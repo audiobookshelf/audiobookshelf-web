@@ -2,13 +2,27 @@
 @import "./prism.css";
 
 .bg-gradient {
-  background-image: linear-gradient(to right bottom, #2e2e2e, #303030, #313131, #333333, #353535, #343434, #323232, #313131, #2c2c2c, #282828, #232323, #1f1f1f);
+  background-image: linear-gradient(
+    to right bottom,
+    #2e2e2e,
+    #303030,
+    #313131,
+    #333333,
+    #353535,
+    #343434,
+    #323232,
+    #313131,
+    #2c2c2c,
+    #282828,
+    #232323,
+    #1f1f1f
+  );
 }
 
 /* override prism padding */
 pre[class*="language-"] {
   /* padding: 0.25em 1em; */
-  white-space:pre-line;
+  white-space: pre-line;
 }
 
 /* custom scrollbar */
@@ -43,7 +57,7 @@ pre[class*="language-"] {
 
 .warn::before {
   color: orange;
-  content: '⚠';
+  content: "⚠";
   display: inline-block;
   font-size: x-large;
   margin: 4px 14px;
@@ -51,4 +65,24 @@ pre[class*="language-"] {
 
 .warn li {
   margin: 0;
+}
+
+.inline-warning-badge {
+  background: #ff9800dd;
+  color: #111;
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 8px;
+}
+
+.inline-success-badge {
+  background: #3c8f3e;
+  color: #fff;
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 8px;
 }
