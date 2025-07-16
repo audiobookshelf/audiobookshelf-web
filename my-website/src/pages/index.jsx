@@ -77,7 +77,7 @@ export default function HomePage() {
         </div>
 
         <div className="links">
-          <a href="/docs/intro">Documentation</a>
+          <a href="/docs/docker">Documentation</a>
           <a href="/guides">User Guides</a>
           <a href="/faq">Common Questions</a>
           <a href="/support">How to Support</a>
