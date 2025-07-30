@@ -1,0 +1,157 @@
+:root {
+  --overlay-gradient: rgba(48, 48, 48, 0) 0%, rgba(39, 39, 39, 0) 36%, rgba(46, 46, 46, 1) 50%, rgba(48, 48, 48, 1) 71%, rgba(34, 34, 34, 1) 86%, rgba(25, 25, 25, 1) 100%;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(var(--angle), var(--overlay-gradient));
+}
+
+.bookshelves {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.bookshelfRow {
+  display: flex;
+  position: relative;
+  height: 8rem;
+  padding: 0 2rem;
+  background-image: url(/wood_panels.jpg);
+}
+
+.book {
+  padding-top: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  transition: opacity 0.3s ease;
+}
+.book.hidden {
+  opacity: 0;
+}
+.book.visible {
+  opacity: 1;
+}
+
+.bookCover {
+  height: 10rem;
+  width: 10rem;
+  position: relative;
+  background: #333;
+}
+.bookCover img {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  box-shadow: 4px 1px 8px #1116, -4px 1px 8px #1116, 1px -4px 8px #1116;
+  z-index: 10;
+}
+
+.bookshelfDivider {
+  height: 0.75rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(149, 119, 90, 1) 0%, rgba(103, 70, 37, 1) 17%, rgba(103, 70, 37, 1) 88%, rgba(71, 48, 25, 1) 100%);
+  box-shadow: 2px 14px 8px #111a;
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(var(--angle), var(--overlay-gradient));
+  z-index: 20;
+}
+
+.foreground {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 30;
+}
+
+@font-face {
+  font-family: 'Gentium Book Basic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/GentiumBookBasic.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Gentium Book Basic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/GentiumBookBasic.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.center {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.logo {
+  height: 7rem;
+}
+.title {
+  color: white;
+  font-size: 2.5rem;
+  padding-top: 1rem;
+  font-family: 'Gentium Book Basic', serif;
+}
+.subtitle {
+  color: #ccc;
+  font-size: 1rem;
+  padding-top: 0.5rem;
+  text-align: center;
+}
+
+.links {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  text-align: right;
+}
+.links a {
+  color: #ccc;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.links a:hover {
+  text-decoration: underline;
+}
+
+.socials {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+.socials img {
+  height: 2rem;
+  transition: transform 0.2s ease;
+}
+.socials img:hover {
+  transform: scale(1.1);
+}
