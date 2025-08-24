@@ -10,7 +10,7 @@ Switching between installation methods (e.g., Linux, Windows, Docker) is not a s
 There is no guarantee that this process will be successful. Proceed with caution, and please do not open GitHub issues related to this process. If you have advanced knowledge, you can seek assistance on the official Discord server. Please note that these are complicated operations, and support for beginners is limited.
 :::
 
-# General Notes
+## General Notes
 
 ### Why is this necessary?
 
@@ -20,13 +20,17 @@ Similarly, paths within metadata files are absolute and will not update automati
 
 This guide is primarily based on a community-provided [script](https://github.com/Vito0912/absToolbox/blob/main/tools/migrate_backup_to_new_server.py).
 
-# A Generally Reliable Method
+## A Generally Reliable Method
 
 You can often succeed by replicating the original file system structure on the new system, even when migrating from Windows to Linux. Ensure you preserve the exact directory structure. Preserving file permissions is also recommended where possible. Migrations from Windows can be problematic due to the use of backslashes (`\`) in file paths.
 
-# Windows to Docker
+## Windows to Docker
 
 Follow the instructions provided in the [migration script](https://github.com/Vito0912/absToolbox/blob/main/tools/migrate_backup_to_new_server.py).
+
+:::warning
+This is a community-provided script
+:::
 
 If your library folder paths are not updated after running the script, you may need to edit the database manually as described below:
 
@@ -57,5 +61,5 @@ If you encounter issues, please review the [Windows to Docker migration discussi
 
 ### Additional Resources
 
--   [Basic Debian to Docker migration issue](https://example.com) `[TODO: Link needed]`
--   [Windows to Docker migration conversation](https://github.com/advplyr/audiobookshelf/discussions/3995)
+- [Basic Debian to Docker migration issue](https://github.com/advplyr/audiobookshelf/issues/4436#issuecomment-3012229894)
+- [Windows to Docker migration conversation](https://github.com/advplyr/audiobookshelf/discussions/3995)

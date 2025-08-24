@@ -51,9 +51,9 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/audiobookshelf/audiobookshelf-web/my-website/",
         },
-        blog: {
+        /* blog: {
           showReadingTime: true,
           feedOptions: {
             type: ["rss", "atom"],
@@ -68,6 +68,7 @@ const config = {
           onInlineAuthors: "warn",
           onUntruncatedBlogPosts: "warn",
         },
+        */
         theme: {
           customCss: "./src/css/custom.css",
         },
@@ -93,7 +94,7 @@ const config = {
             position: "left",
             label: "Tutorial",
           },
-          { to: "/blog", label: "Blog", position: "left" },
+          /* { to: "/blog", label: "Blog", position: "left" }, */
           {
             href: "https://github.com/advplyr/audiobookshelf",
             label: "GitHub",
@@ -107,10 +108,10 @@ const config = {
           {
             title: "Docs",
             items: [
-              {
+              /*{
                 label: "Tutorial",
                 to: "/docs/intro",
-              },
+              },*/
             ],
           },
           {
