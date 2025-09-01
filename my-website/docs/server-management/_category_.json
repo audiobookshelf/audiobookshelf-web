@@ -4,6 +4,6 @@
   "position": 5,
   "link": {
     "type": "generated-index",
-    "description": "Learn how to install and configure Audiobookshelf."
+    "description": "The Audiobookshelf server is managed through the web interface. Some limited configuration is available through environment variables."
   }
 }
