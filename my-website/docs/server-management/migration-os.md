@@ -18,13 +18,23 @@ Audiobookshelf stores all data with absolute paths, not relative ones. This mean
 
 Similarly, paths within metadata files are absolute and will not update automatically if you change the metadata environment variable. This can only be set during the initial setup.
 
-This guide is primarily based on a community-provided [script](https://github.com/Vito0912/absToolbox/blob/main/tools/migrate_backup_to_new_server.py).
-
 ## A Generally Reliable Method
 
 You can often succeed by replicating the original file system structure on the new system, even when migrating from Windows to Linux. Ensure you preserve the exact directory structure. Preserving file permissions is also recommended where possible. Migrations from Windows can be problematic due to the use of backslashes (`\`) in file paths.
 
-## Windows to Docker
+## Community Script
+
+This guide is primarily based on a community-provided [script](https://github.com/Vito0912/absToolbox/blob/main/tools/migrate_backup_to_new_server.py).
+
+### Web-First Approach (New, Recommended Method)
+
+The script mentioned above has mostly been replaced by a web-first approach, which does not require a local Python installation or manual database changes.  
+It is available at the [ABS Toolbox (Migrate-Server)](https://abstoolbox.vito0912.de/tool/migrate-server) (Note: This is a third-party tool and not officially affiliated with Audiobookshelf).
+
+Follow the instructions on the page. After setting up the new server, make sure to add the new server under the tool's Settings and follow the instructions there as well.  
+You need to add the page to the CORS allowed origins for both your old and new server. See [CORS](./cors) and [ABS Toolbox](https://abstoolbox.vito0912.de/settings) for more details.
+
+## Windows to Docker (Old, legacy Method)
 
 Follow the instructions provided in the [migration script](https://github.com/Vito0912/absToolbox/blob/main/tools/migrate_backup_to_new_server.py).
 
