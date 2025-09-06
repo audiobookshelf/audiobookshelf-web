@@ -10,11 +10,7 @@ The following projects are not maintained by the Audiobookshelf team nor did any
 
 :::
 
-:::info API Tokens
-
-API tokens can only be created by admins. See TBA for more information.
-
-:::
+There is a community-curated list of Audiobookshelf-related apps and projects. Many projects not added to the list by the authors below can be found there. This list is not maintained by the Audiobookshelf team. You can find it at [ABS Toolbox - Projects](https://abstoolbox.vito0912.de/projects).
 
 ---
 

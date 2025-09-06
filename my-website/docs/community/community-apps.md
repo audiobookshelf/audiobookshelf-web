@@ -10,6 +10,8 @@ The following projects are not maintained by the Audiobookshelf team nor did any
 
 :::
 
+There is a community-curated list of Audiobookshelf-related apps and projects. Apps that are not added to the list below can be found there, along with the features of each app. This list is not maintained and does not represent the opinion of the Audiobookshelf team. You can find it at [ABS Toolbox - Clients](https://abstoolbox.vito0912.de/clients).
+
 ---
 
 :::info
@@ -18,7 +20,7 @@ ABS is constantly changing, and the API is updated often. Many of these apps use
 
 :::
 
-<br />
+
 
 | OS                           | Project Link                                            | Notes                                                                                                                                                |
 | ---------------------------- | ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
