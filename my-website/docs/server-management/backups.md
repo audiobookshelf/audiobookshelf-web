@@ -12,7 +12,10 @@ By default, backups are stored in `/metadata/backups`. You can configure this lo
 You can configure how many backups to keep and a maximum size for your backups. Both fields treat 0 as "unlimited".
 
 :::warning
-Backups do not contain any media files, you must manage those backups using another method.
+
+- Backups do not contain any media files, you must manage those backups using another method.
+- Backups cannot be loaded from another installation method without losing progress and metadata.
+
 :::
 
 ![Backups Page](/pages/server-management/backups.png)

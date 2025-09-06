@@ -11,4 +11,6 @@ Previous listening sessions can be deleted from the extra details popup or by se
 
 The table can be filtered by specific users and sorted by each of the columns. Clicking on each row shows additional information for the listening session, including the device playback occurred on for additional debugging.
 
+Listening sessions are an important part of keeping stats accurate. Stats are calculated based on listening sessions. Listening sessions should be kept and not deleted.
+
 ![Listening Session Details](/pages/server-management/listening-session-details.png)

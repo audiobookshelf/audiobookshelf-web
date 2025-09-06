@@ -22,7 +22,7 @@ To prevent notification spam, Audiobookshelf will only send 1 notification per s
 Here you can define specific notification events and the endpoints they should be sent to. Each entry consists of:
 
 - **Notification Event** - The trigger that will cause this notification (e.g., `onTest`, `onBackupCompleted`).
-- **Apprise URL** - The destination for the notification, typically your Apprise API endpoint (e.g., `http://localhost:9000/notify`). This allows different endpoints to receive different notification types.
+- **Apprise URL** - The destination for the notification, typically your Apprise API endpoint (e.g., `http://localhost:9000/notify`) or your webhook. This allows different endpoints to receive different notification types.
 - **Title Template** - The title of the notification, using template substitution.
 - **Body Template** - The body of the notification, using template substitution.
 
