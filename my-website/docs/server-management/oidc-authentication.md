@@ -47,17 +47,17 @@ Example issuer URLs:
 
 If auto-discovery doesn't work, configure these fields manually:
 
-| Field | Description |
-|-------|-------------|
-| **Issuer URL** |  The base URL that identifies your OIDC provider |
-| **Authorize URL** | Endpoint where users are redirected for authentication |
-| **Token URL** | Endpoint for exchanging authorization codes for tokens |
-| **Userinfo URL** | Endpoint for retrieving user profile information |
-| **JWKS URL** | Endpoint for JSON Web Key Set used to verify tokens |
-| **Logout URL** | Endpoint for ending SSO sessions |
-| **Client ID** | The unique identifier for Audiobookshelf in your provider |
-| **Client Secret** | The secret key for secure communication |
-| **Signing Algorithm** | Algorithm used by your provider (e.g., RS256, ES256) |
+| Field                 | Description                                               |
+| --------------------- | --------------------------------------------------------- |
+| **Issuer URL**        | The base URL that identifies your OIDC provider           |
+| **Authorize URL**     | Endpoint where users are redirected for authentication    |
+| **Token URL**         | Endpoint for exchanging authorization codes for tokens    |
+| **Userinfo URL**      | Endpoint for retrieving user profile information          |
+| **JWKS URL**          | Endpoint for JSON Web Key Set used to verify tokens       |
+| **Logout URL**        | Endpoint for ending SSO sessions                          |
+| **Client ID**         | The unique identifier for Audiobookshelf in your provider |
+| **Client Secret**     | The secret key for secure communication                   |
+| **Signing Algorithm** | Algorithm used by your provider (e.g., RS256, ES256)      |
 
 :::warning
 
@@ -77,10 +77,16 @@ If you are using an OIDC provider like Authentik, you do not need to change the 
 
 :::
 
+:::info Unauthorized when using Authentik
+
+If you see "Unauthorized" errors when logging in with Authentik, check that the user's email is verified. For instructions, refer to the [Authentik documentation](https://docs.goauthentik.io/add-secure-apps/providers/property-mappings/#scope-mappings-with-oauth2). You can also follow the step-by-step guide in [Issue #150](https://github.com/audiobookshelf/audiobookshelf-web/issues/150).
+
+:::
+
 ### Bypassing OIDC Login
 
 If OIDC is misconfigured or unavailable, you can bypass SSO by navigating directly to. This will bring you to the local login page (if still enabled):
 
 ```text
-https://your-audiobookshelf-domain.com/login/?autoLaunch=0
+https://example.com/login/?autoLaunch=0
 ```
