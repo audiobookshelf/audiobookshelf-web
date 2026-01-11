@@ -1,6 +1,6 @@
 ---
 id: community-providers
-title: Community Providers
+title: Metadata Providers
 sidebar_position: 3
 ---
 
@@ -16,9 +16,7 @@ A custom provider can be added to ABS through "Metadata Tools" in the server set
 To add a custom provider you will need the address of the provider (a URL if a public community provider or the IP and port if you're running the custom provider yourself).
 If an authorization token is needed you will also add that here.
 
-TODO: Add screenshot again
-
-<!--- ![Adding Custom Metadata Provider](/guides/custom_metadata/adding_provider.png) -->
+![Adding Custom Metadata Provider](/pages/custom_metadata/adding_provider.png)
 
 ## Creating custom provider
 

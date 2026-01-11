@@ -1,6 +1,6 @@
 ---
 id: community-apps
-title: Community Apps
+title: Third-Party Apps
 sidebar_position: 1
 ---
 
@@ -19,8 +19,6 @@ There is a community-curated list of Audiobookshelf-related apps and projects. A
 ABS is constantly changing, and the API is updated often. Many of these apps use endpoints that are not recommended anymore and could cause problems or in general produce unwanted behaviour, such as incorrect stats, negative or wrong listening sessions, wrong last online times, and getting around restrictions set by the server admin. If you notice any of these problems, please let the app developers know.
 
 :::
-
-
 
 | OS                           | Project Link                                            | Notes                                                                                                                                                |
 | ---------------------------- | ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
