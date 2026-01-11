@@ -11,7 +11,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Audiobookshelf",
-  tagline: "Dinosaurs are cool",
+  tagline: "A self-hosted audiobook server",
   favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -20,7 +20,8 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
+  url: "https://audiobookshelf.org",
+
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -90,9 +91,15 @@ const config = {
         items: [
           {
             type: "docSidebar",
-            sidebarId: "tutorialSidebar",
+            sidebarId: "docsSidebar",
             position: "left",
-            label: "Tutorial",
+            label: "Documentation",
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "contributingSidebar",
+            position: "left",
+            label: "Contributing",
           },
           /* { to: "/blog", label: "Blog", position: "left" }, */
           {
