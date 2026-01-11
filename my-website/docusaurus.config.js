@@ -101,6 +101,12 @@ const config = {
             position: "left",
             label: "Contributing",
           },
+          {
+            type: "docSidebar",
+            sidebarId: "showcaseSidebar",
+            position: "left",
+            label: "Showcase",
+          },
           /* { to: "/blog", label: "Blog", position: "left" }, */
           {
             href: "https://github.com/advplyr/audiobookshelf",
