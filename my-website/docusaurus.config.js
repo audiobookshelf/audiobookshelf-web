@@ -107,6 +107,7 @@ const config = {
             position: "left",
             label: "Showcase",
           },
+
           /* { to: "/blog", label: "Blog", position: "left" }, */
           {
             href: "https://github.com/advplyr/audiobookshelf",
@@ -142,6 +143,10 @@ const config = {
               {
                 label: "GitHub",
                 href: "https://github.com/facebook/docusaurus",
+              },
+              {
+                label: "Privacy Policy",
+                to: "/privacy-policy",
               },
             ],
           },
