@@ -120,20 +120,11 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Docs",
-            items: [
-              /*{
-                label: "Tutorial",
-                to: "/docs/intro",
-              },*/
-            ],
-          },
-          {
             title: "Community",
             items: [
               {
                 label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
+                href: "https://discord.gg/HQgCbd6E75",
               },
             ],
           },
@@ -141,17 +132,13 @@ const config = {
             title: "More",
             items: [
               {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
-              },
-              {
                 label: "Privacy Policy",
                 to: "/privacy-policy",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `The Audiobookshelf project. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
