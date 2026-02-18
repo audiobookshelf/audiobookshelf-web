@@ -29,8 +29,13 @@ export default function HomePage() {
     const deg = angle * (180 / Math.PI) + 180;
     document.documentElement.style.setProperty('--angle', `-${deg}deg`);
 
-    const coversPerShelf = Math.ceil(width / getCoverWidth());
-    const shelfCount = Math.ceil(height / getShelfHeight());
+    const coverWidth = getCoverWidth();
+    const shelfHeight = getShelfHeight();
+    const coversPerShelf = Math.ceil(width / coverWidth);
+    const shelfCount = Math.ceil(height / shelfHeight);
+
+    document.documentElement.style.setProperty('--cover-width', `${coverWidth}px`);
+    document.documentElement.style.setProperty('--shelf-height', `${shelfHeight}px`);
 
     let index = 0;
     const newShelves = [];
