@@ -29,8 +29,13 @@ export default function HomePage() {
     const deg = angle * (180 / Math.PI) + 180;
     document.documentElement.style.setProperty('--angle', `-${deg}deg`);
 
-    const coversPerShelf = Math.ceil(width / getCoverWidth());
-    const shelfCount = Math.ceil(height / getShelfHeight());
+    const coverWidth = getCoverWidth();
+    const shelfHeight = getShelfHeight();
+    const coversPerShelf = Math.ceil(width / coverWidth);
+    const shelfCount = Math.ceil(height / shelfHeight);
+
+    document.documentElement.style.setProperty('--cover-width', `${coverWidth}px`);
+    document.documentElement.style.setProperty('--shelf-height', `${shelfHeight}px`);
 
     let index = 0;
     const newShelves = [];
@@ -77,11 +82,10 @@ export default function HomePage() {
         </div>
 
         <div className="links">
-          <a href="/docs/intro">Documentation</a>
-          <a href="/guides">User Guides</a>
-          <a href="/faq">Common Questions</a>
-          <a href="/support">How to Support</a>
-          <a href="/showcase">Showcase</a>
+          <a href="/docs/documentation/introduction">Documentation</a>
+          <a href="/docs/faq/general">Common Questions</a>
+          <a href="/docs/contributing/general">Contributing</a>
+          <a href="/docs/showcase/showcase">Showcase</a>
 
           <div className="socials">
             <a href="https://discord.gg/HQgCbd6E75"><img src="/discord.svg" alt="Discord" /></a>

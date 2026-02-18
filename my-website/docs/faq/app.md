@@ -1,7 +1,8 @@
 ---
-title: App FAQ
-slug: app
-fullpath: /faq/app
+id: app
+sidebar_label: App
+title: App
+sidebar_position: 1.3
 ---
 
 This section aims to answer common questions related to the app.
@@ -31,7 +32,7 @@ The apps will likely leave beta before all originally planned features are reali
 Android has more features than iOS, but all of these features are planned for iOS (with no estimate on when any given feature is implemented).
 
 A checklist tracking the main remaining bugs for the iOS app is located [here](https://github.com/advplyr/audiobookshelf-app/issues/541).
-_Please do not_ leave additional comments on this issue that are just requests to release the app, this has already been communicated in various GitHub and Discord discussions (see [General FAQ](/faq#i-have-a-feature-request-how-should-i-bring-this-up)).
+_Please do not_ leave additional comments on this issue that are just requests to release the app, this has already been communicated in various GitHub and Discord discussions (see [General FAQ](/docs/faq/general#i-have-a-feature-request-how-should-i-bring-this-up)).
 
 ## When will spots be cleared in Testflight to make room for new users?
 
@@ -78,15 +79,6 @@ Users are advised to exercise caution and discretion when using third-party apps
 
 This list serves as a means of discovering third-party apps. These apps are not affiliated with or supported by Audiobookshelf.
 Any issues with the apps should be directed to the app maintainers through appropriate channels.
-
-| OS                           | App Name    | Project Link                               | Notes                                                                                                                                                |
-| ---------------------------- | ----------- | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| iOS                          | ShelfPlayer | https://github.com/rasmuslos/ShelfPlayer   | ShelfPlayer is a sleek and modern Audiobookshelf client, specifically designed for audiobooks, podcasts and iOS, as well as iPadOS.                  |
-| iOS                          | Plappa      | https://plappa.me/                         | Audiobook player for Jellyfin and Audiobookshelf, written in Swift/SwiftUI                                                                           |
-| Wear OS                      | ABS-wear    | https://github.com/RasmusKoit/abs_wear     | ABS Wear is a standalone version for Android Wear OS 4.0                                                                                             |
-| Android                      | Lissen      | https://github.com/GrakovNe/lissen-android | Lissen is a free, aesthetic Audiobookshelf client designed especially for seamless audiobook listening                                               |
-| Android, Windows, Linux, Web | Buchable    | https://github.com/Vito0912/abs_flutter    | A feature-rich, cross-platform Audiobookshelf client offering extensive functionality, including support for audiobooks, podcasts, caching and more. |
-| Linux, macOS                 | Toutui      | https://github.com/AlbanDAVID/Toutui       | TUI client. Experience the power of ABS in your terminal!                                                                                            |
 
 ## I want to build a client app. What are the rules?
 

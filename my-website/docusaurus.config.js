@@ -11,7 +11,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Audiobookshelf",
-  tagline: "Dinosaurs are cool",
+  tagline: "A self-hosted audiobook server",
   favicon: "img/favicon.ico",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -20,7 +20,8 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
+  url: "https://audiobookshelf.org",
+
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -51,9 +52,9 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/audiobookshelf/audiobookshelf-web/my-website/",
         },
-        blog: {
+        /* blog: {
           showReadingTime: true,
           feedOptions: {
             type: ["rss", "atom"],
@@ -68,6 +69,7 @@ const config = {
           onInlineAuthors: "warn",
           onUntruncatedBlogPosts: "warn",
         },
+        */
         theme: {
           customCss: "./src/css/custom.css",
         },
@@ -89,11 +91,24 @@ const config = {
         items: [
           {
             type: "docSidebar",
-            sidebarId: "tutorialSidebar",
+            sidebarId: "docsSidebar",
             position: "left",
-            label: "Tutorial",
+            label: "Documentation",
           },
-          { to: "/blog", label: "Blog", position: "left" },
+          {
+            type: "docSidebar",
+            sidebarId: "contributingSidebar",
+            position: "left",
+            label: "Contributing",
+          },
+          {
+            type: "docSidebar",
+            sidebarId: "showcaseSidebar",
+            position: "left",
+            label: "Showcase",
+          },
+
+          /* { to: "/blog", label: "Blog", position: "left" }, */
           {
             href: "https://github.com/advplyr/audiobookshelf",
             label: "GitHub",
@@ -105,20 +120,11 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Docs",
-            items: [
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
-            ],
-          },
-          {
             title: "Community",
             items: [
               {
                 label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
+                href: "https://discord.gg/HQgCbd6E75",
               },
             ],
           },
@@ -126,13 +132,13 @@ const config = {
             title: "More",
             items: [
               {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                label: "Privacy Policy",
+                to: "/privacy-policy",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `The Audiobookshelf project. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,

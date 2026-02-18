@@ -1,0 +1,28 @@
+---
+id: general
+sidebar_label: General
+title: General
+sidebar_position: 1.1
+---
+
+This page aims to answer common general questions.
+
+## Where can I get help?
+
+1. Join the community on [Discord](https://discord.gg/HQgCbd6E75).
+2. Go to the [Github repo](https://github.com/advplyr/audiobookshelf) and at the top left of the page you can search for your issue.
+
+## I have a feature request. How should I bring this up?
+
+First, check the GitHub issues. There are two repositories, one for the [server and web client](https://github.com/advplyr/audiobookshelf), and one for [the apps](https://github.com/advplyr/audiobookshelf-app).
+You may need to try a few different search terms because someone else may have used different words to explain what they wanted.
+
+If your feature request already exists, you can react with the "thumbs up" reaction to the top comment.
+Please don't bump posts by just saying "+1" or "I also want this" unless you have something to add to the feature request.
+You can also express support for an existing feature request in Discord.
+
+If your feature request does not exist, you can create a new Feature Request or talk about it on Discord.
+
+## How can I help out?
+
+Please take a look at the Contributing section. If you still have questions, feel free to ask for help on Discord or GitHub.
