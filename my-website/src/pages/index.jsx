@@ -77,9 +77,10 @@ export default function HomePage() {
         </div>
 
         <div className="links">
-          <a href="/docs/introduction">Documentation</a>
-          <a href="/docs/faq/general">Common Questions</a>
-          <a href="/docs/contributing/general">How to Support</a>
+          <a href="/docs/documentation/introduction">Documentation</a>
+          <a href="/docs/documentation/faq/general">Common Questions</a>
+          <a href="/docs/contributing/general">Contributing</a>
+          <a href="/docs/showcase/showcase">Showcase</a>
 
           <div className="socials">
             <a href="https://discord.gg/HQgCbd6E75"><img src="/discord.svg" alt="Discord" /></a>
