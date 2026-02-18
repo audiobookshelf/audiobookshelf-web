@@ -14,7 +14,7 @@ There are many ways to contribute. Some ideas are included here:
 - Documentation updates: If you notice a problem with the website documentation, please open a PR to help keep it up to date and improve it. This documentation is target for Audiobookshelf, and is not intended to provide guides for how to use other tools. For example, reverse proxy configuration is helpful to add, but users should read the documentation for the relevant reverse proxy instead of having us maintain an install guide (which can easily get out of date).
 - Review help: Testing PRs to verify they perform as described helps to signal that a PR is ready for review by a project member.
 - Edge testing: The `:edge` docker container is built on every push to the master branch. Using this image to help test new features and bug fixes before a release helps to make sure we did not miss anything in our testing.
-- Financial: Donations can be made to [https://github.com/sponsors/advplyr](advplyr's developer profile). These donations are used to help with development costs. We believe the best way to support the project is still an investment of time for the project (everything mentioned above, helping answer community questions, etc), but this is also a viable option.
+- Financial: Donations can be made to [advplyrs developer profile](https://github.com/sponsors/advplyr). These donations are used to help with development costs. We believe the best way to support the project is still an investment of time for the project (everything mentioned above, helping answer community questions, etc), but this is also a viable option.
 
 Thank you for taking the time to consider contribuing to Audiobookshelf!
 
