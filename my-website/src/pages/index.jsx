@@ -78,7 +78,7 @@ export default function HomePage() {
 
         <div className="links">
           <a href="/docs/documentation/introduction">Documentation</a>
-          <a href="/docs/documentation/faq/general">Common Questions</a>
+          <a href="/docs/faq/general">Common Questions</a>
           <a href="/docs/contributing/general">Contributing</a>
           <a href="/docs/showcase/showcase">Showcase</a>
 

@@ -32,7 +32,7 @@ The apps will likely leave beta before all originally planned features are reali
 Android has more features than iOS, but all of these features are planned for iOS (with no estimate on when any given feature is implemented).
 
 A checklist tracking the main remaining bugs for the iOS app is located [here](https://github.com/advplyr/audiobookshelf-app/issues/541).
-_Please do not_ leave additional comments on this issue that are just requests to release the app, this has already been communicated in various GitHub and Discord discussions (see [General FAQ](/faq#i-have-a-feature-request-how-should-i-bring-this-up)).
+_Please do not_ leave additional comments on this issue that are just requests to release the app, this has already been communicated in various GitHub and Discord discussions (see [General FAQ](/docs/faq/general#i-have-a-feature-request-how-should-i-bring-this-up)).
 
 ## When will spots be cleared in Testflight to make room for new users?
 
