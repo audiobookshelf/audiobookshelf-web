@@ -1,6 +1,11 @@
 # Audiobookshelf Website
 
-This is [audiobookshelf.org](https://audiobookshelf.org), the install guide and documentation for [audiobookshelf](https://github.com/advplyr/audiobookshelf).
+> [!NOTE]
+> This is the old audiobookshelf docs website.
+> 
+> The new docs repo is [audiobookshelf-docs](https://github.com/audiobookshelf/audiobookshelf-docs)
+
+This is the old [audiobookshelf.org](https://audiobookshelf.org), the install guide and documentation for [audiobookshelf](https://github.com/advplyr/audiobookshelf).
 
 
 ## Contributing
